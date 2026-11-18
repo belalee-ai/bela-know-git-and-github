@@ -2,3 +2,19 @@
 /shots/
 /node_modules/
 /assets/ref/
+# 已获公开授权、且直播网页实际使用的文件
+/assets/fonts/*
+!/assets/fonts/silkscreen.woff2
+!/assets/fonts/lidali-hand.woff2
+/assets/y2k/*
+!/assets/y2k/bela-racer.webp
+!/assets/y2k/paper-sky.webp
+!/assets/y2k/bow.png
+!/assets/y2k/butterfly.png
+!/assets/y2k/disc.png
+!/assets/y2k/disk.png
+!/assets/y2k/flower.png
+!/assets/y2k/headphones.png
+!/assets/y2k/heart.png
+!/assets/y2k/phone.png
+!/assets/y2k/star.png
