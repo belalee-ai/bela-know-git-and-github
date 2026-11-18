@@ -169,9 +169,9 @@ async function exercise(page) {
   for (const step of [5,6]) await click(page,`.gal-guide-body [data-gal-step="${step}"]`);
   await click(page,'[data-upload]'); await click(page,'[data-upload]');
   await checkText('#lesson-body','第一份作品已存档'); await frame(page,'06-first-upload');
-  const topic = await bodyText(page,'#lesson-title');
+  const topic = await bodyText(page,'#air-title');
   await page.call('Page.reload', {ignoreCache:true});
-  await until(async () => (await bodyText(page,'#lesson-title')) === topic && await visible(page,'#lesson:not([hidden])'), '刷新后没有恢复第六节');
+  await until(async () => (await bodyText(page,'#air-title')) === topic && await visible(page,'#lesson:not([hidden])'), '刷新后没有恢复第六节');
 
   for (const [shortcut,name] of [['l','loop'],['t','glossary'],['q','quiz']]) {
     await key(page,shortcut);
