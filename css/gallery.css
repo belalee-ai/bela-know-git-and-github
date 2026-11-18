@@ -1,0 +1,124 @@
+/* Local GitHub replica, open-source stories and Bela’s real commit archive. */
+.gal {
+  --gal-ink: #3d203d;
+  --gal-edge: #875675;
+  --gal-plum: #40253e;
+  --gal-light: #fffafc;
+  --gal-cloud: #e5edf9;
+  --gal-pink: #f9c7de;
+  --gal-mint: #bcdfcf;
+  box-sizing: border-box; width: 100%; height: 100%; color: var(--gal-ink);
+  font-family: "PingFang SC", "Microsoft YaHei", system-ui, sans-serif; font-size: 28px; line-height: 1.4;
+}
+.gal *, .gal *::before, .gal *::after { box-sizing: border-box; }
+.gal h3, .gal p { margin: 0; color: inherit; }
+.gal h3 { font: 750 54px/1.16 "PingFang SC", "Microsoft YaHei", system-ui, sans-serif; letter-spacing: -.045em; }
+.gal p { font-size: 28px; line-height: 1.5; }
+.gal button { min-width: 0; min-height: 0; font: inherit; line-height: 1.2; color: inherit; cursor: pointer; letter-spacing: normal; }
+.gal button:focus-visible { outline: 4px solid #7d367e; outline-offset: 3px; z-index: 1; }
+.gal .gal-art { display: block; object-fit: contain; pointer-events: none; user-select: none; }
+.gal-kicker, .gal-mono, .gal-log-meta, .gal-commit > b, .gal-date-label, .gal code { font-family: ui-monospace, "SFMono-Regular", Menlo, monospace; }
+.gal-kicker { font-size: 24px; font-weight: 700; letter-spacing: .025em; }
+.gal button.gal-action { align-self: flex-start; min-height: 57px; padding: 10px 24px; border: 2px solid var(--gal-ink); border-radius: 9px; background: var(--gal-plum); color: white; font-size: 28px; font-weight: 650; box-shadow: 3px 3px 0 #c99bb4; }
+.gal button.gal-action:hover { background: #613654; }
+.gal-repo-layout { display: grid; grid-template-columns: minmax(0, 1.52fr) minmax(0, 1fr); gap: 24px; align-items: stretch; height: 100%; }
+.gal-repo, .gal-flash, .gal-timeline-card, .gal-project-card, .gal-scale, .gal-guide-screen, .gal-history, .gal-log { border: 2px solid var(--gal-edge); border-radius: 16px; overflow: hidden; }
+.gal-repo { background: var(--gal-light); align-self: stretch; }
+.gal-repo-top { display: flex; align-items: center; gap: 16px; min-height: 62px; padding: 9px 22px; background: var(--gal-plum); color: #fff4fa; }
+.gal-repo-top strong { letter-spacing: -.035em; font-size: 30px; }
+.gal-repo-top > span { margin-left: auto; font-size: 20px; font-weight: 650; color: #edcfe2; }
+.gal-code-mark { display: inline-grid; place-items: center; padding: 1px 7px; border: 1.5px solid #e8c3d7; border-radius: 6px; color: #fff; font: 700 22px/1.25 monospace; }
+.gal-repo-name { display: grid; gap: 0; padding: 18px 22px 12px; }
+.gal-repo-name span { color: #79596f; font-size: 22px; }
+.gal-repo-name strong { font-size: 31px; line-height: 1.25; overflow-wrap: anywhere; }
+.gal-repo-tools, .gal-repo-tabs { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; padding: 4px 22px 15px; }
+.gal-repo-tabs { border-top: 1px solid #dbc9d5; border-bottom: 1px solid #c7acc0; gap: 10px; padding-top: 12px; padding-bottom: 12px; background: #f3ebf2; }
+.gal .gal-hot { padding: 5px 13px; border: 1.5px solid #ad8ba4; border-radius: 7px; background: #fffafc; box-shadow: 0 2px 0 #dbc6d3; font-size: 27px; font-weight: 600; }
+.gal .gal-hot:hover, .gal .gal-hot.is-current { border-color: #67314e; background: #f8c6df; }
+.gal-code-tab { padding: 3px 3px 3px 0; color: #654f62; font-size: 24px; }
+.gal-file-box { margin: 18px 22px; border: 1.5px solid #b99dad; border-radius: 8px; overflow: hidden; }
+.gal-file-head, .gal-file-row { display: flex; align-items: center; gap: 12px; min-height: 54px; padding: 6px 14px; }
+.gal-file-head { justify-content: space-between; background: #f2e7f0; border-bottom: 1px solid #c9adbe; }
+.gal-file-head > span { font: 600 23px monospace; }
+.gal-doc-glyph { position: relative; width: 19px; height: 24px; background: white; border: 2px solid var(--gal-edge); border-radius: 3px; }
+.gal-doc-glyph::after { position: absolute; content: ""; width: 9px; height: 2px; left: 3px; top: 7px; background: var(--gal-edge); box-shadow: 0 5px var(--gal-edge); }
+.gal-flash { display: flex; position: relative; flex-direction: column; background: #fff5ce; }
+.gal-card-art { display: grid; flex: 1; min-height: 90px; place-items: center; overflow: hidden; background-color: #eddcf1; background-image: radial-gradient(#b989b6 1.5px, transparent 1.7px); background-size: 12px 12px; border-bottom: 2px solid var(--gal-edge); }
+.gal-card-art .gal-art { width: clamp(120px, 10vw, 198px); height: 160px; max-height: 100%; transform: rotate(-7deg); }
+.gal-flash-contents { padding: 20px 25px 24px; }
+.gal-flash h3 { font-size: 45px; margin: 6px 0 10px; }
+.gal-timeline-card, .gal-project-card, .gal-scale { display: flex; flex-direction: column; height: 100%; min-height: 325px; }
+.gal-timeline-card { background: var(--gal-light); }
+.gal-timeline-head, .gal-poster-top { display: flex; justify-content: space-between; align-items: center; gap: 12px; padding: 14px 26px; border-bottom: 2px solid var(--gal-edge); font-weight: 700; }
+.gal-timeline-head { background: var(--gal-cloud); }
+.gal-timeline-head .gal-mono { font-size: 25px; }
+.gal-event { flex: 1; display: grid; align-items: center; grid-template-columns: minmax(0,1fr) 220px; gap: 30px; padding: 14px 45px; }
+.gal-event p { margin-top: 18px; }
+.gal-event .gal-art { width: 200px; height: 190px; transform: rotate(8deg); }
+.gal-milestones { position: relative; display: flex; align-items: stretch; padding: 13px 12px 25px; }
+.gal-milestones::before { content: ""; position: absolute; left: 6%; right: 6%; top: 29px; height: 3px; background: #b595b1; }
+.gal .gal-milestone { display: grid; justify-items: center; gap: 7px; flex: 1; border: 0; background: transparent; position: relative; padding: 6px 3px; font: 650 23px/1.3 ui-monospace, monospace; }
+.gal-milestone i { display: block; width: 22px; height: 22px; border: 3px solid var(--gal-edge); background: #fff; border-radius: 100%; }
+.gal-milestone:hover i, .gal-milestone.is-current i { background: #f277a9; border-color: var(--gal-ink); box-shadow: 0 0 0 4px #f7cada; }
+.gal-project-card { position: relative; background: #f9dcea; }
+.gal-poster-top { background: rgba(255,255,255,.38); }
+.gal-date-label { font-weight: 500; font-size: 22px; }
+.gal-project-grid { flex: 1; display: grid; align-items: center; grid-template-columns: 1.2fr 1fr; gap: 35px; padding: 23px 38px; }
+.gal-project-grid h3 { margin-bottom: 7px; }
+.gal-project-grid .gal-big-number { margin-top: 18px; }
+.gal-big-number, .gal-scale-grid strong { font-family: ui-sans-serif, system-ui, sans-serif; font-weight: 800; font-variant-numeric: tabular-nums; font-size: 92px; line-height: 1.04; letter-spacing: -.07em; }
+.gal-project-about { display: flex; flex-direction: column; align-items: flex-start; gap: 13px; border-left: 2px dashed #a57494; padding: 0 0 0 28px; }
+.gal-project-about .gal-art { width: 110px; height: 105px; }
+.gal-openclaw { background: #e1dff4; }
+.gal-openclaw-hero { margin: auto 0; padding: 23px 40px; max-width: 78%; }
+.gal-openclaw-hero .gal-big-number { font-size: 105px; }
+.gal-openclaw-hero h3 { font-size: 40px; margin-top: 14px; }
+.gal-openclaw > .gal-art { position: absolute; right: 28px; top: 28%; width: 180px; height: 160px; transform: rotate(-8deg); }
+.gal-project-stats { display: flex; gap: 40px; padding: 15px 36px; background: #f3edf9; border-top: 2px solid var(--gal-edge); }
+.gal-scale { background: #d2e9df; }
+.gal-scale-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin: auto 0; padding: 22px 36px; }
+.gal-scale-grid > div { display: grid; gap: 12px; }
+.gal-scale-grid > div + div { border-left: 2px solid var(--gal-edge); padding-left: 34px; }
+.gal-scale-grid strong { font-size: 76px; }
+.gal-scale-grid small { font-size: .5em; vertical-align: top; }
+.gal-scale > p { padding: 16px 34px; border-top: 2px solid var(--gal-edge); }
+.gal-archive, .gal-guide { display: flex; flex-direction: column; height: 100%; gap: 17px; }
+.gal-chapters, .gal-guide-nav { display: flex; gap: 8px; align-items: stretch; }
+.gal .gal-chapter, .gal .gal-guide-tab { display: inline-flex; align-items: center; justify-content: center; gap: 10px; padding: 9px 17px; border: 2px solid #a7839b; border-radius: 10px; background: #fff9fc; font-size: 27px; font-weight: 650; white-space: nowrap; }
+.gal .gal-chapter.is-current, .gal .gal-guide-tab.is-current { background: var(--gal-plum); color: #fff; border-color: var(--gal-plum); }
+.gal-chapter:hover, .gal-guide-tab:hover { box-shadow: inset 0 0 0 1px #a77794; }
+.gal-archive-grid { flex: 1; min-height: 0; display: grid; grid-template-columns: .82fr 1.2fr; gap: 18px; }
+.gal-history { display: flex; flex-direction: column; background: #fcf5fa; }
+.gal-history-title, .gal-log-meta { display: flex; justify-content: space-between; align-items: center; gap: 10px; min-height: 55px; padding: 8px 16px; border-bottom: 1.5px solid #c3a8ba; }
+.gal-history-title { font-weight: 650; background: #eddce8; }
+.gal-history-title b { font: 650 24px/1.2 ui-monospace, monospace; }
+.gal-history-list { position: relative; min-height: 0; overflow-y: auto; padding: 8px 8px 13px; scrollbar-color: #aa7b9b #f5e7f0; }
+.gal .gal-commit { position: relative; display: grid; grid-template-columns: 16px 1fr auto; gap: 10px; align-items: center; width: 100%; min-height: 58px; padding: 9px 9px; text-align: left; border: 1.5px solid transparent; border-radius: 8px; background: transparent; font-variant-numeric: tabular-nums; }
+.gal-commit i { width: 13px; height: 13px; border: 2px solid var(--gal-edge); border-radius: 50%; background: #fff; }
+.gal-commit::after { content: ""; position: absolute; left: 14.5px; top: calc(50% + 7px); width: 2px; height: calc(100% - 13px); background: #a4829b; }
+.gal-commit:last-child::after { display: none; }
+.gal-commit b { font-size: 24px; }
+.gal-commit > span { font: 500 21px/1.3 ui-monospace, monospace; }
+.gal .gal-commit.is-current, .gal .gal-commit:hover { border-color: #bd8bab; background: #f7d6e5; }
+.gal-commit.is-current i { background: #b84377; border-color: var(--gal-ink); }
+.gal-log { display: flex; flex-direction: column; background: #fff7df; }
+.gal-log-meta { font-size: 22px; background: #f7e9c5; }
+.gal-log-meta code { font-size: 21px; }
+.gal-log h3 { font-size: 41px; line-height: 1.24; padding: 20px 23px 0; }
+.gal p.gal-log-note { padding: 10px 23px 19px; }
+.gal-log-diff { margin-top: auto; padding: 13px 23px 20px; border-top: 1.5px dashed #b59d84; }
+.gal-diff-labels { display: flex; justify-content: space-between; gap: 10px; font-size: 24px; }
+.gal-diff-labels span:first-child b { color: #286242; }
+.gal-diff-labels span:last-child b { color: #a32b63; }
+.gal-diff-track { height: 13px; margin-top: 8px; border: 1.5px solid #705065; border-radius: 5px; background: linear-gradient(90deg, #75b792 0 var(--gal-share), #dd86a3 var(--gal-share) 100%); }
+.gal-diff-track[data-empty="true"] { background: #ddd3d7; }
+.gal-guide-tab > b { display: grid; place-items: center; height: 29px; width: 29px; border: 1.5px solid; border-radius: 50%; font-size: 20px; }
+.gal-guide-screen { display: flex; flex: 1; min-height: 0; flex-direction: column; background: #fffafd; }
+.gal-guide-body { display: flex; flex: 1; min-height: 0; align-items: center; justify-content: space-between; gap: 20px; padding: 18px 36px; }
+.gal-guide-body > div { display: grid; justify-items: start; align-content: center; gap: 10px; }
+.gal-guide-body .gal-art { width: 166px; height: 175px; }
+.gal-guide-body h3 { font-size: 47px; }
+.gal-guide-body .gal-action { margin-top: 7px; }
+.gal-field { display: flex; gap: 20px; align-items: center; border: 1.5px solid #bfa4b6; border-radius: 7px; background: #f6edf5; padding: 9px 15px; font-size: 26px; }
+.gal .gal-name-history { margin-top: 14px; font-family: ui-monospace, monospace; font-size: 24px; color: #5e4460; }
+.gal-log-note > span { display: inline; padding: 1px 5px; margin-right: 9px; border: 1px solid #b9957a; border-radius: 4px; color: #715240; font-size: 20px; font-weight: 650; vertical-align: .08em; }

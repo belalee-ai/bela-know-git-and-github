@@ -1,0 +1,53 @@
+@font-face { font-family: NotesPixel; src: url('../assets/fonts/silkscreen.woff2') format('woff2'); font-display: swap; }
+:root { color-scheme: light; --ink: #3b2137; --plum: #4d2a46; --border: #b99bad; --paper: #fffafd; --muted: #72586a; }
+* { box-sizing: border-box; }
+body { margin: 0; background: #f4e9f0; color: var(--ink); font: 20px/1.58 'PingFang SC','Microsoft YaHei',system-ui,sans-serif; }
+a { color: inherit; }
+a:focus-visible { outline: 3px solid #9c316b; outline-offset: 4px; }
+h1,h2,h3,p { margin: 0; }
+.notes-header { min-height: 75px; padding: 12px clamp(18px, 4vw, 72px); border-bottom: 2px solid var(--plum); background: #f9cfe2; display: flex; align-items: center; gap: 24px; }
+.notes-brand { font: 28px/1 NotesPixel,monospace; text-decoration: none; white-space: nowrap; }
+.notes-brand span { font: 18px system-ui; }
+.notes-header h1 { padding-left: 22px; border-left: 1px solid #b987a4; font-size: 21px; }
+.notes-header > span { margin-left: auto; font-size: 16px; color: var(--muted); }
+.notes-layout { width: min(1400px,100%); display: grid; grid-template-columns: minmax(185px,235px) minmax(0,1fr); gap: clamp(20px,3vw,44px); padding: clamp(18px,3vw,42px); margin: 0 auto; }
+#notes-menu { position: sticky; top: 18px; align-self: start; display: grid; gap: 6px; }
+.notes-menu-title,.notes-hint,.notes-meta { font-size: 15px; font-weight: 650; letter-spacing: .035em; color: var(--muted); }
+.notes-menu-title { padding: 0 10px 8px; }
+#notes-menu a { display: flex; align-items: center; gap: 12px; padding: 10px 13px; border: 1px solid transparent; border-radius: 10px; text-decoration: none; font-size: 20px; line-height: 1.35; }
+#notes-menu a:hover { border-color: var(--border); background: var(--paper); }
+#notes-menu a[aria-current] { background: var(--plum); color: white; }
+#notes-menu kbd { display: grid; place-items: center; flex: none; width: 29px; height: 29px; border: 1px solid currentColor; border-radius: 6px; font: 17px NotesPixel,monospace; }
+.notes-hint { padding: 14px 10px; font-weight: 500; }
+#notes-card { padding: clamp(20px,3vw,41px); background: var(--paper); border: 1.5px solid var(--border); border-radius: 18px; line-height: 1.55; }
+#notes-card h2 { margin: 5px 0 22px; font-size: clamp(31px,3.6vw,48px); line-height: 1.2; letter-spacing: -.04em; }
+#notes-card h3 { margin-bottom: 5px; font-size: 17px; color: #73506a; }
+.notes-hook,.notes-vote,.notes-bridge { padding: 15px 19px; border-radius: 10px; }
+.notes-hook { background: #fce8f1; }
+.notes-hook p,.notes-bridge p { font-weight: 580; }
+.notes-beats { padding-left: 1.5em; margin: 22px 0; }
+.notes-beats li { padding: 5px 0 9px 5px; border-bottom: 1px dashed #dcc9d8; }
+.notes-beats li + li { margin-top: 5px; }
+.notes-beats li::marker { font-family: ui-monospace, monospace; color: #986383; }
+.notes-beats strong { margin-right: 12px; }
+.notes-beats p { display: inline; }
+.notes-vote { background: #e7edf8; }
+.notes-choices { display: flex; flex-wrap: wrap; gap: 5px 20px; margin: 5px 0; }
+.notes-choices span { font-weight: 680; }
+.notes-answer { font-size: 18px; color: #54445a; }
+.notes-bridge { background: #f7eed9; margin-top: 14px; }
+@media (max-width: 760px) {
+  .notes-layout { grid-template-columns: minmax(0,1fr); }
+  #notes-menu { position: static; display: flex; flex-wrap: wrap; gap: 3px; }
+  #notes-menu a { gap: 5px; font-size: 16px; padding: 4px 7px; }
+  #notes-menu kbd { height: 21px; width: 21px; font-size: 13px; }
+  .notes-menu-title,.notes-hint { display: none; }
+  .notes-header { min-height: 56px; gap: 12px; }
+  .notes-header h1 { font-size: 17px; padding-left: 12px; }
+  .notes-header > span { font-size: 13px; }
+}
+.notes-rundown { padding: 12px 10px; border-top: 1px solid var(--border); color: var(--muted); font-size: 16px; }
+.notes-rundown h3 { margin-bottom: 5px; color: var(--ink); font-size: 18px; }
+.notes-bridge + .notes-hook { margin-top: 14px; }
+.notes-hook p.notes-recap { margin-top: 8px; font-weight: 450; color: #684b62; }
+@media (max-width: 760px) { .notes-rundown { flex-basis: 100%; } }

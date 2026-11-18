@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#f7dbe8">
+  <title>Bela OS · 文科生也能懂的 Git &amp; GitHub</title>
+  <link rel="icon" href="assets/y2k/heart.png">
+  <link rel="stylesheet" href="css/os.css">
+  <link rel="stylesheet" href="css/workshop.css">
+  <link rel="stylesheet" href="css/gallery.css">
+</head>
+<body>
+<main id="stage" aria-label="Bela OS 直播桌面">
+  <header class="taskbar">
+    <button id="brand" class="os-brand flex items-center" title="回到直播桌面（0）"><span class="pixel-logo" aria-hidden="true"><i></i><i></i><i></i><i></i></span>Bela OS</button>
+    <span class="bar-divider" aria-hidden="true"></span><span class="on-air"><i></i><span id="air-title">直播桌面</span></span>
+    <div class="task-right flex items-center"><span class="creator">♥ &nbsp;李贝拉Bela · 文科生学 AI 编程</span><span class="bar-divider"></span><time id="clock"></time></div>
+  </header>
+  <section id="home" aria-label="直播节目单">
+    <article class="hero os-window">
+      <div class="chrome"><span class="window-name"><i class="mini-window"></i> Bela 的直播间</span><span class="chrome-glyphs" aria-hidden="true"><i>–</i><i>□</i></span></div>
+      <div class="hero-face relative">
+        <div class="hero-art" aria-hidden="true"><div class="photo-disc"></div><img src="assets/y2k/bela-racer.webp" alt=""><span class="twinkle big">✦</span><span class="twinkle small">✧</span><span class="autograph">Bela</span></div>
+        <div class="hero-copy"><div class="live-label"><b></b> LIVE CLASS</div><h1>文科生也能懂的<strong>Git <em>&amp;</em> GitHub</strong></h1>
+          <button class="hero-enter" data-program="1">从第一节开始 <span aria-hidden="true">↗</span></button></div>
+      </div>
+    </article>
+    <div class="program-head"><h2>直播节目单</h2><span>点图标进入，或按键盘 <kbd>1</kbd>–<kbd>6</kbd></span></div>
+    <nav id="programs" aria-label="六个独立节目"></nav>
+  </section>
+  <section id="lesson" class="os-window" aria-labelledby="lesson-title" hidden>
+    <div class="chrome"><span class="window-name"><i class="mini-window"></i><span id="lesson-file"></span></span><button class="chrome-close" id="close-lesson" title="回到桌面（Esc）" aria-label="关闭节目，回到桌面">×</button></div>
+    <div class="lesson-heading"><h1 id="lesson-title"></h1><p><b>刚进来的朋友</b><span id="lesson-intro"></span></p></div>
+    <div id="lesson-body"></div>
+    <nav class="stepnav" aria-label="节目步骤"><span id="step-pos"></span><span id="step-name"></span><div><button id="previous">← 上一步</button><button id="next">下一步 →</button></div></nav>
+  </section>
+  <aside class="recap os-window" id="recap">
+    <div class="chrome"><span class="window-name"><span class="blink-dot"></span> 回顾播放器</span><button id="loop-expand" class="chrome-close" aria-label="放大回顾播放器（L）" title="放大播放 L">⤢</button></div>
+    <div class="recap-inside"><div class="recap-kicker"><span class="radiowaves" aria-hidden="true">▂▅▇▃▆</span> ON REPEAT</div><h2>刚进来？<br>30 秒看懂</h2>
+      <div id="mini-frame" class="loop-frame"></div>
+      <div class="playback"><button id="loop-pause" aria-label="暂停循环"></button><div id="mini-bars" class="play-bars"></div><span class="runtime">00:30</span></div>
+    </div>
+  </aside>
+  <nav id="utilities" aria-label="直播工具">
+    <button data-tool="glossary"><kbd>T</kbd>术语翻译机</button>
+    <button data-tool="quiz"><kbd>Q</kbd>弹幕小测</button>
+    <button data-tool="notes"><kbd>N</kbd>主讲提词卡<span class="out-arrow" aria-hidden="true">↗</span></button>
+  </nav>
+  <section id="overlay" role="dialog" aria-modal="true" aria-labelledby="modal-title" hidden>
+    <div id="modal" class="os-window"><div class="chrome"><span class="window-name"><i class="mini-window"></i> Bela OS</span><button class="chrome-close" id="modal-close" aria-label="关闭浮窗">×</button></div><div id="modal-body"></div></div>
+  </section>
+</main>
+<noscript><article class="fallback"><h1>文科生也能懂的 Git &amp; GitHub</h1><p>Git 把你主动提交的修改留在电脑上。GitHub 能托管这些记录，让别人一起改作品。</p><p>六节节目依次是论文时光机、分支、GitHub 协作、开源故事、AI 改坏后的恢复，以及个人网站的 28 次存档。打开 JavaScript 即可参与演示。</p></article></noscript>
+<script src="data/commits.js"></script><script src="data/facts.js"></script><script src="data/glossary.js"></script>
+<script src="js/programs.js"></script><script src="js/lessons-workshop.js"></script><script src="js/lessons-gallery.js"></script><script src="js/app.js"></script>
+</body></html>
