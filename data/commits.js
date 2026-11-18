@@ -1,4 +1,4 @@
-// 日期和时刻按原作者所在的 UTC+08:00。note 是可改的讲述提示。
+// 日期和时刻按原作者所在的 UTC+08:00。note 是供观众阅读的简短观察或提问。
 window.DATA = window.DATA || {};
 window.DATA.commits = [
   {
@@ -10,7 +10,7 @@ window.DATA.commits = [
     "chapter": 1,
     "added": 22973,
     "deleted": 0,
-    "note": "让观众猜一猜，一个新网站第一份存档有多大。"
+    "note": "第一份存档，把整个网站记了下来。"
   },
   {
     "hash": "10565a3",
@@ -21,7 +21,7 @@ window.DATA.commits = [
     "chapter": 1,
     "added": 4,
     "deleted": 2499,
-    "note": "讲讲作品文件和发布设置为什么都值得留档。"
+    "note": "换了发布账号，也能留下一条记录。"
   },
   {
     "hash": "b760c61",
@@ -32,7 +32,7 @@ window.DATA.commits = [
     "chapter": 2,
     "added": 7416,
     "deleted": 9135,
-    "note": "请大家记住右上角的时间，等会儿对照最后一条。"
+    "note": "那一夜的 11 次修改，从 23:40 开始。"
   },
   {
     "hash": "5ad758b",
@@ -43,7 +43,7 @@ window.DATA.commits = [
     "chapter": 2,
     "added": 2496,
     "deleted": 15,
-    "note": "问大家，换一种外观，能不能只存一次改动？"
+    "note": "下次想找旧导航，可以翻到前一版。"
   },
   {
     "hash": "9be3ae6",
@@ -54,7 +54,7 @@ window.DATA.commits = [
     "chapter": 2,
     "added": 1,
     "deleted": 2490,
-    "note": "联系论文：正文要留，打印出来的副本需要每次都留吗？"
+    "note": "能随时重新生成的文件，要每次都存吗？"
   },
   {
     "hash": "3864c4d",
@@ -65,7 +65,7 @@ window.DATA.commits = [
     "chapter": 2,
     "added": 28,
     "deleted": 119,
-    "note": "可以说说，当时先处理的是哪一类问题。"
+    "note": "离上线还差哪几步？这条记录数出了四处。"
   },
   {
     "hash": "e7ae144",
@@ -76,7 +76,7 @@ window.DATA.commits = [
     "chapter": 2,
     "added": 58,
     "deleted": 51,
-    "note": "请大家想象，打开长文章时哪些图片会先出现。"
+    "note": "长文章的图片，需要一打开就全加载吗？"
   },
   {
     "hash": "a6f0b80",
@@ -87,7 +87,7 @@ window.DATA.commits = [
     "chapter": 2,
     "added": 41,
     "deleted": 53,
-    "note": "举一个网页动画太抢眼的例子。"
+    "note": "关掉闪光效果，也能单独留一版。"
   },
   {
     "hash": "6b913e7",
@@ -98,7 +98,7 @@ window.DATA.commits = [
     "chapter": 2,
     "added": 15,
     "deleted": 17,
-    "note": "用生活里的配色讲讲，为什么换个颜色也值得存一份。"
+    "note": "侧栏的一点红，也有自己的修改记录。"
   },
   {
     "hash": "4e6da0c",
@@ -109,7 +109,7 @@ window.DATA.commits = [
     "chapter": 2,
     "added": 16,
     "deleted": 458,
-    "note": "请观众看红色减号：作品也可以越改越短。"
+    "note": "这一版删了 458 行，页面依然在往前走。"
   },
   {
     "hash": "3c5ac35",
@@ -120,7 +120,7 @@ window.DATA.commits = [
     "chapter": 2,
     "added": 87,
     "deleted": 24,
-    "note": "让观众回想，点开失效链接时希望看到什么。"
+    "note": "点开失效链接，你希望页面怎么提醒你？"
   },
   {
     "hash": "c7cc6e6",
@@ -131,7 +131,7 @@ window.DATA.commits = [
     "chapter": 2,
     "added": 67,
     "deleted": 7,
-    "note": "试着想想，鼠标能点中的地方，手指能不能点中。"
+    "note": "鼠标点得到的小按钮，手指也点得到吗？"
   },
   {
     "hash": "48f5dda",
@@ -142,7 +142,7 @@ window.DATA.commits = [
     "chapter": 2,
     "added": 11,
     "deleted": 7,
-    "note": "对照第一条和最后一条：这一晚一共留下十一份。"
+    "note": "到凌晨 00:38，十一份存档串起了这一夜。"
   },
   {
     "hash": "180bc5f",
@@ -153,7 +153,7 @@ window.DATA.commits = [
     "chapter": 3,
     "added": 794,
     "deleted": 57,
-    "note": "这是两段故事间的过渡：网页已经能装进自己的内容了。"
+    "note": "从这一版起，点标签就能展开工具详情。"
   },
   {
     "hash": "5599976",
@@ -164,7 +164,7 @@ window.DATA.commits = [
     "chapter": 3,
     "added": 143,
     "deleted": 0,
-    "note": "请大家猜，写一篇文章会留下几次存档。"
+    "note": "一篇新文章，也可以有自己的修改历史。"
   },
   {
     "hash": "765ad45",
@@ -175,7 +175,7 @@ window.DATA.commits = [
     "chapter": 3,
     "added": 28,
     "deleted": 0,
-    "note": "问观众，文字换成图之后，哪部分更容易理解。"
+    "note": "这张数据图，比文章晚了三分钟存档。"
   },
   {
     "hash": "6bb1d52",
@@ -186,7 +186,7 @@ window.DATA.commits = [
     "chapter": 3,
     "added": 45,
     "deleted": 0,
-    "note": "点出这次只补图和出处，也值得单独留档。"
+    "note": "图上补了出处，读者就能顺着找回原资料。"
   },
   {
     "hash": "3b7284e",
@@ -197,7 +197,7 @@ window.DATA.commits = [
     "chapter": 3,
     "added": 136,
     "deleted": 8,
-    "note": "借此说明，同一个仓库里可以放好几篇作品。"
+    "note": "两篇文章，能在同一次存档里一起修改。"
   },
   {
     "hash": "5ac8ee3",
@@ -208,7 +208,7 @@ window.DATA.commits = [
     "chapter": 3,
     "added": 121,
     "deleted": 15,
-    "note": "邀请观众比较，故事和图各能解释什么。"
+    "note": "开头换成故事，你会更想往下读吗？"
   },
   {
     "hash": "369c111",
@@ -219,7 +219,7 @@ window.DATA.commits = [
     "chapter": 3,
     "added": 151,
     "deleted": 59,
-    "note": "请大家看两次日期：发布数日后，还能接着改。"
+    "note": "文章发出四天后，仍然可以接着修改。"
   },
   {
     "hash": "9dc6d9e",
@@ -230,7 +230,7 @@ window.DATA.commits = [
     "chapter": 4,
     "added": 2672,
     "deleted": 281,
-    "note": "问问观众：如果第二天更喜欢粉色，怎么找回去？"
+    "note": "如果更喜欢粉色，应该翻哪一版？"
   },
   {
     "hash": "c859ba4",
@@ -241,7 +241,7 @@ window.DATA.commits = [
     "chapter": 4,
     "added": 499,
     "deleted": 0,
-    "note": "请大家看看，网站从放文章发展到了放工具。"
+    "note": "同一个网站，现在既能读文章，也能用工具。"
   },
   {
     "hash": "17fe40e",
@@ -252,7 +252,7 @@ window.DATA.commits = [
     "chapter": 4,
     "added": 17,
     "deleted": 3,
-    "note": "讲一个小功能从初稿到补说明的过程。"
+    "note": "第一版能用之后，还可以继续补提示。"
   },
   {
     "hash": "94e7e9d",
@@ -263,7 +263,7 @@ window.DATA.commits = [
     "chapter": 4,
     "added": 465,
     "deleted": 1,
-    "note": "为什么给自己用的页面，分享前还要再改一版？"
+    "note": "把工具给别人用，输入框该放什么示例？"
   },
   {
     "hash": "7543d6a",
@@ -274,7 +274,7 @@ window.DATA.commits = [
     "chapter": 4,
     "added": 56,
     "deleted": 6,
-    "note": "请观众想想，数字旁边需要什么说明。"
+    "note": "两个结果的数字不同，一眼看得出来吗？"
   },
   {
     "hash": "7b1022d",
@@ -285,7 +285,7 @@ window.DATA.commits = [
     "chapter": 4,
     "added": 20,
     "deleted": 12,
-    "note": "可以讲，发现原先的表格装不下新情况时怎么补。"
+    "note": "一张旧表格，怎样装下同一天的两种训练？"
   },
   {
     "hash": "dba4e8e",
@@ -296,7 +296,7 @@ window.DATA.commits = [
     "chapter": 4,
     "added": 61,
     "deleted": 17,
-    "note": "问观众，搬走以后，还能在旧仓库找到它吗？"
+    "note": "工具搬走后，旧仓库还记得它吗？"
   },
   {
     "hash": "941ca8e",
@@ -307,6 +307,6 @@ window.DATA.commits = [
     "chapter": 4,
     "added": 0,
     "deleted": 1079,
-    "note": "请大家回到第一次添加工具的存档，看看它仍在哪里。"
+    "note": "今天的页面里没了，旧存档里依然找得到。"
   }
 ];

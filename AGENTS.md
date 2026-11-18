@@ -9,7 +9,7 @@
 ## 修改入口
 
 - 首页、窗口切换和全局快捷键由 index.html、css/ 和 js/app.js 负责。每节的互动单独注册到 window.BelaLessons。
-- 讲稿与章节标题在 js/programs.js，第二块屏幕打开 notes.html。
+- js/programs.js 保存节目标题、入场提示和投票题。js/notes.js 保存开场、讲述要点与过渡语，第二块屏幕打开 notes.html。
 - data/ 保存真实案例、术语和统计快照。改变数字先查 docs/sources.md 的原始来源，并更新采样日期。演示文案与作者真实经历分开标记。
 - assets/ 只提交网页确实引用且已获公开授权的素材。assets/ref/ 只供本地对照。
 - main 存放共享输入与检查工具。此次 GPT 实现在 build/gpt 对应的独立工作区；其他实现应使用自己的分支，避免覆盖对方。

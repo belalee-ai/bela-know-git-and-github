@@ -4,7 +4,7 @@
 
 ## 找到直播网页
 
-[打开网页实现分支 build/gpt](../../tree/build/gpt)。下载该分支的 ZIP 并解压，或在克隆后切换到 `build/gpt`，双击其中的 `index.html`。第二块屏幕打开 `notes.html` 看主讲提词卡。网页和素材都在本地，直播时可以断网。
+[打开网页实现分支 build/gpt](https://github.com/belalee-ai/bela-know-git-and-github/tree/build/gpt)。下载该分支的 ZIP 并解压，或在克隆后切换到 `build/gpt`，双击其中的 `index.html`。第二块屏幕打开 `notes.html` 看主讲提词卡。网页和素材都在本地，直播时可以断网。
 
 默认分支 `main` 是两种实现共用的起点，保存维护指南、数据与验收工具。GitHub 的提交记录用中文分阶段描述这张桌面是怎样做出来的。
 
@@ -19,7 +19,7 @@
 
 ## 交接
 
-开发工具从 [AGENTS.md](AGENTS.md) 开始，Claude Code 也可从 [CLAUDE.md](CLAUDE.md) 进入。六节内容与直播验收要求见 [网页任务书](docs/brief.md)。在实现分支运行以下检查，截图输出到本机的 `shots/`。
+开发工具从 [AGENTS.md](AGENTS.md) 开始，Claude Code 也可从 [CLAUDE.md](CLAUDE.md) 进入。六节内容与直播验收要求见 [网页任务书](docs/brief.md)，真实数据可在[来源与复核方法](docs/sources.md)中核对。在实现分支运行以下检查，截图输出到本机的 `shots/`。
 
 ```sh
 node scripts/check-offline.mjs
