@@ -4,13 +4,13 @@
 
 李贝拉Bela 把这个问题做成了一张可以玩的粉色电脑桌面。打开「论文时光机」，改一句、存一版，再亲手翻回去，就能看懂 Git 怎样记住修改。接着逛一个模拟的 GitHub 仓库，看看别人如何收藏作品、提问题、给作者投稿。六节节目都能独立打开，适合自己试，也适合直播投屏。
 
-**[下载完整项目 ZIP](https://github.com/belalee-ai/bela-know-git-and-github/archive/refs/heads/build/gpt.zip)**　·　[浏览网页源码](https://github.com/belalee-ai/bela-know-git-and-github/tree/build/gpt)
+**[下载完整项目 ZIP][main-zip]**　·　[浏览首页源码](index.html)
 
 ![Bela OS 直播桌面，左侧是六个节目，右侧是刚进直播间也能看懂的 30 秒回顾窗口](docs/images/desktop.webp)
 
 ## 怎么运行
 
-1. **下载并解压整个 ZIP。** 网页、字体、图片和演示数据都在同一个文件夹里。
+1. **[下载并解压整个 ZIP][main-zip]。** 网页、字体、图片和演示数据都在同一个文件夹里。
 2. **双击 `index.html`。** 浏览器会打开 Bela OS。全程可以断网，无需安装软件包或启动服务器。
 3. **按 `1` 试一次存档。** 进入「论文时光机」，用 `→` 翻到「动手存档」，改一句、点「存档」，再点旧版本看差异。按 `Esc` 关掉当前窗口。
 
@@ -20,11 +20,11 @@
 <summary>用 Git 获取完整项目</summary>
 
 ```sh
-git clone --branch build/gpt --single-branch https://github.com/belalee-ai/bela-know-git-and-github.git
+git clone https://github.com/belalee-ai/bela-know-git-and-github.git
 cd bela-know-git-and-github
 ```
 
-在这个目录里打开 `index.html` 即可。`build/gpt` 包含可以运行的网页，`main` 保存共享素材、数据和维护指南。
+默认分支 `main` 包含完整网页、素材和数据。在刚克隆的目录里双击 `index.html` 即可。
 
 </details>
 
@@ -65,6 +65,8 @@ node scripts/shoot.mjs
 node scripts/shoot.mjs --tour
 ```
 
-截图输出到 `shots/`。完整的交互复核记录见[交付说明](https://github.com/belalee-ai/bela-know-git-and-github/blob/build/gpt/BUILD_NOTES.md)。
+截图输出到 `shots/`。完整的交互复核记录见[交付说明](BUILD_NOTES.md)。
 
 </details>
+
+[main-zip]: https://github.com/belalee-ai/bela-know-git-and-github/archive/refs/heads/main.zip
