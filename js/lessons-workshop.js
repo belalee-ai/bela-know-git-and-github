@@ -17,7 +17,8 @@
     container.querySelector('[data-ws-action="next"]')?.addEventListener('click', () => window.BelaGoStep(step + 1));
   }
 
-  const originalThesis = '我想研究城市里的书店。\n我打算先读资料。\n我希望听到店主的故事。';
+  const thesisLimit = 20;
+  const originalThesis = '街角书店\n先读资料\n再写结论';
   const thesis = {
     versions: [originalThesis],
     draft: originalThesis,
@@ -25,8 +26,7 @@
     comparison: null
   };
 
-  // Longest common subsequence keeps two separate corrections visibly separate.
-  // Demo documents are limited to 180 UTF-16 units, bounding both time and memory.
+  // Keep separate edits independent. Only edited fragments appear in the live comparison.
   function markChanges(oldText, newText, output) {
     const before = [...oldText];
     const after = [...newText];
@@ -38,39 +38,71 @@
           : Math.max(lengths[left + 1][right], lengths[left][right + 1]);
       }
     }
-    const runs = [];
-    function append(tag, character) {
-      if (runs.at(-1)?.tag === tag) runs.at(-1).text += character;
-      else runs.push({ tag, text: character });
-    }
+    const hunks = [];
+    let hunk;
     let left = 0;
     let right = 0;
     while (left < before.length || right < after.length) {
       if (left < before.length && right < after.length && before[left] === after[right]) {
-        append('span', before[left++]);
+        hunk = null;
+        left++;
         right++;
-      } else if (left < before.length && (right === after.length || lengths[left + 1][right] >= lengths[left][right + 1])) {
-        append('del', before[left++]);
+        continue;
+      }
+      if (!hunk) {
+        hunk = { removed: [], added: [] };
+        hunks.push(hunk);
+      }
+      if (left < before.length && (right === after.length || lengths[left + 1][right] >= lengths[left][right + 1])) {
+        hunk.removed.push(before[left++]);
       } else {
-        append('ins', after[right++]);
+        hunk.added.push(after[right++]);
       }
     }
-    output.replaceChildren(...runs.map(({ tag, text }) => {
-      const part = document.createElement(tag);
-      part.textContent = text;
-      return part;
-    }));
+    // Page long or disjoint changes so every edited character is available at broadcast size.
+    const pages = [];
+    for (const { removed, added } of hunks) {
+      for (let start = 0; start < Math.max(removed.length, added.length); start += 4) {
+        pages.push([removed.slice(start, start + 4).join(''), added.slice(start, start + 4).join('')]);
+      }
+    }
+    if (!pages.length) { output.textContent = '这两版相同。'; return; }
+    let page = 0;
+    output.innerHTML = '<div class="ws-diff-row"><b>改前</b><del></del></div><div class="ws-diff-row"><b>改后</b><ins></ins></div>';
+    const oldPart = output.querySelector('del');
+    const newPart = output.querySelector('ins');
+    let previous, next, counter;
+    if (pages.length > 1) {
+      const nav = document.createElement('nav');
+      nav.setAttribute('aria-label', '逐段查看改动');
+      nav.innerHTML = '<button type="button" aria-label="上一段改动">‹</button><span></span><button type="button" aria-label="下一段改动">›</button>';
+      output.append(nav);
+      [previous, counter, next] = nav.children;
+      previous.onclick = () => { page--; show(); };
+      next.onclick = () => { page++; show(); };
+    }
+    function show() {
+      const visibleText = value => value.replaceAll('\n', '↵').replaceAll(' ', '␣').replaceAll('\t', '⇥') || '—';
+      oldPart.textContent = visibleText(pages[page][0]);
+      newPart.textContent = visibleText(pages[page][1]);
+      if (counter) {
+        counter.textContent = `${page + 1} / ${pages.length}`;
+        previous.disabled = page === 0;
+        next.disabled = page === pages.length - 1;
+      }
+    }
+    show();
   }
 
   function paperEditor(root) {
     const container = screen(root, 'ws-editor', `
       <div class="ws-paper">
-        <div class="ws-paper-head"><label for="ws-thesis">我的毕业论文</label><span>可直接打字</span></div>
-        <textarea id="ws-thesis" maxlength="180" rows="4" spellcheck="false" aria-label="编辑论文，最多一百八十字"></textarea>
-        <div class="ws-paper-actions">${action('试改一句', 'example', true)}${action('＋ 存档', 'save')}</div>
+        <div class="ws-paper-head"><label for="ws-thesis">论文</label><span class="ws-length"></span></div>
+        <textarea id="ws-thesis" maxlength="${thesisLimit}" rows="4" spellcheck="false" aria-label="编辑论文，最多二十字"></textarea>
+        <div class="ws-paper-actions">${action('试改', 'example', true)}${action('＋ 存档', 'save')}</div>
       </div>
       <div class="ws-history">
-        <div class="ws-history-head"><strong>存档点</strong><span>点选回看</span></div>
+        <div class="ws-history-head"><strong>回看</strong></div>
         <div class="ws-timeline" aria-label="论文存档"></div>
         <div class="ws-compare" aria-live="polite"></div>
       </div>`);
@@ -80,6 +112,7 @@
     const changes = container.querySelector('.ws-compare');
 
     function updateButtons() {
+      container.querySelector('.ws-length').textContent = `${edit.value.length} / ${thesisLimit}`;
       save.disabled = !thesis.draft.trim() || thesis.draft === thesis.versions[thesis.current];
     }
     function showHistory() {
@@ -104,23 +137,29 @@
         return button;
       }));
       rail.children[thesis.current]?.scrollIntoView({ block: 'nearest', inline: 'nearest' });
-      if (thesis.comparison) {
-        changes.innerHTML = '<b>改动对照</b><div class="ws-diff" tabindex="0" aria-label="删去的字有删除线，加入的字有下划线"></div>';
-        markChanges(...thesis.comparison, changes.lastElementChild);
+      showComparison();
+    }
+    function showComparison() {
+      if (thesis.draft !== thesis.versions[thesis.current]) {
+        changes.textContent = '改完点存档。';
+      } else if (thesis.comparison) {
+        changes.innerHTML = '<div class="ws-diff" aria-label="改动片段"></div>';
+        markChanges(...thesis.comparison, changes.firstElementChild);
       } else {
-        changes.textContent = '先改一句，再存下这一版。';
+        changes.textContent = '改一句，再存档。';
       }
     }
     function updateDraft() {
       thesis.draft = edit.value;
       updateButtons();
+      showComparison();
     }
     edit.addEventListener('input', updateDraft);
     container.querySelector('[data-ws-action="example"]').addEventListener('click', () => {
-      const samples = ['我打算先采访店主。', '我打算走访三家书店。'];
       const lines = edit.value.split('\n');
-      lines[1] = lines[1] === samples[0] ? samples[1] : samples[0];
-      edit.value = Array.from(lines.join('\n')).slice(0, 180).join('');
+      const index = Math.min(1, lines.length - 1);
+      lines[index] = lines[index] === '去问店主' ? '走访书店' : '去问店主';
+      edit.value = lines.join('\n').slice(0, thesisLimit);
       updateDraft();
     });
     save.addEventListener('click', () => {
@@ -139,11 +178,11 @@
       if (step === 2) return paperEditor(root);
       let contents;
       if (step === 0) {
-        contents = `<div class="ws-copy"><h2>交给导师的，<br>到底是哪一份？</h2>${action('整理这些版本 →', 'next')}</div>
+        contents = `<div class="ws-copy"><h2>哪一份<br>交给导师？</h2>${action('理一理 →', 'next')}</div>
           <div class="ws-file-pile" aria-label="七份毕业论文">
-            <div class="ws-pile-tab">我的论文 / 7 个文件</div>
-            <div class="ws-file ws-file-back"><i></i>毕业论文_初稿.docx</div>
-            <div class="ws-file ws-file-mid"><i></i>毕业论文_最终版.docx</div>
+            <div class="ws-pile-tab">7 份</div>
+            <div class="ws-file ws-file-back"><i></i>初稿.docx</div>
+            <div class="ws-file ws-file-mid"><i></i>终稿.docx</div>
             <div class="ws-file ws-file-front"><i></i><span>毕业论文_最终版_<br><b>真的最终版_v7</b>.docx</span></div>
           </div>`;
       } else if (step === 1) {
@@ -159,22 +198,22 @@
 
   const branchSteps = ['文件太多', '一份草稿', '给草稿起名', '开一条分支', '第一次存档', '第二次存档', '合并时投票'];
   const chat = [
-    ['贝拉', '七个最终版，我找不到昨天那份了。'],
-    ['小王', '给每次修改留个存档吧。'],
-    ['贝拉', '再给草稿起个名字，我想试个大胆的标题。']
+    ['贝拉', '七份稿，昨天哪份？'],
+    ['小王', '每版留个存档。'],
+    ['贝拉', '开个草稿，换个标题？']
   ];
-  const titles = { main: '街角书店研究', bold: '书店为什么亮到深夜？', both: '街角书店研究：书店为什么亮到深夜？' };
+  const titles = { main: '街角书店', bold: '谁在深夜读书？', both: '街角书店：谁在深夜读书？' };
   let branchChoice = '';
   function branchDiagram(step, merged) {
     const node = (x, y, style) => `<circle cx="${x}" cy="${y}" r="9" class="ws-node ${style}"/>`;
     return `<div class="ws-branch-figure">
-      <div class="ws-track-label"><b>主线</b><span>交给导师</span></div>
+      <div class="ws-track-label"><b>主线</b><span>交稿</span></div>
       <svg viewBox="0 0 400 115" role="img" aria-label="${merged ? '大胆版已经合并回主线' : '从主线分出大胆版，各自存档'}">
         <path class="ws-path-main" d="M17 24H382"/>
         ${step >= 3 ? '<path class="ws-path-bold" d="M62 24C92 24 92 89 135 89H285"/>' : ''}
         ${merged ? '<path class="ws-path-bold" d="M285 89C332 89 327 24 370 24"/>' : ''}
         ${node(62,24,'')}${step >= 5 ? node(252,24,'') : ''}${step >= 4 ? node(160,89,'is-bold') : ''}${step >= 5 ? node(265,89,'is-bold') : ''}${merged ? node(370,24,'') : ''}
-      </svg><div class="ws-track-label ws-bold-label"><b>大胆版</b><span>换个标题</span></div></div>`;
+      </svg><div class="ws-track-label ws-bold-label"><b>大胆版</b><span>改标题</span></div></div>`;
   }
 
   lessons[2] = {
@@ -185,14 +224,14 @@
           `<div class="ws-message ${index === 1 ? 'ws-reply' : ''}"><b>${speaker}</b><p>${message}</p></div>`).join('');
         const container = screen(root, 'ws-conversation', `
           <div class="ws-talk-stack">${bubbles}</div>
-          <div class="ws-chat-action">${step === 0 ? icon('phone') : ''}${action(step === 2 ? '开一个平行宇宙 →' : '下一句 →', 'next')}</div>`);
+          <div class="ws-chat-action">${step === 0 ? icon('phone') : ''}${action(step === 2 ? '试开分支 →' : '下一句 →', 'next')}</div>`);
         nextOnClick(container, step);
         return;
       }
       const merged = step === 6 && Boolean(branchChoice);
       let prompt;
       if (step === 6 && !merged) {
-        prompt = `<div class="ws-vote"><strong>两人改了同一行，留哪句？</strong>
+        prompt = `<div class="ws-vote"><strong>同一行改了两遍，留哪句？</strong>
           <p>① ${titles.main}<br>② ${titles.bold}</p>
           <div>${action('① 主线', 'main', true)}${action('② 大胆版', 'bold', true)}${action('③ 两句都留', 'both')}</div></div>`;
       } else if (merged) {
@@ -223,15 +262,15 @@
 
   const aiSteps = ['交给 AI', '改好就存档', '页面改坏了', '恢复成功', '三种后悔药', '用人话指挥 AI'];
   const aiChat = [
-    ['我想给个人主页换个颜色。', '把按钮改成粉色 →'],
-    ['粉色按钮做好了，我也替你存了档。', '让 AI 再加个动画 →'],
-    ['动画加完，按钮跑出页面了！', '回到上一个存档 ↶'],
-    ['回来了，粉色按钮也还在。', '还有哪些退路？ →']
+    ['想换个按钮颜色。', '改成粉色 →'],
+    ['我已把粉色版存档。', '再加个动画 →'],
+    ['按钮飞出去了！', '回到上一个存档 ↶'],
+    ['回来了，还是粉色。', '还有哪些退路？ →']
   ];
   const remedies = [
-    ['手滑改错字', '修改还没存档', '丢掉这次改动，拿回上一次存好的内容。'],
-    ['自己想重来', '只在自己电脑上', '把分支移回选中的存档，再从那里继续写。'],
-    ['大家已拿到', '改动已经共享', '再存一版，抵消那次修改。大家仍能查到来龙去脉。']
+    ['改错字', '还没存档', '撤销手滑的修改'],
+    ['想重来', '只有自己用', '把分支退回旧存档，从那里接着写。'],
+    ['已共享', '别人也拿到了', '再存一版抵消改动，大家都留着历史。']
   ];
   let remedyIndex = 0;
 
@@ -239,11 +278,11 @@
     steps: aiSteps,
     render(root, step) {
       if (step === 4) {
-        const [title, context, result] = remedies[remedyIndex];
+        const [, context, result] = remedies[remedyIndex];
         const container = screen(root, 'ws-remedies', `
           <div class="ws-remedy-options" aria-label="选择场景">${remedies.map(([label], i) =>
             `<button type="button" aria-pressed="${i === remedyIndex}" data-remedy="${i}">${label}</button>`).join('')}</div>
-          <div class="ws-remedy-detail">${icon('disk')}<div><p>${context}</p><h3>${title}</h3><p>${result}</p></div></div>`);
+          <div class="ws-remedy-detail">${icon('disk')}<div><h3>${context}</h3><p>${result}</p></div></div>`);
         container.querySelectorAll('[data-remedy]').forEach(button => button.addEventListener('click', () => {
           remedyIndex = Number(button.dataset.remedy);
           lessons[5].render(root, 4);
@@ -256,11 +295,11 @@
         return;
       }
       const [message, label] = aiChat[step];
-      const container = screen(root, 'ws-ai', `<div class="ws-assistant"><div class="ws-assistant-label">模拟对话 / AI 助手</div>
+      const container = screen(root, 'ws-ai', `<div class="ws-assistant"><div class="ws-assistant-label">AI 模拟助手</div>
         <div class="ws-ai-bubble"><b>${step === 1 ? 'AI' : '贝拉'}</b><p>${message}</p></div>
         ${action(label, 'next')}</div>
-        <div class="ws-site ${step === 2 ? 'is-broken' : ''}"><div class="ws-site-bar"><span class="ws-leds" aria-hidden="true">● ● ●</span><span>网页预览</span></div>
-          <div class="ws-site-body">${icon('flower')}<strong>我的主页</strong><div class="ws-preview-button ${step ? 'is-rose' : ''}">看我的作品</div></div>
+        <div class="ws-site ${step === 2 ? 'is-broken' : ''}"><div class="ws-site-bar"><span class="ws-leds" aria-hidden="true">● ● ●</span><span>预览</span></div>
+          <div class="ws-site-body">${icon('flower')}<strong>我的主页</strong><div class="ws-preview-button ${step ? 'is-rose' : ''}">作品集</div></div>
           ${step ? `<div class="ws-site-status">${step === 2 ? '⚠ 布局出错' : step === 3 ? '✓ 已恢复存档' : '✓ 已自动存档'}</div>` : ''}
         </div>`);
       nextOnClick(container, step);

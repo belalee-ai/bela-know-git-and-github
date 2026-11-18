@@ -18,7 +18,7 @@
 .gal button:focus-visible { outline: 4px solid #7d367e; outline-offset: 3px; z-index: 1; }
 .gal .gal-art { display: block; object-fit: contain; pointer-events: none; user-select: none; }
 .gal-kicker, .gal-mono, .gal-log-meta, .gal-commit > b, .gal-date-label, .gal code { font-family: ui-monospace, "SFMono-Regular", Menlo, monospace; }
-.gal-kicker { font-size: 24px; font-weight: 700; letter-spacing: .025em; }
+.gal-kicker { font-size: 28px; font-weight: 700; letter-spacing: .025em; }
 .gal button.gal-action { align-self: flex-start; min-height: 57px; padding: 10px 24px; border: 2px solid var(--gal-ink); border-radius: 9px; background: var(--gal-plum); color: white; font-size: 28px; font-weight: 650; box-shadow: 3px 3px 0 #c99bb4; }
 .gal button.gal-action:hover { background: #613654; }
 .gal-repo-layout { display: grid; grid-template-columns: minmax(0, 1.52fr) minmax(0, 1fr); gap: 24px; align-items: stretch; height: 100%; }
@@ -33,9 +33,9 @@
 .gal-repo-name strong { font-size: 31px; line-height: 1.25; overflow-wrap: anywhere; }
 .gal-repo-tools, .gal-repo-tabs { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; padding: 4px 22px 15px; }
 .gal-repo-tabs { border-top: 1px solid #dbc9d5; border-bottom: 1px solid #c7acc0; gap: 10px; padding-top: 12px; padding-bottom: 12px; background: #f3ebf2; }
-.gal .gal-hot { padding: 5px 13px; border: 1.5px solid #ad8ba4; border-radius: 7px; background: #fffafc; box-shadow: 0 2px 0 #dbc6d3; font-size: 27px; font-weight: 600; }
+.gal .gal-hot { padding: 5px 13px; border: 1.5px solid #ad8ba4; border-radius: 7px; background: #fffafc; box-shadow: 0 2px 0 #dbc6d3; font-size: 28px; font-weight: 600; }
 .gal .gal-hot:hover, .gal .gal-hot.is-current { border-color: #67314e; background: #f8c6df; }
-.gal-code-tab { padding: 3px 3px 3px 0; color: #654f62; font-size: 24px; }
+.gal-code-tab { padding: 3px 3px 3px 0; color: #654f62; font-size: 28px; }
 .gal-file-box { margin: 18px 22px; border: 1.5px solid #b99dad; border-radius: 8px; overflow: hidden; }
 .gal-file-head, .gal-file-row { display: flex; align-items: center; gap: 12px; min-height: 54px; padding: 6px 14px; }
 .gal-file-head { justify-content: space-between; background: #f2e7f0; border-bottom: 1px solid #c9adbe; }
@@ -51,7 +51,7 @@
 .gal-timeline-card { background: var(--gal-light); }
 .gal-timeline-head, .gal-poster-top { display: flex; justify-content: space-between; align-items: center; gap: 12px; padding: 14px 26px; border-bottom: 2px solid var(--gal-edge); font-weight: 700; }
 .gal-timeline-head { background: var(--gal-cloud); }
-.gal-timeline-head .gal-mono { font-size: 25px; }
+.gal-timeline-head .gal-mono { font-size: 28px; }
 .gal-event { flex: 1; display: grid; align-items: center; grid-template-columns: minmax(0,1fr) 220px; gap: 30px; padding: 14px 45px; }
 .gal-event p { margin-top: 18px; }
 .gal-event .gal-art { width: 200px; height: 190px; transform: rotate(8deg); }
@@ -84,7 +84,7 @@
 .gal-scale > p { padding: 16px 34px; border-top: 2px solid var(--gal-edge); }
 .gal-archive, .gal-guide { display: flex; flex-direction: column; height: 100%; gap: 17px; }
 .gal-chapters, .gal-guide-nav { display: flex; gap: 8px; align-items: stretch; }
-.gal .gal-chapter, .gal .gal-guide-tab { display: inline-flex; align-items: center; justify-content: center; gap: 10px; padding: 9px 17px; border: 2px solid #a7839b; border-radius: 10px; background: #fff9fc; font-size: 27px; font-weight: 650; white-space: nowrap; }
+.gal .gal-chapter, .gal .gal-guide-tab { display: inline-flex; align-items: center; justify-content: center; gap: 10px; padding: 9px 17px; border: 2px solid #a7839b; border-radius: 10px; background: #fff9fc; font-size: 28px; font-weight: 650; white-space: nowrap; }
 .gal .gal-chapter.is-current, .gal .gal-guide-tab.is-current { background: var(--gal-plum); color: #fff; border-color: var(--gal-plum); }
 .gal-chapter:hover, .gal-guide-tab:hover { box-shadow: inset 0 0 0 1px #a77794; }
 .gal-archive-grid { flex: 1; min-height: 0; display: grid; grid-template-columns: .82fr 1.2fr; gap: 18px; }
@@ -97,17 +97,19 @@
 .gal-commit i { width: 13px; height: 13px; border: 2px solid var(--gal-edge); border-radius: 50%; background: #fff; }
 .gal-commit::after { content: ""; position: absolute; left: 14.5px; top: calc(50% + 7px); width: 2px; height: calc(100% - 13px); background: #a4829b; }
 .gal-commit:last-child::after { display: none; }
-.gal-commit b { font-size: 24px; }
+.gal-commit b { font-size: 28px; }
 .gal-commit > span { font: 500 21px/1.3 ui-monospace, monospace; }
 .gal .gal-commit.is-current, .gal .gal-commit:hover { border-color: #bd8bab; background: #f7d6e5; }
 .gal-commit.is-current i { background: #b84377; border-color: var(--gal-ink); }
 .gal-log { display: flex; flex-direction: column; background: #fff7df; }
 .gal-log-meta { font-size: 22px; background: #f7e9c5; }
 .gal-log-meta code { font-size: 21px; }
-.gal-log h3 { font-size: 41px; line-height: 1.24; padding: 20px 23px 0; }
-.gal p.gal-log-note { padding: 10px 23px 19px; }
+.gal-log-face { display: flex; flex: 1; flex-direction: column; align-items: start; justify-content: center; gap: 19px; padding: 18px 23px; }
+.gal-log-face h3 { font-size: 42px; line-height: 1.3; }
+.gal button.gal-flip { padding: 7px 15px; border: 1.5px solid #9c7e87; border-radius: 8px; background: #fffaf1; font-size: 28px; font-weight: 650; }
+.gal button.gal-flip:hover, .gal button.gal-flip[aria-pressed="true"] { background: #f7dfc1; }
 .gal-log-diff { margin-top: auto; padding: 13px 23px 20px; border-top: 1.5px dashed #b59d84; }
-.gal-diff-labels { display: flex; justify-content: space-between; gap: 10px; font-size: 24px; }
+.gal-diff-labels { display: flex; justify-content: space-between; gap: 10px; font-size: 28px; }
 .gal-diff-labels span:first-child b { color: #286242; }
 .gal-diff-labels span:last-child b { color: #a32b63; }
 .gal-diff-track { height: 13px; margin-top: 8px; border: 1.5px solid #705065; border-radius: 5px; background: linear-gradient(90deg, #75b792 0 var(--gal-share), #dd86a3 var(--gal-share) 100%); }
@@ -119,6 +121,5 @@
 .gal-guide-body .gal-art { width: 166px; height: 175px; }
 .gal-guide-body h3 { font-size: 47px; }
 .gal-guide-body .gal-action { margin-top: 7px; }
-.gal-field { display: flex; gap: 20px; align-items: center; border: 1.5px solid #bfa4b6; border-radius: 7px; background: #f6edf5; padding: 9px 15px; font-size: 26px; }
-.gal .gal-name-history { margin-top: 14px; font-family: ui-monospace, monospace; font-size: 24px; color: #5e4460; }
-.gal-log-note > span { display: inline; padding: 1px 5px; margin-right: 9px; border: 1px solid #b9957a; border-radius: 4px; color: #715240; font-size: 20px; font-weight: 650; vertical-align: .08em; }
+.gal-field { display: flex; gap: 20px; align-items: center; border: 1.5px solid #bfa4b6; border-radius: 7px; background: #f6edf5; padding: 9px 15px; font-size: 28px; }
+.gal .gal-name-history { margin-top: 14px; font-family: ui-monospace, monospace; font-size: 28px; color: #5e4460; }
