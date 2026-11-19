@@ -7,11 +7,11 @@
   --ws-edge-strong: rgba(154, 130, 144, 0.28);
   --ws-accent: #d43879;
   --ws-accent-deep: #a31d56;
-  --lp-rose: linear-gradient(155deg, #fcd9e8 0%, #fef0f6 62%, #fff9fb 100%);
-  --lp-butter: linear-gradient(155deg, #fbecc8 0%, #fdf6e6 62%, #fffdf8 100%);
-  --lp-sky: linear-gradient(155deg, #d6ecff 0%, #ecf6ff 62%, #f9fcff 100%);
-  --lp-sage: linear-gradient(155deg, #d2efe0 0%, #ebf8f1 62%, #f8fdfb 100%);
-  --lp-lavender: linear-gradient(155deg, #e3ddff 0%, #f3f0ff 62%, #fbfaff 100%);
+  --lp-rose: #fceaf1;
+  --lp-butter: #fbede5;
+  --lp-sky: #e7f0f8;
+  --lp-sage: #f3eee5;
+  --lp-lavender: #f0e9f7;
   box-sizing: border-box;
   position: relative;
   isolation: isolate;

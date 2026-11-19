@@ -71,7 +71,7 @@ p {
   margin: 0;
 }
 
-/* Little Plains Luminous Warm-White Canvas + Soft Sky & Rose Watercolor Perimeter Frame */
+/* Editorial Warm Ivory Canvas + Soft Cerulean & Blush Perimeter Frame */
 #stage {
   position: absolute;
   left: 50%;
@@ -80,14 +80,14 @@ p {
   height: 1080px;
   transform: translate(-50%, -50%) scale(var(--zoom, 1));
   overflow: hidden;
-  background-color: #fbfaf8;
+  background-color: #faf7f3;
   background-image:
-    radial-gradient(circle at 12% 10%, rgba(255, 214, 232, 0.42) 0%, rgba(255, 214, 232, 0) 38%),
-    radial-gradient(circle at 88% 14%, rgba(206, 232, 255, 0.45) 0%, rgba(206, 232, 255, 0) 38%),
-    radial-gradient(circle at 52% 96%, rgba(220, 242, 230, 0.38) 0%, rgba(220, 242, 230, 0) 42%);
+    radial-gradient(circle at 12% 10%, rgba(248, 213, 229, 0.45) 0%, rgba(248, 213, 229, 0) 40%),
+    radial-gradient(circle at 88% 14%, rgba(204, 224, 242, 0.48) 0%, rgba(204, 224, 242, 0) 40%),
+    radial-gradient(circle at 52% 96%, rgba(247, 218, 206, 0.36) 0%, rgba(247, 218, 206, 0) 42%);
   box-shadow:
-    inset 0 0 0 8px rgba(190, 220, 250, 0.48),
-    inset 0 0 28px rgba(242, 200, 224, 0.32);
+    inset 0 0 0 8px rgba(182, 208, 232, 0.46),
+    inset 0 0 28px rgba(242, 204, 218, 0.28);
 }
 
 /* Borderless Floating Editorial Top Header (Little Plains style — no boxy top bar!) */
@@ -448,50 +448,50 @@ p {
   box-shadow: 0 2px 5px rgba(68, 36, 58, 0.05);
 }
 .program-launch[data-program="1"] {
-  --note-bg: #fff2f6;
-  --note-border: #f4d6e1;
-  --note-icon-bg: #fce1eb;
-  --note-icon-fg: #b82964;
+  --note-bg: #fcebf2;
+  --note-border: #f0d2df;
+  --note-icon-bg: #f8d6e5;
+  --note-icon-fg: #b4265f;
   --note-tilt: -0.7deg;
   --tape-tilt: 1.5deg;
 }
 .program-launch[data-program="2"] {
-  --note-bg: #fff9e8;
-  --note-border: #f0e1b9;
-  --note-icon-bg: #faecc4;
-  --note-icon-fg: #9a6912;
+  --note-bg: #fbede6;
+  --note-border: #eed3c6;
+  --note-icon-bg: #f7d9cb;
+  --note-icon-fg: #b54028;
   --note-tilt: 0.55deg;
   --tape-tilt: -1.8deg;
 }
 .program-launch[data-program="3"] {
-  --note-bg: #eff6ff;
-  --note-border: #d4e3f7;
-  --note-icon-bg: #dceafb;
-  --note-icon-fg: #2b62a8;
+  --note-bg: #e9f1f8;
+  --note-border: #cddfeb;
+  --note-icon-bg: #d4e4f2;
+  --note-icon-fg: #265985;
   --note-tilt: -0.5deg;
   --tape-tilt: 1.2deg;
 }
 .program-launch[data-program="4"] {
-  --note-bg: #edf9f3;
-  --note-border: #ccead9;
-  --note-icon-bg: #d4f1e2;
-  --note-icon-fg: #20724c;
+  --note-bg: #f4efe6;
+  --note-border: #e3d9c8;
+  --note-icon-bg: #e8dfd0;
+  --note-icon-fg: #6b523b;
   --note-tilt: 0.65deg;
   --tape-tilt: -1.4deg;
 }
 .program-launch[data-program="5"] {
-  --note-bg: #f5f1ff;
-  --note-border: #dfd6f7;
-  --note-icon-bg: #e7dffc;
-  --note-icon-fg: #5e3aa8;
+  --note-bg: #f2ebf8;
+  --note-border: #dfd1ec;
+  --note-icon-bg: #e4d6f2;
+  --note-icon-fg: #663f8c;
   --note-tilt: -0.6deg;
   --tape-tilt: 1.6deg;
 }
 .program-launch[data-program="6"] {
-  --note-bg: #fff4ec;
-  --note-border: #f3dccb;
-  --note-icon-bg: #fde5d4;
-  --note-icon-fg: #b55422;
+  --note-bg: #f9ecee;
+  --note-border: #ebd0d5;
+  --note-icon-bg: #f2d5da;
+  --note-icon-fg: #9e3547;
   --note-tilt: 0.7deg;
   --tape-tilt: -1.2deg;
 }

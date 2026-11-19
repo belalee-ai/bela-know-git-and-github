@@ -145,7 +145,7 @@
               <g transform="translate(42,36) scale(1.25)">
                 <path fill="#F05032" d="M23.546 10.93L13.067.452a1.55 1.55 0 0 0-2.188 0L8.708 2.627l2.76 2.76a1.838 1.838 0 0 1 2.327 2.341l2.658 2.66a1.838 1.838 0 0 1 1.9 3.039 1.837 1.837 0 0 1-2.6 0 1.846 1.846 0 0 1-.404-2.01l-2.48-2.48v6.532a1.838 1.838 0 1 1-1.512-.054V8.817a1.838 1.838 0 0 1-.997-2.41L7.63 3.686.454 10.862a1.55 1.55 0 0 0 0 2.189l10.48 10.477a1.55 1.55 0 0 0 2.186 0l10.426-10.426a1.55 1.55 0 0 0 0-2.172z"/>
               </g>
-              <rect x="84" y="36" width="196" height="30" rx="15" fill="#d2efe0" />
+              <rect x="84" y="36" width="196" height="30" rx="15" fill="#ede6dc" />
               <text x="182" y="56" text-anchor="middle" font-size="14" font-weight="700" fill="#145a38">Q&amp;A · 它们不是一回事</text>
               <text x="42" y="104" font-size="25" font-weight="700" fill="#145a38">Git = 电脑里的版本控制工具</text>
               <text x="42" y="134" font-size="17" fill="#466957">只留 1 个文件夹，断网也能按顺序拍下每次版本快照</text>
@@ -176,7 +176,7 @@
               <g transform="translate(734,36) scale(1.25)">
                 <path fill="#24292F" d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/>
               </g>
-              <rect x="776" y="36" width="210" height="30" rx="15" fill="#d6ecff" />
+              <rect x="776" y="36" width="210" height="30" rx="15" fill="#ddeaf6" />
               <text x="881" y="56" text-anchor="middle" font-size="14" font-weight="700" fill="#164687">免费托管 · 作品集与开源</text>
               <text x="734" y="104" font-size="25" font-weight="700" fill="#164687">GitHub = 基于 Git 的云端平台</text>
               <text x="734" y="134" font-size="17" fill="#466285">把本机 Git 仓库传上网，防丢备份、展示作品集、找开源项目</text>
@@ -318,15 +318,15 @@
         mantra:
           'Git 是本机版本工具，GitHub 是免费云端平台；越用 AI 做小工具，越要从第 1 天留档。',
         svg: `<svg viewBox="0 0 1160 118" role="img" aria-label="模块1核心流程图">
-          <rect x="10" y="12" width="334" height="94" rx="20" fill="#fbecc8"/>
+          <rect x="10" y="12" width="334" height="94" rx="20" fill="#f9e1d7"/>
           <text x="34" y="48" font-size="19" font-weight="700" fill="#8f4f0a">① 两大普适痛点</text>
           <text x="34" y="78" font-size="16" fill="#5e4324">7 个「最终版」分不清 · AI 改崩找不回旧版</text>
           <path d="M354 60 H402" stroke="#c83271" stroke-width="3.5"/><polygon points="406,60 394,53 394,67" fill="#c83271"/>
-          <rect x="416" y="12" width="344" height="94" rx="20" fill="#d2efe0"/>
+          <rect x="416" y="12" width="344" height="94" rx="20" fill="#ede6dc"/>
           <text x="440" y="48" font-size="19" font-weight="700" fill="#145a38">② 本机用 Git（2005 Linus 写出）</text>
           <text x="440" y="78" font-size="16" fill="#2b5e44">1 个文件夹存 V1→V2→V3，断网也能一秒回退</text>
           <path d="M770 60 H818" stroke="#2264b8" stroke-width="3.5"/><polygon points="822,60 810,53 810,67" fill="#2264b8"/>
-          <rect x="832" y="12" width="318" height="94" rx="20" fill="#d6ecff"/>
+          <rect x="832" y="12" width="318" height="94" rx="20" fill="#ddeaf6"/>
           <text x="856" y="48" font-size="19" font-weight="700" fill="#164687">③ 云端上 GitHub（2008 上线）</text>
           <text x="856" y="78" font-size="16" fill="#325585">免费云端备份 · 求职作品集 · 逛开源宝库</text>
         </svg>`,
@@ -385,7 +385,7 @@
       scene:
         '适用场景：AI 刚把页面改乱，你打开预览发现不对，还没有点 commit 提交存档——直接把这次改动擦掉即可。',
       prompt: '「刚才改乱了，把工作区里还没提交的改动全部丢掉，恢复到上一次存档的状态。」',
-      svg: `<svg viewBox="0 0 360 150"><rect x="8" y="10" width="344" height="130" rx="20" fill="#fff5f8"/><line x1="40" y1="66" x2="175" y2="66" stroke="#248f5c" stroke-width="4"/><line x1="175" y1="66" x2="290" y2="66" stroke="#d86c92" stroke-width="3" stroke-dasharray="6 5"/><circle cx="60" cy="66" r="15" fill="#d2efe0" stroke="#186b43" stroke-width="3"/><text x="60" y="71" text-anchor="middle" font-size="13" font-weight="700" fill="#145a38">V1</text><text x="60" y="106" text-anchor="middle" font-size="13" fill="#544650">初稿</text><circle cx="175" cy="66" r="16" fill="#186b43"/><text x="175" y="71" text-anchor="middle" font-size="13" font-weight="700" fill="#fff">V2</text><text x="175" y="106" text-anchor="middle" font-size="13" font-weight="700" fill="#145a38">当前存档 ✓</text><rect x="255" y="44" width="76" height="44" rx="12" fill="#fde0ea" stroke="#c82863" stroke-width="2"/><text x="293" y="71" text-anchor="middle" font-size="14" font-weight="700" fill="#b01e54">✕ 擦除草稿</text></svg>`,
+      svg: `<svg viewBox="0 0 360 150"><rect x="8" y="10" width="344" height="130" rx="20" fill="#fff5f8"/><line x1="40" y1="66" x2="175" y2="66" stroke="#248f5c" stroke-width="4"/><line x1="175" y1="66" x2="290" y2="66" stroke="#d86c92" stroke-width="3" stroke-dasharray="6 5"/><circle cx="60" cy="66" r="15" fill="#ede6dc" stroke="#186b43" stroke-width="3"/><text x="60" y="71" text-anchor="middle" font-size="13" font-weight="700" fill="#145a38">V1</text><text x="60" y="106" text-anchor="middle" font-size="13" fill="#544650">初稿</text><circle cx="175" cy="66" r="16" fill="#186b43"/><text x="175" y="71" text-anchor="middle" font-size="13" font-weight="700" fill="#fff">V2</text><text x="175" y="106" text-anchor="middle" font-size="13" font-weight="700" fill="#145a38">当前存档 ✓</text><rect x="255" y="44" width="76" height="44" rx="12" fill="#fde0ea" stroke="#c82863" stroke-width="2"/><text x="293" y="71" text-anchor="middle" font-size="14" font-weight="700" fill="#b01e54">✕ 擦除草稿</text></svg>`,
     },
     {
       tab: '② 本地已交（Reset）',
@@ -393,7 +393,7 @@
       scene:
         '适用场景：已经点过 commit 存了档，但还只保存在你自己电脑里（没 push 到共享仓库），想直接退回前一个好版本。',
       prompt: '「帮我把本地仓库 reset 退回到 #a1b2c3d 粉色按钮那次提交，后面的坏版本不要了。」',
-      svg: `<svg viewBox="0 0 360 150"><rect x="8" y="10" width="344" height="130" rx="20" fill="#fdf6e4"/><line x1="40" y1="74" x2="170" y2="74" stroke="#248f5c" stroke-width="4"/><line x1="170" y1="74" x2="295" y2="74" stroke="#b8aeb4" stroke-width="3" stroke-dasharray="5 5"/><circle cx="60" cy="74" r="14" fill="#d2efe0" stroke="#186b43" stroke-width="3"/><text x="60" y="110" text-anchor="middle" font-size="13" fill="#544650">V1</text><circle cx="170" cy="74" r="16" fill="#186b43"/><text x="170" y="79" text-anchor="middle" font-size="13" font-weight="700" fill="#fff">V2</text><text x="170" y="110" text-anchor="middle" font-size="13" font-weight="700" fill="#145a38">↶ 指针退回这</text><circle cx="295" cy="74" r="14" fill="#ece6ea" stroke="#9e9299" stroke-width="2"/><text x="295" y="110" text-anchor="middle" font-size="13" fill="#8a7c84">V3 废弃</text><path d="M288 48 C248 18, 206 18, 176 48" fill="none" stroke="#c85a14" stroke-width="3"/><polygon points="173,52 176,40 185,48" fill="#c85a14"/></svg>`,
+      svg: `<svg viewBox="0 0 360 150"><rect x="8" y="10" width="344" height="130" rx="20" fill="#fdf6e4"/><line x1="40" y1="74" x2="170" y2="74" stroke="#248f5c" stroke-width="4"/><line x1="170" y1="74" x2="295" y2="74" stroke="#b8aeb4" stroke-width="3" stroke-dasharray="5 5"/><circle cx="60" cy="74" r="14" fill="#ede6dc" stroke="#186b43" stroke-width="3"/><text x="60" y="110" text-anchor="middle" font-size="13" fill="#544650">V1</text><circle cx="170" cy="74" r="16" fill="#186b43"/><text x="170" y="79" text-anchor="middle" font-size="13" font-weight="700" fill="#fff">V2</text><text x="170" y="110" text-anchor="middle" font-size="13" font-weight="700" fill="#145a38">↶ 指针退回这</text><circle cx="295" cy="74" r="14" fill="#ece6ea" stroke="#9e9299" stroke-width="2"/><text x="295" y="110" text-anchor="middle" font-size="13" fill="#8a7c84">V3 废弃</text><path d="M288 48 C248 18, 206 18, 176 48" fill="none" stroke="#c85a14" stroke-width="3"/><polygon points="173,52 176,40 185,48" fill="#c85a14"/></svg>`,
     },
     {
       tab: '③ 已传云端（Revert）',
@@ -401,7 +401,7 @@
       scene:
         '适用场景：错误版本已经 push 传到了 GitHub 仓库。为了不抹除历史记录，新增一个 V4 把 V3 的改动反过来抵消掉。',
       prompt: '「刚才那次提交已经传上 GitHub 了，请帮我用 revert 做一次反向提交抵消它。」',
-      svg: `<svg viewBox="0 0 360 150"><rect x="8" y="10" width="344" height="130" rx="20" fill="#eef6ff"/><line x1="36" y1="68" x2="314" y2="68" stroke="#2264b8" stroke-width="4"/><circle cx="50" cy="68" r="13" fill="#d6ecff" stroke="#1c56a3" stroke-width="2.5"/><text x="50" y="104" text-anchor="middle" font-size="13" fill="#465a75">V1</text><circle cx="134" cy="68" r="13" fill="#d6ecff" stroke="#1c56a3" stroke-width="2.5"/><text x="134" y="104" text-anchor="middle" font-size="13" fill="#465a75">V2</text><circle cx="218" cy="68" r="13" fill="#fde0ea" stroke="#c82863" stroke-width="2.5"/><text x="218" y="104" text-anchor="middle" font-size="13" fill="#b01e54">V3 出错</text><circle cx="306" cy="68" r="16" fill="#1c56a3"/><text x="306" y="73" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">+V4</text><text x="306" y="104" text-anchor="middle" font-size="13" font-weight="700" fill="#164687">反向抵消 ✓</text></svg>`,
+      svg: `<svg viewBox="0 0 360 150"><rect x="8" y="10" width="344" height="130" rx="20" fill="#eef6ff"/><line x1="36" y1="68" x2="314" y2="68" stroke="#2264b8" stroke-width="4"/><circle cx="50" cy="68" r="13" fill="#ddeaf6" stroke="#1c56a3" stroke-width="2.5"/><text x="50" y="104" text-anchor="middle" font-size="13" fill="#465a75">V1</text><circle cx="134" cy="68" r="13" fill="#ddeaf6" stroke="#1c56a3" stroke-width="2.5"/><text x="134" y="104" text-anchor="middle" font-size="13" fill="#465a75">V2</text><circle cx="218" cy="68" r="13" fill="#fde0ea" stroke="#c82863" stroke-width="2.5"/><text x="218" y="104" text-anchor="middle" font-size="13" fill="#b01e54">V3 出错</text><circle cx="306" cy="68" r="16" fill="#1c56a3"/><text x="306" y="73" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">+V4</text><text x="306" y="104" text-anchor="middle" font-size="13" font-weight="700" fill="#164687">反向抵消 ✓</text></svg>`,
     },
   ];
   let remedyIndex = 0;
@@ -446,7 +446,7 @@
               <text x="334" y="114" font-size="19" font-weight="700" fill="#164687">② AI 改 1 个小需求</text>
               <text x="334" y="144" font-size="15.5" fill="#52657c">小步快跑，不塞十个需求</text>
               <path d="M430 178 V204" stroke="#1b754a" stroke-width="3.5"/><polygon points="430,208 423,196 437,196" fill="#1b754a"/>
-              <rect x="314" y="212" width="232" height="96" rx="20" fill="#fbecc8"/>
+              <rect x="314" y="212" width="232" height="96" rx="20" fill="#f9e1d7"/>
               <text x="334" y="250" font-size="19" font-weight="700" fill="#8f4f0a">③ 先打开网页测试 ★</text>
               <text x="334" y="280" font-size="15.5" fill="#6b4c28">改崩直接擦掉，不留坏档</text>
               <path d="M306 260 H276" stroke="#1b754a" stroke-width="3.5"/><polygon points="272,260 284,253 284,267" fill="#1b754a"/>
@@ -520,13 +520,13 @@
         mantra:
           '项目第一天就开 Git，AI 改完先测试；确认没问题再提交，改崩按场景选三种后悔药。',
         svg: `<svg viewBox="0 0 1160 118" role="img" aria-label="三种后悔药决策流程图">
-          <rect x="10" y="12" width="356" height="94" rx="20" fill="#fcd9e8"/>
+          <rect x="10" y="12" width="356" height="94" rx="20" fill="#f8d8e6"/>
           <text x="32" y="48" font-size="18" font-weight="700" fill="#a81d58">情况 A：改乱了，还没点 Commit？</text>
           <text x="32" y="78" font-size="16" fill="#5e3447">👉 用 Discard 直接擦掉工作区未保存草稿</text>
-          <rect x="402" y="12" width="356" height="94" rx="20" fill="#fbecc8"/>
+          <rect x="402" y="12" width="356" height="94" rx="20" fill="#f9e1d7"/>
           <text x="424" y="48" font-size="18" font-weight="700" fill="#8f4f0a">情况 B：已 Commit 在本地，没传云端？</text>
           <text x="424" y="78" font-size="16" fill="#5e4324">👉 用 Reset 把本地分支指针退回上一版</text>
-          <rect x="794" y="12" width="356" height="94" rx="20" fill="#d6ecff"/>
+          <rect x="794" y="12" width="356" height="94" rx="20" fill="#ddeaf6"/>
           <text x="816" y="48" font-size="18" font-weight="700" fill="#164687">情况 C：已经 Push 上传到 GitHub？</text>
           <text x="816" y="78" font-size="16" fill="#325585">👉 用 Revert 新增一次「反向提交」安全抵消</text>
         </svg>`,
@@ -838,7 +838,7 @@
               <rect x="8" y="8" width="884" height="204" rx="26" fill="#f7f4f6" stroke="#d8ced4" stroke-width="1.5"/>
               <text x="32" y="42" font-size="18" font-weight="700" fill="#251e23">💻 你电脑里的项目文件夹（什么是仓库 Repo？= 明面文件夹 + 隐藏的 .git 历史暗格）</text>
 
-              <rect x="30" y="60" width="246" height="132" rx="18" fill="#fbecc8"/>
+              <rect x="30" y="60" width="246" height="132" rx="18" fill="#f9e1d7"/>
               <rect x="46" y="74" width="142" height="24" rx="12" fill="#ffffff"/>
               <text x="117" y="91" text-anchor="middle" font-size="12.5" font-weight="700" fill="#8f4f0a">👁️ 肉眼直接可见</text>
               <text x="46" y="130" font-size="22" font-weight="750" fill="#251e23">01 工作区</text>
@@ -850,21 +850,21 @@
               <rect x="322" y="56" width="548" height="140" rx="20" fill="#ffffff" stroke="#b59ea9" stroke-width="2" stroke-dasharray="7 5"/>
               <text x="344" y="80" font-size="14" font-weight="700" fill="#7a6872">🙈 平时看不见的隐藏文件夹 .git（Git 偷偷把旧版本藏在这里）</text>
 
-              <rect x="342" y="94" width="232" height="86" rx="15" fill="#fcd9e8"/>
+              <rect x="342" y="94" width="232" height="86" rx="15" fill="#f8d8e6"/>
               <text x="360" y="126" font-size="20" font-weight="750" fill="#a31d56">02 暂存区 Staging</text>
               <text x="360" y="152" font-size="14" fill="#5e3447">像购物车：挑哪几个文件存一版</text>
 
               <path d="M582 136 H616" stroke="#186b43" stroke-width="3"/><polygon points="620,136 609,130 609,142" fill="#186b43"/>
               <text x="600" y="124" text-anchor="middle" font-size="13" font-weight="700" fill="#145a38">commit</text>
 
-              <rect x="626" y="94" width="226" height="86" rx="15" fill="#d2efe0"/>
+              <rect x="626" y="94" width="226" height="86" rx="15" fill="#ede6dc"/>
               <text x="644" y="126" font-size="20" font-weight="750" fill="#145a38">03 本地仓库 Local</text>
               <text x="644" y="152" font-size="14" fill="#2b5e44">锁着 V1/V2/V3 全部历史快照</text>
 
               <path d="M902 126 H950" stroke="#1c56a3" stroke-width="3.5"/><polygon points="954,126 942,119 942,133" fill="#1c56a3"/>
               <text x="926" y="112" text-anchor="middle" font-size="14" font-weight="700" fill="#164687">push</text>
 
-              <rect x="962" y="8" width="270" height="204" rx="26" fill="#d6ecff"/>
+              <rect x="962" y="8" width="270" height="204" rx="26" fill="#ddeaf6"/>
               <rect x="984" y="34" width="168" height="26" rx="13" fill="#ffffff"/>
               <text x="1068" y="52" text-anchor="middle" font-size="12.5" font-weight="700" fill="#164687">👁️ 浏览器网页可见</text>
               <text x="984" y="102" font-size="24" font-weight="750" fill="#164687">☁️ 04 远程仓库</text>
@@ -973,22 +973,22 @@
         mantra:
           '提交备注别偷懒写「111」，写清这版改了啥；工作区改好进暂存，提交进本地仓库，再推上 GitHub。',
         svg: `<svg viewBox="0 0 1160 118" role="img" aria-label="四区六命令速查流程图">
-          <rect x="10" y="14" width="250" height="90" rx="18" fill="#fbecc8"/>
+          <rect x="10" y="14" width="250" height="90" rx="18" fill="#f9e1d7"/>
           <text x="30" y="50" font-size="19" font-weight="700" fill="#8f4f0a">01 工作区</text>
           <text x="30" y="78" font-size="15" fill="#5e4324">正在改的本地文件</text>
           <path d="M268 58 H314" stroke="#c83271" stroke-width="3.5"/><polygon points="318,58 306,51 306,65" fill="#c83271"/>
           <text x="292" y="44" text-anchor="middle" font-size="14" font-weight="700" fill="#a81d58">add</text>
-          <rect x="326" y="14" width="240" height="90" rx="18" fill="#fcd9e8"/>
+          <rect x="326" y="14" width="240" height="90" rx="18" fill="#f8d8e6"/>
           <text x="346" y="50" font-size="19" font-weight="700" fill="#a81d58">02 暂存区</text>
           <text x="346" y="78" font-size="15" fill="#5e3447">勾选要打包的文件</text>
           <path d="M574 58 H626" stroke="#186b43" stroke-width="3.5"/><polygon points="630,58 618,51 618,65" fill="#186b43"/>
           <text x="600" y="44" text-anchor="middle" font-size="14" font-weight="700" fill="#145a38">commit</text>
-          <rect x="638" y="14" width="248" height="90" rx="18" fill="#d2efe0"/>
+          <rect x="638" y="14" width="248" height="90" rx="18" fill="#ede6dc"/>
           <text x="658" y="50" font-size="19" font-weight="700" fill="#145a38">03 本地仓库 (.git)</text>
           <text x="658" y="78" font-size="15" fill="#2b5e44">写清备注永久留档</text>
           <path d="M894 58 H942" stroke="#1c56a3" stroke-width="3.5"/><polygon points="946,58 934,51 934,65" fill="#1c56a3"/>
           <text x="918" y="44" text-anchor="middle" font-size="14" font-weight="700" fill="#164687">push</text>
-          <rect x="954" y="14" width="196" height="90" rx="18" fill="#d6ecff"/>
+          <rect x="954" y="14" width="196" height="90" rx="18" fill="#ddeaf6"/>
           <text x="974" y="50" font-size="19" font-weight="700" fill="#164687">04 远程仓库</text>
           <text x="974" y="78" font-size="15" fill="#325585">GitHub 云端备份</text>
         </svg>`,
@@ -1048,30 +1048,30 @@
   function overviewBranchFlowSvg() {
     return `<div class="ws-branch-overview-svg">
       <svg viewBox="0 0 680 360" role="img" aria-label="Git主分支与分开的实验分支分叉与合并流程图">
-        <rect x="24" y="20" width="250" height="34" rx="17" fill="#d2efe0"/>
+        <rect x="24" y="20" width="250" height="34" rx="17" fill="#ede6dc"/>
         <circle cx="44" cy="37" r="6" fill="#248f5c"/>
         <text x="58" y="43" font-size="15" font-weight="700" fill="#145a38">main 主分支 · 线上稳定版网站</text>
 
         <path d="M50 140 H640" stroke="#248f5c" stroke-width="5" stroke-linecap="round"/>
         <path d="M210 140 C255 140, 255 240, 300 240 H460 C505 240, 505 140, 550 140" fill="none" stroke="#d93876" stroke-width="4.5" stroke-linecap="round"/>
 
-        <circle cx="90" cy="140" r="14" fill="#d2efe0" stroke="#186b43" stroke-width="3"/>
+        <circle cx="90" cy="140" r="14" fill="#ede6dc" stroke="#186b43" stroke-width="3"/>
         <text x="90" y="108" text-anchor="middle" font-size="14" font-weight="700" fill="#145a38">V1 首页上线</text>
 
-        <circle cx="210" cy="140" r="14" fill="#d2efe0" stroke="#186b43" stroke-width="3"/>
+        <circle cx="210" cy="140" r="14" fill="#ede6dc" stroke="#186b43" stroke-width="3"/>
         <text x="210" y="108" text-anchor="middle" font-size="14" font-weight="700" fill="#145a38">V2 稳定版</text>
 
         <circle cx="550" cy="140" r="17" fill="#186b43"/>
         <path d="M542 140 L548 146 L559 134" fill="none" stroke="#ffffff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
         <text x="550" y="104" text-anchor="middle" font-size="14" font-weight="700" fill="#145a38">V3 Merge 合并回主线</text>
 
-        <circle cx="320" cy="240" r="14" fill="#fcd9e8" stroke="#b8205d" stroke-width="3"/>
+        <circle cx="320" cy="240" r="14" fill="#f8d8e6" stroke="#b8205d" stroke-width="3"/>
         <text x="320" y="276" text-anchor="middle" font-size="14" font-weight="700" fill="#a81d58">新开分支试改</text>
 
-        <circle cx="440" cy="240" r="14" fill="#fcd9e8" stroke="#b8205d" stroke-width="3"/>
+        <circle cx="440" cy="240" r="14" fill="#f8d8e6" stroke="#b8205d" stroke-width="3"/>
         <text x="440" y="276" text-anchor="middle" font-size="14" font-weight="700" fill="#a81d58">测试通过 ✓</text>
 
-        <rect x="24" y="306" width="300" height="34" rx="17" fill="#fcd9e8"/>
+        <rect x="24" y="306" width="300" height="34" rx="17" fill="#f8d8e6"/>
         <circle cx="44" cy="323" r="6" fill="#d93876"/>
         <text x="58" y="329" font-size="15" font-weight="700" fill="#a81d58">feature 实验分支 · 让 AI 试改新排版</text>
       </svg>
@@ -1142,15 +1142,15 @@
           mantra:
             '主分支（main）只放相对稳定的版本；要做大改动就新开一条分支（branch）去实验，改好再合并！',
           svg: `<svg viewBox="0 0 1160 118" role="img" aria-label="主分支与实验分支分工流程图">
-            <rect x="10" y="12" width="356" height="94" rx="20" fill="#d2efe0"/>
+            <rect x="10" y="12" width="356" height="94" rx="20" fill="#ede6dc"/>
             <text x="32" y="48" font-size="18" font-weight="700" fill="#145a38">① main 主分支（保稳定）</text>
             <text x="32" y="78" font-size="16" fill="#2b5e44">随时可演示、可交付的稳定版本放这里</text>
             <path d="M374 60 H414" stroke="#c83271" stroke-width="3.5"/><polygon points="418,60 406,53 406,67" fill="#c83271"/>
-            <rect x="426" y="12" width="356" height="94" rx="20" fill="#fcd9e8"/>
+            <rect x="426" y="12" width="356" height="94" rx="20" fill="#f8d8e6"/>
             <text x="448" y="48" font-size="18" font-weight="700" fill="#a81d58">② 新开 branch 实验分支（试大改）</text>
             <text x="448" y="78" font-size="16" fill="#5e3447">大改排版、试新想法，改废直接丢也不伤主线</text>
             <path d="M790 60 H830" stroke="#186b43" stroke-width="3.5"/><polygon points="834,60 822,53 822,67" fill="#186b43"/>
-            <rect x="842" y="12" width="308" height="94" rx="20" fill="#d6ecff"/>
+            <rect x="842" y="12" width="308" height="94" rx="20" fill="#ddeaf6"/>
             <text x="864" y="48" font-size="18" font-weight="700" fill="#164687">③ Merge 合并 &amp; 冲突拍板</text>
             <text x="864" y="78" font-size="16" fill="#325585">测试通过合回主线；撞车时由人拍板留哪版</text>
           </svg>`,

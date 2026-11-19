@@ -138,7 +138,7 @@
               <text x="30" y="42" font-size="19" font-weight="700" fill="#251e23">就像发朋友圈前「遮掉银行卡密码」</text>
               <text x="30" y="68" font-size="14.5" fill="#70626a">.gitignore = 上传 GitHub 前的「不许上传黑名单」</text>
 
-              <rect x="30" y="92" width="150" height="196" rx="18" fill="#fbecc8"/>
+              <rect x="30" y="92" width="150" height="196" rx="18" fill="#f9e1d7"/>
               <text x="105" y="132" text-anchor="middle" font-size="17" font-weight="700" fill="#8f4f0a">💻 你电脑里的文件</text>
               <text x="105" y="166" text-anchor="middle" font-size="14.5" fill="#5e4324">📄 网页与说明书</text>
               <text x="105" y="202" text-anchor="middle" font-size="14.5" font-weight="700" fill="#b01e54">🔑 API 密码 (.env)</text>
@@ -155,7 +155,7 @@
               <path d="M184 156 H212" stroke="#186b43" stroke-width="3.5"/>
               <path d="M350 156 H376" stroke="#186b43" stroke-width="3.5"/><polygon points="380,156 368,149 368,163" fill="#186b43"/>
 
-              <rect x="384" y="92" width="146" height="196" rx="18" fill="#d2efe0"/>
+              <rect x="384" y="92" width="146" height="196" rx="18" fill="#ede6dc"/>
               <text x="457" y="132" text-anchor="middle" font-size="17" font-weight="700" fill="#145a38">☁️ 传上 GitHub</text>
               <text x="457" y="168" text-anchor="middle" font-size="14.5" font-weight="700" fill="#145a38">✅ 只传作品本身</text>
               <text x="457" y="202" text-anchor="middle" font-size="14" fill="#2b5e44">网页源码</text>
@@ -344,15 +344,15 @@
             <strong>不会命令用桌面版，先建直觉不焦虑；自己练习选 Private，作品集展示选 Public。</strong>
           </div>
           <svg viewBox="0 0 1160 116" role="img" aria-label="零命令行建仓上传三步流程图">
-            <rect x="10" y="12" width="356" height="92" rx="20" fill="#d6ecff"/>
+            <rect x="10" y="12" width="356" height="92" rx="20" fill="#ddeaf6"/>
             <text x="32" y="46" font-size="18" font-weight="700" fill="#164687">① GitHub Desktop 零代码起步</text>
             <text x="32" y="76" font-size="16" fill="#325585">点可视化按钮完成：建仓库 → 提交版本 → 回退</text>
             <path d="M374 58 H414" stroke="#c83271" stroke-width="3.5"/><polygon points="418,58 406,51 406,65" fill="#c83271"/>
-            <rect x="426" y="12" width="356" height="92" rx="20" fill="#fcd9e8"/>
+            <rect x="426" y="12" width="356" height="92" rx="20" fill="#f8d8e6"/>
             <text x="448" y="46" font-size="18" font-weight="700" fill="#a81d58">② .gitignore 安检门拦住密钥</text>
             <text x="448" y="76" font-size="16" fill="#5e3447">.env（API 密钥）与 node_modules 留在本地不上传</text>
             <path d="M790 58 H830" stroke="#186b43" stroke-width="3.5"/><polygon points="834,58 822,51 822,65" fill="#186b43"/>
-            <rect x="842" y="12" width="308" height="92" rx="20" fill="#d2efe0"/>
+            <rect x="842" y="12" width="308" height="92" rx="20" fill="#ede6dc"/>
             <text x="864" y="46" font-size="18" font-weight="700" fill="#145a38">③ Private 练习 ⇄ Public 展示</text>
             <text x="864" y="76" font-size="16" fill="#2b5e44">平时练习选私密，做求职作品集转公开（随时可改）</text>
           </svg>
@@ -755,19 +755,19 @@
             <strong>文科生学 GitHub，本质上不是为了成为程序员，而是为了让 Vibe Coding 写出来的项目变得：</strong>
           </div>
           <svg viewBox="0 0 1180 112" role="img" aria-label="Vibe Coding 工程思维四大价值流程图">
-            <rect x="8" y="10" width="272" height="92" rx="20" fill="#fbecc8"/>
+            <rect x="8" y="10" width="272" height="92" rx="20" fill="#f9e1d7"/>
             <text x="28" y="46" font-size="21" font-weight="750" fill="#8f4f0a">🎛️ 更加可控</text>
             <text x="28" y="76" font-size="15.5" fill="#5e4324">第1天就建仓，告别7个最终版混乱</text>
             <path d="M286 56 H304" stroke="#9e8c96" stroke-width="3"/>
-            <rect x="310" y="10" width="272" height="92" rx="20" fill="#fcd9e8"/>
+            <rect x="310" y="10" width="272" height="92" rx="20" fill="#f8d8e6"/>
             <text x="330" y="46" font-size="21" font-weight="750" fill="#a81d58">⏪ 更加可回退</text>
             <text x="330" y="76" font-size="15.5" fill="#5e3447">AI改完先测试再交，崩了一秒退回</text>
             <path d="M588 56 H606" stroke="#9e8c96" stroke-width="3"/>
-            <rect x="612" y="10" width="272" height="92" rx="20" fill="#d2efe0"/>
+            <rect x="612" y="10" width="272" height="92" rx="20" fill="#ede6dc"/>
             <text x="632" y="46" font-size="21" font-weight="750" fill="#145a38">🌿 更加可迭代</text>
             <text x="632" y="76" font-size="15.5" fill="#2b5e44">主分支放稳定版，大改新开分支试</text>
             <path d="M890 56 H908" stroke="#9e8c96" stroke-width="3"/>
-            <rect x="914" y="10" width="258" height="92" rx="20" fill="#d6ecff"/>
+            <rect x="914" y="10" width="258" height="92" rx="20" fill="#ddeaf6"/>
             <text x="934" y="46" font-size="21" font-weight="750" fill="#164687">🌟 更加可展示</text>
             <text x="934" y="76" font-size="15.5" fill="#325585">README+版本记录=求职作品集</text>
           </svg>
