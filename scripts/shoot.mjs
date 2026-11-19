@@ -108,6 +108,69 @@ async function frame(page, name, checkCamera = true) {
   shotCount++;
 }
 
+// Inspect the manuscript shown in each location, not just its version badge.
+async function exerciseSync(page) {
+  const action = name => `[data-sync-action="${name}"]`;
+  const field = name => `[data-sync-field="${name}"]`;
+  const original = {title: '书店', byline: '小王'};
+  const edited = {title: '街角', byline: '贝拉'};
+  async function expectCopies(work, local, remote, friend, reason) {
+    const actual = await page.evaluate(`Object.fromEntries(
+      [...document.querySelectorAll('[data-sync-copy]')].map(card => [
+        card.dataset.syncCopy,
+        Object.fromEntries([...card.querySelectorAll('[data-sync-value]')]
+          .map(value => [value.dataset.syncValue, value.innerText.trim()]))
+      ])
+    )`);
+    assert.deepEqual(actual, {work, local, remote, friend}, reason);
+  }
+  async function transfer(previous, next, capture = false) {
+    await click(page, action('commit'));
+    await expectCopies(edited, next, previous, previous, '提交只能更新本机存档');
+    if (capture) {
+      await frame(page, '03-sync-commit');
+      await click(page, action('compare'));
+      assert.equal(await bodyText(page, '.sync-diff del'), previous.title);
+      assert.equal(await bodyText(page, '.sync-diff ins'), next.title);
+      const unchanged = await page.evaluate("[...document.querySelectorAll('.sync-diff tbody tr:last-child td')].map(cell => cell.innerText)");
+      assert.deepEqual(unchanged, [previous.byline, previous.byline], '未暂存的署名不应出现在本次差异里');
+      await click(page, action('compare'));
+    }
+    await click(page, action('push'));
+    await expectCopies(edited, next, next, previous, '推送只能传送已提交内容，朋友还需拉取');
+    await click(page, action('pull'));
+    await expectCopies(edited, next, next, next, '拉取后朋友应只收到已选的修改');
+    if (capture) await frame(page, '03-sync-pull');
+  }
+  for (const selection of [['title'], ['byline'], ['title', 'byline']]) {
+    await expectCopies(original, original, original, original, '重演时应从同一版开始');
+    await click(page, action('edit'));
+    await expectCopies(edited, original, original, original, '动笔后只改变工作区');
+    const commitDisabled = () => page.evaluate(`${selectorExpression(action('commit'))}.disabled`);
+    assert.ok(await commitDisabled(), '没有暂存改动时不能提交');
+    await click(page, field('title'));
+    assert.equal(await commitDisabled(), false, '暂存后可以提交');
+    await click(page, field('title'));
+    assert.ok(await commitDisabled(), '撤回全部选择后不能提交');
+
+    const next = {...original};
+    for (const name of selection) {
+      await click(page, field(name));
+      next[name] = edited[name];
+    }
+    await expectCopies(edited, original, original, original, '勾选不应提前生成存档');
+    const firstRound = selection.length === 1 && selection[0] === 'title';
+    await transfer(original, next, firstRound);
+    if (firstRound) {
+      await click(page, action('continue'));
+      await click(page, field('byline'));
+      await transfer(next, edited);
+    }
+    await click(page, action('reset'));
+  }
+  await expectCopies(original, original, original, original, '重置应清空上一轮的同步状态');
+}
+
 async function exercise(page) {
   const open = async n => {
     await key(page, String(n));
@@ -136,7 +199,10 @@ async function exercise(page) {
   await checkText('#lesson-body','已合并到主线');
 
   await open(3); await frame(page,'03-repository');
-  for (let s=1;s<=6;s++) {
+  await click(page,'#lesson-body [data-gal-step="1"]');
+  await exerciseSync(page);
+  await key(page,'ArrowLeft');
+  for (let s=2;s<=7;s++) {
     await click(page,`#lesson-body [data-gal-step="${s}"]`);
     assert.ok(await visible(page,'.gal-hot[aria-pressed="true"]'), '仓库热点未选中');
   }

@@ -29,19 +29,26 @@
   ];
 
   lessons[3] = {
-    steps: ['Git + Hub', ...hotspots.map(item => item.term)],
+    steps: ['Git + Hub', '只发一处改动', ...hotspots.map(item => item.term)],
     render(root, step) {
-      const selected = hotspots[step - 1];
-      const hot = (index, label) => `<button class="gal-hot${index === step ? ' is-current' : ''}" type="button" aria-pressed="${index === step}" data-gal-step="${index}">${label}</button>`;
+      if (step === 1) {
+        window.BelaSyncDemo.render(root);
+        return;
+      }
+      const selected = hotspots[step - 2];
+      const hot = (term, label) => {
+        const target = 2 + hotspots.findIndex(item => item.term === term);
+        return `<button class="gal-hot${target === step ? ' is-current' : ''}" type="button" aria-pressed="${target === step}" data-gal-step="${target}">${label}</button>`;
+      };
       const card = selected ? `<div class="gal-card-art">${art(selected.art)}</div><div class="gal-flash-contents"><span class="gal-kicker">${selected.term}</span><h3>${selected.title}</h3><p>${selected.copy}</p></div>` :
-        `<div class="gal-card-art">${art('headphones')}</div><div class="gal-flash-contents"><span class="gal-kicker">Git + Hub</span><h3>存档上网</h3><p>Git 存档，Hub 是聚集地。</p></div>`;
+        `<div class="gal-card-art">${art('headphones')}</div><div class="gal-flash-contents"><span class="gal-kicker">Git + Hub</span><h3>存档上网</h3><p>Git 存档，Hub 是聚集地。</p>${goButton(1, '试试只发一处 →')}</div>`;
       mount(root, `<div class="gal-repo-layout">
         <section aria-label="本地模拟仓库" class="gal-repo">
           <div class="gal-repo-top"><b class="gal-code-mark" aria-hidden="true">&lt;/&gt;</b><strong>GitHub</strong><span>模拟</span></div>
           <div class="gal-repo-name"><span>belalee-ai /</span><strong>bela-know-git-and-github</strong></div>
-          <div class="gal-repo-tools">${hot(1, '☆ Star 收藏')}${hot(2, '⑂ Fork 复制')}</div>
-          <div class="gal-repo-tabs"><span class="gal-code-tab">Code 代码</span>${hot(3, 'Issues 提问')}${hot(4, 'Pull requests 投稿')}</div>
-          <div class="gal-file-box"><div class="gal-file-head"><span>⑂ main 主线</span>${hot(6, '◷ Commits 存档')}</div><div class="gal-file-row"><span class="gal-doc-glyph" aria-hidden="true"></span>${hot(5, 'README.md 说明')}</div></div>
+          <div class="gal-repo-tools">${hot('Star', '☆ Star 收藏')}${hot('Fork', '⑂ Fork 复制')}</div>
+          <div class="gal-repo-tabs"><span class="gal-code-tab">Code 代码</span>${hot('Issue', 'Issues 提问')}${hot('Pull request', 'Pull requests 投稿')}</div>
+          <div class="gal-file-box"><div class="gal-file-head"><span>⑂ main 主线</span>${hot('Commits', '◷ Commits 存档')}</div><div class="gal-file-row"><span class="gal-doc-glyph" aria-hidden="true"></span>${hot('README', 'README.md 说明')}</div></div>
         </section>
         <aside class="gal-flash" aria-live="polite">${card}</aside>
       </div>`);

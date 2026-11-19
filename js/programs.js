@@ -29,10 +29,10 @@ window.BelaPrograms = [
     intro: 'Git 留版本，GitHub 一起改。',
     icon: 'phone',
     quiz: {
-      question: '在自己的电脑上，谁负责保存提交历史？',
-      choices: ['Git', 'GitHub'],
+      question: '只提交了标题。推送后朋友拉取，会收到哪处修改？',
+      choices: ['只有新标题', '新标题和新署名'],
       answer: 0,
-      why: 'Git 在本地记录历史。你可以把这些记录推送到 GitHub，和别人共享。',
+      why: '朋友收到已提交的标题。新署名还留在你的工作区。',
     },
   },
   {
