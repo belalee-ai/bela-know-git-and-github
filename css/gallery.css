@@ -1,133 +1,1187 @@
-/* Local GitHub replica, open-source stories and Bela’s real commit archive. */
+/* Little Plains Color-Filled Editorial + Lieflat Charts Visual System (Modules 5 & 6) */
 .gal {
-  --gal-ink: #3d203d;
-  --gal-edge: #875675;
-  --gal-plum: #40253e;
-  --gal-light: #fffafc;
-  --gal-cloud: #e5edf9;
-  --gal-pink: #f9c7de;
-  --gal-mint: #bcdfcf;
-  box-sizing: border-box; width: 100%; height: 100%; color: var(--gal-ink);
-  font-family: "PingFang SC", "Microsoft YaHei", system-ui, sans-serif; font-size: 28px; line-height: 1.4;
+  --gal-ink: #251e23;
+  --gal-soft: #4e424a;
+  --gal-muted: #82737c;
+  --gal-edge: rgba(154, 130, 144, 0.16);
+  --gal-edge-strong: rgba(154, 130, 144, 0.28);
+  --gal-accent: #d43879;
+  --gal-accent-deep: #a31d56;
+  --lp-rose: linear-gradient(155deg, #fcd9e8 0%, #fef0f6 62%, #fff9fb 100%);
+  --lp-butter: linear-gradient(155deg, #fbecc8 0%, #fdf6e6 62%, #fffdf8 100%);
+  --lp-sky: linear-gradient(155deg, #d6ecff 0%, #ecf6ff 62%, #f9fcff 100%);
+  --lp-sage: linear-gradient(155deg, #d2efe0 0%, #ebf8f1 62%, #f8fdfb 100%);
+  --lp-lavender: linear-gradient(155deg, #e3ddff 0%, #f3f0ff 62%, #fbfaff 100%);
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+  color: var(--gal-ink);
+  font: 480 21px/1.48 -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
 }
-.gal *, .gal *::before, .gal *::after { box-sizing: border-box; }
-.gal h3, .gal p { margin: 0; color: inherit; }
-.gal h3 { font: 750 54px/1.16 "PingFang SC", "Microsoft YaHei", system-ui, sans-serif; letter-spacing: -.045em; }
-.gal p { font-size: 28px; line-height: 1.5; }
-.gal button { min-width: 0; min-height: 0; font: inherit; line-height: 1.2; color: inherit; cursor: pointer; letter-spacing: normal; }
-.gal button:focus-visible { outline: 4px solid #7d367e; outline-offset: 3px; z-index: 1; }
-.gal .gal-art { display: block; object-fit: contain; pointer-events: none; user-select: none; }
-.gal-kicker, .gal-mono, .gal-log-meta, .gal-commit > b, .gal-date-label, .gal code { font-family: ui-monospace, "SFMono-Regular", Menlo, monospace; }
-.gal-kicker { font-size: 28px; font-weight: 700; letter-spacing: .025em; }
-.gal button.gal-action { align-self: flex-start; min-height: 57px; padding: 10px 24px; border: 2px solid var(--gal-ink); border-radius: 9px; background: var(--gal-plum); color: white; font-size: 28px; font-weight: 650; box-shadow: 3px 3px 0 #c99bb4; }
-.gal button.gal-action:hover { background: #613654; }
-.gal-repo-layout { display: grid; grid-template-columns: minmax(0, 1.52fr) minmax(0, 1fr); gap: 24px; align-items: stretch; height: 100%; }
-.gal-repo, .gal-flash, .gal-timeline-card, .gal-project-card, .gal-scale, .gal-guide-screen, .gal-history, .gal-log { border: 2px solid var(--gal-edge); border-radius: 16px; overflow: hidden; }
-.gal-repo { background: var(--gal-light); align-self: stretch; }
-.gal-repo-top { display: flex; align-items: center; gap: 16px; min-height: 62px; padding: 9px 22px; background: var(--gal-plum); color: #fff4fa; }
-.gal-repo-top strong { letter-spacing: -.035em; font-size: 30px; }
-.gal-repo-top > span { margin-left: auto; font-size: 20px; font-weight: 650; color: #edcfe2; }
-.gal-code-mark { display: inline-grid; place-items: center; padding: 1px 7px; border: 1.5px solid #e8c3d7; border-radius: 6px; color: #fff; font: 700 22px/1.25 monospace; }
-.gal-repo-name { display: grid; gap: 0; padding: 18px 22px 12px; }
-.gal-repo-name span { color: #79596f; font-size: 22px; }
-.gal-repo-name strong { font-size: 31px; line-height: 1.25; overflow-wrap: anywhere; }
-.gal-repo-tools, .gal-repo-tabs { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; padding: 4px 22px 15px; }
-.gal-repo-tabs { border-top: 1px solid #dbc9d5; border-bottom: 1px solid #c7acc0; gap: 10px; padding-top: 12px; padding-bottom: 12px; background: #f3ebf2; }
-.gal .gal-hot { padding: 5px 13px; border: 1.5px solid #ad8ba4; border-radius: 7px; background: #fffafc; box-shadow: 0 2px 0 #dbc6d3; font-size: 28px; font-weight: 600; }
-.gal .gal-hot:hover, .gal .gal-hot.is-current { border-color: #67314e; background: #f8c6df; }
-.gal-code-tab { padding: 3px 3px 3px 0; color: #654f62; font-size: 28px; }
-.gal-file-box { margin: 18px 22px; border: 1.5px solid #b99dad; border-radius: 8px; overflow: hidden; }
-.gal-file-head, .gal-file-row { display: flex; align-items: center; gap: 12px; min-height: 54px; padding: 6px 14px; }
-.gal-file-head { justify-content: space-between; background: #f2e7f0; border-bottom: 1px solid #c9adbe; }
-.gal-file-head > span { font: 600 23px monospace; }
-.gal-doc-glyph { position: relative; width: 19px; height: 24px; background: white; border: 2px solid var(--gal-edge); border-radius: 3px; }
-.gal-doc-glyph::after { position: absolute; content: ""; width: 9px; height: 2px; left: 3px; top: 7px; background: var(--gal-edge); box-shadow: 0 5px var(--gal-edge); }
-.gal-flash { display: flex; position: relative; flex-direction: column; background: #fff5ce; }
-.gal-card-art { display: grid; flex: 1; min-height: 90px; place-items: center; overflow: hidden; background-color: #eddcf1; background-image: radial-gradient(#b989b6 1.5px, transparent 1.7px); background-size: 12px 12px; border-bottom: 2px solid var(--gal-edge); }
-.gal-card-art .gal-art { width: clamp(120px, 10vw, 198px); height: 160px; max-height: 100%; transform: rotate(-7deg); }
-.gal-flash-contents { padding: 20px 25px 24px; }
-.gal-flash-contents .gal-action { margin-top: 14px; }
-.gal-flash h3 { font-size: 45px; margin: 6px 0 10px; }
-.gal-timeline-card, .gal-project-card, .gal-scale { display: flex; flex-direction: column; height: 100%; min-height: 325px; }
-.gal-timeline-card { background: var(--gal-light); }
-.gal-timeline-head, .gal-poster-top { display: flex; justify-content: space-between; align-items: center; gap: 12px; padding: 14px 26px; border-bottom: 2px solid var(--gal-edge); font-weight: 700; }
-.gal-timeline-head { background: var(--gal-cloud); }
-.gal-timeline-head .gal-mono { font-size: 28px; }
-.gal-event { flex: 1; display: grid; align-items: center; grid-template-columns: minmax(0,1fr) 220px; gap: 30px; padding: 14px 45px; }
-.gal-event p { margin-top: 18px; }
-.gal-event .gal-art { width: 200px; height: 190px; transform: rotate(8deg); }
-.gal-milestones { position: relative; display: flex; align-items: stretch; padding: 13px 12px 25px; }
-.gal-milestones::before { content: ""; position: absolute; left: 6%; right: 6%; top: 29px; height: 3px; background: #b595b1; }
-.gal .gal-milestone { display: grid; justify-items: center; gap: 7px; flex: 1; border: 0; background: transparent; position: relative; padding: 6px 3px; font: 650 23px/1.3 ui-monospace, monospace; }
-.gal-milestone i { display: block; width: 22px; height: 22px; border: 3px solid var(--gal-edge); background: #fff; border-radius: 100%; }
-.gal-milestone:hover i, .gal-milestone.is-current i { background: #f277a9; border-color: var(--gal-ink); box-shadow: 0 0 0 4px #f7cada; }
-.gal-project-card { position: relative; background: #f9dcea; }
-.gal-poster-top { background: rgba(255,255,255,.38); }
-.gal-date-label { font-weight: 500; font-size: 22px; }
-.gal-project-grid { flex: 1; display: grid; align-items: center; grid-template-columns: 1.2fr 1fr; gap: 35px; padding: 23px 38px; }
-.gal-project-grid h3 { margin-bottom: 7px; }
-.gal-project-grid .gal-big-number { margin-top: 18px; }
-.gal-big-number, .gal-scale-grid strong { font-family: ui-sans-serif, system-ui, sans-serif; font-weight: 800; font-variant-numeric: tabular-nums; font-size: 92px; line-height: 1.04; letter-spacing: -.07em; }
-.gal-project-about { display: flex; flex-direction: column; align-items: flex-start; gap: 13px; border-left: 2px dashed #a57494; padding: 0 0 0 28px; }
-.gal-project-about .gal-art { width: 110px; height: 105px; }
-.gal-openclaw { background: #e1dff4; }
-.gal-openclaw-hero { margin: auto 0; padding: 23px 40px; max-width: 78%; }
-.gal-openclaw-hero .gal-big-number { font-size: 105px; }
-.gal-openclaw-hero h3 { font-size: 40px; margin-top: 14px; }
-.gal-openclaw > .gal-art { position: absolute; right: 28px; top: 28%; width: 180px; height: 160px; transform: rotate(-8deg); }
-.gal-project-stats { display: flex; gap: 40px; padding: 15px 36px; background: #f3edf9; border-top: 2px solid var(--gal-edge); }
-.gal-scale { background: #d2e9df; }
-.gal-scale-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin: auto 0; padding: 22px 36px; }
-.gal-scale-grid > div { display: grid; gap: 12px; }
-.gal-scale-grid > div + div { border-left: 2px solid var(--gal-edge); padding-left: 34px; }
-.gal-scale-grid strong { font-size: 76px; }
-.gal-scale-grid small { font-size: .5em; vertical-align: top; }
-.gal-scale > p { padding: 16px 34px; border-top: 2px solid var(--gal-edge); }
-.gal-archive, .gal-guide { display: flex; flex-direction: column; height: 100%; gap: 17px; }
-.gal-chapters, .gal-guide-nav { display: flex; gap: 8px; align-items: stretch; }
-.gal .gal-chapter, .gal .gal-guide-tab { display: inline-flex; align-items: center; justify-content: center; gap: 10px; padding: 9px 17px; border: 2px solid #a7839b; border-radius: 10px; background: #fff9fc; font-size: 28px; font-weight: 650; white-space: nowrap; }
-.gal .gal-chapter.is-current, .gal .gal-guide-tab.is-current { background: var(--gal-plum); color: #fff; border-color: var(--gal-plum); }
-.gal-chapter:hover, .gal-guide-tab:hover { box-shadow: inset 0 0 0 1px #a77794; }
-.gal-archive-grid { flex: 1; min-height: 0; display: grid; grid-template-columns: .82fr 1.2fr; gap: 18px; }
-.gal-history { display: flex; flex-direction: column; background: #fcf5fa; }
-.gal-history-title, .gal-log-meta { display: flex; justify-content: space-between; align-items: center; gap: 10px; min-height: 55px; padding: 8px 16px; border-bottom: 1.5px solid #c3a8ba; }
-.gal-history-title { font-weight: 650; background: #eddce8; }
-.gal-history-title b { font: 650 24px/1.2 ui-monospace, monospace; }
-.gal-history-list { position: relative; min-height: 0; overflow-y: auto; padding: 8px 8px 13px; scrollbar-color: #aa7b9b #f5e7f0; }
-.gal .gal-commit { position: relative; display: grid; grid-template-columns: 16px 1fr auto; gap: 10px; align-items: center; width: 100%; min-height: 58px; padding: 9px 9px; text-align: left; border: 1.5px solid transparent; border-radius: 8px; background: transparent; font-variant-numeric: tabular-nums; }
-.gal-commit i { width: 13px; height: 13px; border: 2px solid var(--gal-edge); border-radius: 50%; background: #fff; }
-.gal-commit::after { content: ""; position: absolute; left: 14.5px; top: calc(50% + 7px); width: 2px; height: calc(100% - 13px); background: #a4829b; }
-.gal-commit:last-child::after { display: none; }
-.gal-commit b { font-size: 28px; }
-.gal-commit > span { font: 500 21px/1.3 ui-monospace, monospace; }
-.gal .gal-commit.is-current, .gal .gal-commit:hover { border-color: #bd8bab; background: #f7d6e5; }
-.gal-commit.is-current i { background: #b84377; border-color: var(--gal-ink); }
-.gal-log { display: flex; flex-direction: column; background: #fff7df; }
-.gal-log-meta { font-size: 22px; background: #f7e9c5; }
-.gal-log-meta code { font-size: 21px; }
-.gal-log-face { display: flex; flex: 1; flex-direction: column; align-items: start; justify-content: center; gap: 19px; padding: 18px 23px; }
-.gal-log-face h3 { font-size: 42px; line-height: 1.3; }
-.gal button.gal-flip { padding: 7px 15px; border: 1.5px solid #9c7e87; border-radius: 8px; background: #fffaf1; font-size: 28px; font-weight: 650; }
-.gal button.gal-flip:hover, .gal button.gal-flip[aria-pressed="true"] { background: #f7dfc1; }
-.gal-log-diff { margin-top: auto; padding: 13px 23px 20px; border-top: 1.5px dashed #b59d84; }
-.gal-diff-labels { display: flex; justify-content: space-between; gap: 10px; font-size: 28px; }
-.gal-diff-labels span:first-child b { color: #286242; }
-.gal-diff-labels span:last-child b { color: #a32b63; }
-.gal-diff-track { height: 13px; margin-top: 8px; border: 1.5px solid #705065; border-radius: 5px; background: linear-gradient(90deg, #75b792 0 var(--gal-share), #dd86a3 var(--gal-share) 100%); }
-.gal-diff-track[data-empty="true"] { background: #ddd3d7; }
-.gal-guide-tab > b { display: grid; place-items: center; height: 29px; width: 29px; border: 1.5px solid; border-radius: 50%; font-size: 20px; }
-.gal-guide-screen { display: flex; flex: 1; min-height: 0; flex-direction: column; background: #fffafd; }
-.gal-guide-body { display: flex; flex: 1; min-height: 0; align-items: center; justify-content: space-between; gap: 20px; padding: 18px 36px; }
-.gal-guide-body > div { display: grid; justify-items: start; align-content: center; gap: 10px; }
-.gal-guide-body .gal-art { width: 166px; height: 175px; }
-.gal-guide-body h3 { font-size: 47px; }
-.gal-guide-body .gal-action { margin-top: 7px; }
-.gal-field { display: flex; gap: 20px; align-items: center; border: 1.5px solid #bfa4b6; border-radius: 7px; background: #f6edf5; padding: 9px 15px; font-size: 28px; }
-.gal .gal-name-history { margin-top: 14px; font-family: ui-monospace, monospace; font-size: 28px; color: #5e4460; }
-.gal-card-buttons, .gal-access { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; }
-.gal-card-buttons .gal-action { margin-top: 0; }
-.gal-access .gal-flip { min-width: 120px; padding: 11px 20px; }
-.gal .gal-access .gal-flip[aria-pressed="true"] { color: white; background: var(--gal-plum); border-color: var(--gal-plum); }
-.gal-visibility-label { border: 1px solid #d6abc4; border-radius: 7px; padding: 1px 10px; font-size: 28px; }
-.gal-ai-prompt { margin-bottom: 14px; }
-.gal-ai-prompt span { display: inline-block; margin-bottom: 5px; color: #78415d; font-size: 28px; font-weight: 650; }
+.gal *,
+.gal *::before,
+.gal *::after {
+  box-sizing: border-box;
+}
+.gal h3,
+.gal p,
+.gal ul {
+  margin: 0;
+  color: inherit;
+}
+.gal h3 {
+  font-size: 28px;
+  font-weight: 680;
+  line-height: 1.28;
+  letter-spacing: 0.005em;
+}
+.gal p {
+  font-size: 20px;
+  line-height: 1.5;
+  color: var(--gal-soft);
+}
+.gal button {
+  min-width: 0;
+  min-height: 0;
+  font: inherit;
+  line-height: 1.25;
+  color: inherit;
+  cursor: pointer;
+}
+.gal button:focus-visible {
+  outline: 3px solid var(--gal-accent);
+  outline-offset: 3px;
+  z-index: 1;
+}
+.gal-kicker,
+.gal-mono,
+.gal-log-meta,
+.gal-date-label,
+.gal code {
+  font-family: ui-monospace, 'SFMono-Regular', Menlo, monospace;
+}
+.gal-kicker {
+  font-size: 16.5px;
+  font-weight: 700;
+  color: var(--gal-accent-deep);
+}
+.gal button.gal-action {
+  align-self: flex-start;
+  padding: 11px 24px;
+  border: 0;
+  border-radius: 99px;
+  background: linear-gradient(180deg, #3a3037 0%, #1c151a 100%);
+  color: #ffffff;
+  font-size: 18.5px;
+  font-weight: 640;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.22), 0 8px 20px rgba(29, 22, 28, 0.16);
+}
+.gal button.gal-action:hover {
+  background: linear-gradient(180deg, #e64b8d 0%, #bd2263 100%);
+  transform: translateY(-1.5px);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.32), 0 12px 24px rgba(189, 34, 99, 0.26);
+}
+.gal button.gal-flip {
+  padding: 9px 20px;
+  border: 0;
+  border-radius: 99px;
+  background: linear-gradient(180deg, #ffffff 0%, #f4eff2 100%);
+  font-size: 18px;
+  font-weight: 640;
+  color: var(--gal-soft);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.9), 0 3px 10px rgba(68, 36, 58, 0.06);
+}
+.gal button.gal-flip:hover {
+  background: linear-gradient(180deg, #fff5f9 0%, #fde6f0 100%);
+  color: var(--gal-accent-deep);
+  transform: translateY(-1.5px);
+}
+.gal button.gal-flip[aria-pressed='true'] {
+  background: linear-gradient(180deg, #3a3037 0%, #1c151a 100%);
+  color: white;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.22), 0 6px 16px rgba(29, 22, 28, 0.16);
+}
+.gal-pill {
+  align-self: flex-start;
+  padding: 4px 14px;
+  border-radius: 99px;
+  background: #f2edf0;
+  color: var(--gal-soft);
+  font-size: 15.5px;
+  font-weight: 680;
+}
+.gal-pill.is-berry {
+  background: #fde2ee;
+  color: #a31d56;
+}
+
+/* ============================================================================
+ * LESSON 5 Step 0: Zero-CLI Desktop 3-Step Flowchart + 3 Setup Cards
+ * ========================================================================== */
+.gal-setup {
+  display: grid;
+  grid-template-rows: 0.95fr 1.05fr;
+  gap: 20px;
+  height: 100%;
+  padding: 6px 4px;
+}
+.gal-desktop-flow {
+  background: #ffffff;
+  border-radius: 26px;
+  padding: 16px 22px;
+  box-shadow: 0 12px 30px rgba(82, 36, 64, 0.045);
+  display: flex;
+  align-items: center;
+}
+.gal-desktop-flow svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.gal-setup-grid {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+.gal-setup-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 12px;
+  padding: 24px 28px;
+  border-radius: 26px;
+  background: #ffffff;
+  box-shadow: 0 10px 26px rgba(82, 36, 64, 0.045);
+}
+.gal-setup-card.is-hero {
+  background: var(--lp-rose);
+}
+.gal-setup-card code {
+  background: rgba(255, 255, 255, 0.9);
+  padding: 2px 8px;
+  border-radius: 6px;
+  font-size: 18px;
+}
+.gal-prompt-toggle {
+  align-self: flex-start;
+  border: 0;
+  border-radius: 99px;
+  padding: 9px 18px;
+  background: linear-gradient(180deg, #fff5f9 0%, #fbd9e8 100%);
+  color: #a31d56;
+  font-size: 15.5px;
+  font-weight: 660;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.9), 0 4px 12px rgba(189, 34, 99, 0.12);
+}
+.gal-prompt-toggle:hover {
+  background: linear-gradient(180deg, #ffe8f2 0%, #f7c3da 100%);
+  transform: translateY(-1.5px);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.9), 0 8px 18px rgba(189, 34, 99, 0.18);
+}
+.gal-prompt-area {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 4px;
+}
+.gal-prompt-box {
+  padding: 12px 16px;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.96);
+  color: #251e23;
+  font-size: 16px;
+  line-height: 1.48;
+  box-shadow: 0 6px 18px rgba(82, 36, 64, 0.06);
+  animation: gal-pop-in 0.24s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+@keyframes gal-pop-in {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+}
+
+/* ============================================================================
+ * LESSON 5 Step 1: .gitignore Security Gate Flowchart Split
+ * ========================================================================== */
+.gal-ignore-split {
+  display: grid;
+  grid-template-columns: 0.98fr 1.02fr;
+  gap: 20px;
+  height: 100%;
+  padding: 6px 4px;
+}
+.gal-gate-svg {
+  background: #ffffff;
+  border-radius: 26px;
+  padding: 16px;
+  box-shadow: 0 12px 30px rgba(82, 36, 64, 0.045);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.gal-gate-svg svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.gal-ignore-right {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.gal-ignore-tabs {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+.gal-ignore-tab {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+  padding: 14px 16px;
+  border: 0;
+  border-radius: 18px;
+  background: #ffffff;
+  text-align: left;
+  box-shadow: 0 6px 18px rgba(82, 36, 64, 0.04);
+}
+.gal-ignore-tab strong,
+.gal-ignore-tab code {
+  font-size: 17.5px;
+  font-weight: 700;
+}
+.gal-ignore-tab span {
+  font-size: 15px;
+  color: var(--gal-soft);
+}
+.gal-ignore-tab.is-current,
+.gal-ignore-tab:hover {
+  background: var(--gal-ink);
+  color: white;
+}
+.gal-ignore-tab.is-current span,
+.gal-ignore-tab:hover span {
+  color: #ffb8d6;
+}
+.gal-ignore-card {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 14px;
+  padding: 28px 32px;
+  border-radius: 26px;
+  background: #ffffff;
+  box-shadow: 0 12px 30px rgba(82, 36, 64, 0.045);
+}
+.gal-ignore-card.is-warn {
+  background: var(--lp-rose);
+}
+.gal-ignore-card.is-safe {
+  background: var(--lp-sage);
+}
+.gal-ignore-head {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.gal-ignore-head code {
+  font-size: 22px;
+  font-weight: 700;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 4px 14px;
+  border-radius: 10px;
+}
+.gal-ignore-head b {
+  font-size: 18px;
+  color: var(--gal-accent-deep);
+}
+.gal-ignore-card.is-safe .gal-ignore-head b {
+  color: #145a38;
+}
+
+/* ============================================================================
+ * LESSON 5 Steps 2 & 3: Local ⇄ GitHub Sync Guides
+ * ========================================================================== */
+.gal-guide {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  gap: 16px;
+  padding: 6px 4px;
+}
+.gal-guide-nav {
+  display: inline-flex;
+  align-self: flex-start;
+  gap: 8px;
+  background: #f0e9ed;
+  padding: 5px;
+  border-radius: 99px;
+}
+.gal .gal-guide-tab {
+  padding: 8px 20px;
+  border: 0;
+  border-radius: 99px;
+  background: transparent;
+  font-size: 18.5px;
+  font-weight: 640;
+  color: var(--gal-soft);
+}
+.gal .gal-guide-tab.is-current {
+  background: #ffffff;
+  color: var(--gal-ink);
+  box-shadow: 0 2px 8px rgba(45, 22, 38, 0.08);
+}
+.gal-guide-screen {
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  border-radius: 26px;
+  background: #ffffff;
+  box-shadow: 0 12px 32px rgba(82, 36, 64, 0.045);
+  overflow: hidden;
+}
+.gal-guide-body {
+  display: grid;
+  grid-template-columns: 1.22fr 0.78fr;
+  flex: 1;
+  min-height: 0;
+  align-items: center;
+  gap: 28px;
+  padding: 28px 36px;
+}
+.gal-guide-body > div:first-child {
+  display: grid;
+  justify-items: start;
+  align-content: center;
+  gap: 14px;
+}
+.gal-field {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  border-radius: 14px;
+  background: #f6f2f4;
+  padding: 12px 18px;
+  font-size: 19px;
+  font-family: ui-monospace, monospace;
+}
+.gal-vis-row,
+.gal-card-buttons {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.gal-sync-diagram {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  padding: 24px;
+  border-radius: 24px;
+  background: #f8f5f7;
+}
+.gal-sync-node {
+  width: 100%;
+  padding: 16px 20px;
+  border-radius: 16px;
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 4px 12px rgba(45, 22, 38, 0.04);
+}
+.gal-sync-node.is-local {
+  background: var(--lp-sage);
+}
+.gal-sync-node.is-cloud {
+  background: var(--lp-sky);
+}
+.gal-sync-node b {
+  font-size: 19px;
+}
+.gal-sync-node span {
+  font: 600 14px ui-monospace, monospace;
+  color: var(--gal-soft);
+}
+.gal-sync-arrow {
+  font: 700 16px ui-monospace, monospace;
+  color: var(--gal-accent-deep);
+  background: #fde2ee;
+  padding: 5px 16px;
+  border-radius: 99px;
+}
+
+/* Lesson 5 Step 4: Module 5 Summary Card */
+.gal-mod-summary {
+  display: grid;
+  grid-template-rows: 1.05fr 0.95fr;
+  gap: 20px;
+  height: 100%;
+  padding: 6px 4px;
+}
+.gal-sum-top {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 18px;
+  padding: 22px 28px;
+  border-radius: 26px;
+  background: #ffffff;
+  box-shadow: 0 12px 32px rgba(82, 36, 64, 0.045);
+}
+.gal-sum-bar {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+.gal-sum-pill {
+  padding: 5px 14px;
+  border-radius: 99px;
+  background: #fde2ee;
+  color: #a31d56;
+  font-size: 15px;
+  font-weight: 700;
+}
+.gal-sum-bar strong {
+  font-size: 21px;
+  font-weight: 680;
+}
+.gal-sum-top svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.gal-sum-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+.gal-sum-cards article {
+  padding: 22px 24px;
+  border-radius: 24px;
+  background: #ffffff;
+  box-shadow: 0 10px 26px rgba(82, 36, 64, 0.04);
+  display: grid;
+  gap: 6px;
+}
+.gal-sum-cards article.is-rose {
+  background: var(--lp-rose);
+}
+.gal-sum-cards article.is-butter {
+  background: var(--lp-butter);
+}
+.gal-sum-cards article.is-sage {
+  background: var(--lp-sage);
+}
+.gal-sum-cards b {
+  font-size: 20px;
+  font-weight: 680;
+}
+.gal-sum-cards p {
+  font-size: 18px;
+  line-height: 1.46;
+}
+
+/* ============================================================================
+ * LESSON 6 Step 0: GitHub Replica + Misconception 5
+ * ========================================================================== */
+.gal-repo-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.32fr) minmax(0, 1fr);
+  gap: 20px;
+  align-items: stretch;
+  height: 100%;
+  padding: 6px 4px;
+}
+.gal-repo,
+.gal-flash,
+.gal-history,
+.gal-log {
+  border-radius: 26px;
+  overflow: hidden;
+  background: #ffffff;
+  box-shadow: 0 12px 32px rgba(82, 36, 64, 0.045);
+}
+.gal-repo {
+  display: flex;
+  flex-direction: column;
+}
+.gal-repo-top {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 52px;
+  padding: 8px 24px;
+  background: #f8f4f6;
+  color: var(--gal-ink);
+}
+.gal-repo-top strong {
+  font-size: 20px;
+}
+.gal-repo-top > span {
+  margin-left: auto;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--gal-muted);
+}
+.gal-code-mark {
+  display: inline-grid;
+  place-items: center;
+  padding: 2px 8px;
+  border-radius: 8px;
+  background: #fde2ee;
+  color: var(--gal-accent-deep);
+  font: 700 16px/1.25 monospace;
+}
+.gal-repo-name {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+  padding: 18px 24px 12px;
+}
+.gal-repo-name span {
+  color: var(--gal-muted);
+  font-size: 21px;
+}
+.gal-repo-name strong {
+  font-size: 26px;
+  font-weight: 680;
+}
+.gal-repo-tools,
+.gal-repo-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  padding: 4px 24px 14px;
+}
+.gal-repo-tabs {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  background: #faf7f9;
+}
+.gal .gal-hot {
+  padding: 7px 16px;
+  border: 0;
+  border-radius: 99px;
+  background: #f2edf0;
+  font-size: 18.5px;
+  font-weight: 640;
+  transition: background 0.15s, color 0.15s;
+}
+.gal .gal-hot:hover,
+.gal .gal-hot.is-current {
+  background: var(--gal-ink);
+  color: #ffffff;
+}
+.gal-code-tab {
+  padding: 4px 8px 4px 0;
+  color: var(--gal-soft);
+  font-size: 19px;
+  font-weight: 650;
+}
+.gal-file-box {
+  margin: 18px 24px;
+  border-radius: 18px;
+  background: #faf7f9;
+  overflow: hidden;
+}
+.gal-file-head,
+.gal-file-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 54px;
+  padding: 8px 18px;
+}
+.gal-file-head {
+  justify-content: space-between;
+  background: #f3eef1;
+}
+.gal-file-head > span {
+  font: 600 18px ui-monospace, monospace;
+}
+.gal-file-date {
+  margin-left: auto;
+  font-size: 16px;
+  font-weight: 650;
+  color: #a31d56;
+}
+.gal-doc-glyph {
+  width: 18px;
+  height: 22px;
+  background: white;
+  border: 1.5px solid var(--gal-muted);
+  border-radius: 4px;
+  flex: none;
+}
+.gal-flash {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: var(--lp-butter);
+}
+.gal-flash-contents {
+  padding: 32px 34px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.gal-flash h3 {
+  font-size: 31px;
+}
+.gal-flash p {
+  font-size: 21.5px;
+  line-height: 1.55;
+}
+
+/* ============================================================================
+ * LESSON 6 Step 1: 4-Step Collab Flowchart + Lieflat Charts F5 Case Comparison
+ * ========================================================================== */
+.gal-collab {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 16px;
+  height: 100%;
+  padding: 6px 4px;
+}
+.gal-collab-steps {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+.gal-collab-steps > div {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 16px 20px;
+  border-radius: 20px;
+  background: #ffffff;
+  box-shadow: 0 6px 18px rgba(82, 36, 64, 0.04);
+}
+.gal-collab-steps > div.is-sky {
+  background: var(--lp-sky);
+}
+.gal-collab-steps > div.is-butter {
+  background: var(--lp-butter);
+}
+.gal-collab-steps > div.is-rose {
+  background: var(--lp-rose);
+}
+.gal-collab-steps > div.is-sage {
+  background: var(--lp-sage);
+}
+.gal-collab-steps b {
+  font-size: 20px;
+  font-weight: 680;
+  color: var(--gal-ink);
+}
+.gal-collab-steps span {
+  font-size: 16.5px;
+  color: var(--gal-soft);
+}
+.gal-collab-steps i {
+  font-style: normal;
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--gal-muted);
+}
+.gal-case-split {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 0.96fr 1.04fr;
+  gap: 18px;
+}
+.gal-case-left {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 14px;
+  padding: 22px 26px;
+  border-radius: 26px;
+  background: #ffffff;
+  box-shadow: 0 12px 30px rgba(82, 36, 64, 0.045);
+}
+.gal-case-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.gal-case-tab {
+  padding: 7px 16px;
+  border: 0;
+  border-radius: 99px;
+  background: #f2edf0;
+  font-size: 17.5px;
+  font-weight: 640;
+}
+.gal-case-tab.is-current,
+.gal-case-tab:hover {
+  background: var(--gal-ink);
+  color: white;
+}
+.gal-case-copy {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
+}
+.gal-case-copy h3 {
+  font-size: 26px;
+}
+.gal-case-copy p {
+  font-size: 19.5px;
+  line-height: 1.52;
+}
+.gal-lf-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 16px;
+  padding: 24px 28px;
+  border-radius: 26px;
+  background: #F7F2EB;
+  color: #081F5C;
+  box-shadow: 0 12px 30px rgba(8, 31, 92, 0.05);
+}
+.gal-lf-title {
+  font-size: 19px;
+  font-weight: 700;
+  color: #081F5C;
+}
+.gal-lf-sub {
+  font-size: 13px;
+  color: rgba(8, 31, 92, 0.65);
+}
+.gal-lf-box svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.gal-lf-src {
+  font: 600 11px ui-monospace, monospace;
+  letter-spacing: 0.08em;
+  color: rgba(8, 31, 92, 0.45);
+}
+
+/* ============================================================================
+ * LESSON 6 Step 2: 6 Common Myths + 4 Beginner FAQs
+ * ========================================================================== */
+.gal-myths {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: 6px 4px;
+}
+.gal-myth-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+.gal-seg {
+  display: inline-flex;
+  gap: 6px;
+  background: #f0e9ed;
+  padding: 5px;
+  border-radius: 99px;
+}
+.gal-seg button {
+  border: 0;
+  background: transparent;
+  padding: 7px 20px;
+  border-radius: 99px;
+  font-size: 18.5px;
+  font-weight: 640;
+  color: var(--gal-soft);
+}
+.gal-seg button[aria-pressed='true'] {
+  background: #ffffff;
+  color: var(--gal-ink);
+  box-shadow: 0 2px 8px rgba(45, 22, 38, 0.08);
+}
+.gal-myth-grid {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+.gal-myth-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 8px;
+  padding: 14px 20px;
+  border-radius: 20px;
+  background: #ffffff;
+  box-shadow: 0 6px 18px rgba(82, 36, 64, 0.04);
+}
+.gal-myth-bad,
+.gal-myth-good {
+  display: grid;
+  grid-template-columns: 66px 1fr;
+  gap: 8px;
+  align-items: baseline;
+}
+.gal-myth-bad span {
+  font-size: 14px;
+  font-weight: 700;
+  color: #b01e54;
+  background: #fde2ee;
+  padding: 2px 8px;
+  border-radius: 99px;
+  text-align: center;
+}
+.gal-myth-bad b {
+  font-size: 18.5px;
+  font-weight: 660;
+  color: var(--gal-ink);
+}
+.gal-myth-good span {
+  font-size: 14px;
+  font-weight: 700;
+  color: #145a38;
+  background: #d2efe0;
+  padding: 2px 8px;
+  border-radius: 99px;
+  text-align: center;
+}
+.gal-myth-good p {
+  font-size: 17.5px;
+  line-height: 1.4;
+  color: var(--gal-soft);
+}
+.gal-faq-grid {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+.gal-faq-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
+  padding: 22px 26px;
+  border-radius: 24px;
+  background: #ffffff;
+  box-shadow: 0 8px 22px rgba(82, 36, 64, 0.04);
+}
+.gal-faq-card.tone-1 {
+  background: var(--lp-rose);
+}
+.gal-faq-card.tone-2 {
+  background: var(--lp-butter);
+}
+.gal-faq-card.tone-3 {
+  background: var(--lp-sage);
+}
+.gal-faq-card.tone-4 {
+  background: var(--lp-sky);
+}
+.gal-faq-card strong {
+  font-size: 22px;
+  font-weight: 680;
+  color: var(--gal-ink);
+}
+.gal-faq-card p {
+  font-size: 19px;
+  line-height: 1.48;
+  color: var(--gal-soft);
+}
+
+/* ============================================================================
+ * LESSON 6 Steps 3-6: 28 Real Commits
+ * ========================================================================== */
+.gal-archive {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  gap: 14px;
+  padding: 6px 4px;
+}
+.gal-archive-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+.gal-chapters {
+  display: inline-flex;
+  gap: 6px;
+  background: #f0e9ed;
+  padding: 5px;
+  border-radius: 99px;
+}
+.gal .gal-chapter {
+  padding: 6px 16px;
+  border: 0;
+  border-radius: 99px;
+  background: transparent;
+  font-size: 18px;
+  font-weight: 640;
+  color: var(--gal-soft);
+  white-space: nowrap;
+}
+.gal .gal-chapter.is-current {
+  background: #ffffff;
+  color: var(--gal-ink);
+  box-shadow: 0 2px 8px rgba(45, 22, 38, 0.08);
+}
+.gal-link-tag {
+  font-size: 16.5px;
+  font-weight: 650;
+  color: var(--gal-accent-deep);
+  background: #fde2ee;
+  padding: 6px 14px;
+  border-radius: 99px;
+  white-space: nowrap;
+}
+.gal-archive-grid {
+  flex: 1;
+  min-height: 0;
+  display: grid;
+  grid-template-columns: 0.96fr 1.04fr;
+  gap: 18px;
+}
+.gal-history {
+  display: flex;
+  flex-direction: column;
+}
+.gal-history-title,
+.gal-log-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  min-height: 46px;
+  padding: 6px 20px;
+  background: #f8f4f6;
+  font-size: 18px;
+  font-weight: 650;
+  color: var(--gal-soft);
+}
+.gal-history-list {
+  position: relative;
+  min-height: 0;
+  overflow-y: auto;
+  padding: 8px;
+}
+.gal .gal-commit {
+  position: relative;
+  display: grid;
+  grid-template-columns: 14px 1fr;
+  gap: 10px;
+  align-items: start;
+  width: 100%;
+  padding: 9px 12px;
+  text-align: left;
+  border: 0;
+  border-radius: 14px;
+  background: transparent;
+}
+.gal-commit i {
+  margin-top: 8px;
+  width: 11px;
+  height: 11px;
+  border: 2px solid #bfa7b6;
+  border-radius: 50%;
+  background: #fff;
+}
+.gal-commit::after {
+  content: '';
+  position: absolute;
+  left: 16.5px;
+  top: 28px;
+  width: 1.5px;
+  height: calc(100% - 14px);
+  background: #e2d5dd;
+}
+.gal-commit:last-child::after {
+  display: none;
+}
+.gal-commit-text {
+  display: grid;
+  gap: 2px;
+  min-width: 0;
+}
+.gal-commit-text strong {
+  font-size: 19.5px;
+  font-weight: 660;
+  line-height: 1.3;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.gal-commit-text span {
+  font-size: 16px;
+  color: var(--gal-muted);
+}
+.gal .gal-commit.is-current,
+.gal .gal-commit:hover {
+  background: #fde8f1;
+}
+.gal-commit.is-current i {
+  background: var(--gal-accent);
+  border-color: var(--gal-accent-deep);
+}
+
+.gal-log {
+  display: flex;
+  flex-direction: column;
+}
+.gal-log-face {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 14px;
+  padding: 20px 26px;
+  overflow: auto;
+}
+.gal-log-face h3 {
+  font-size: 27px;
+  line-height: 1.3;
+}
+.gal-log-note {
+  padding: 14px 18px;
+  border-radius: 16px;
+  background: var(--lp-butter);
+  font-size: 19.5px;
+  line-height: 1.48;
+  color: var(--gal-ink);
+}
+.gal-log-note b {
+  color: #8f4f0a;
+}
+.gal-log-subject {
+  font-size: 17px;
+  color: var(--gal-muted);
+  line-height: 1.4;
+}
+.gal-log-subject code {
+  background: #f6f2f4;
+  padding: 3px 8px;
+  border-radius: 6px;
+  word-break: break-word;
+}
+.gal-log-diff {
+  margin-top: auto;
+  padding: 14px 26px 18px;
+  background: #faf7f9;
+}
+.gal-diff-labels {
+  display: flex;
+  justify-content: space-between;
+  font-size: 19.5px;
+}
+.gal-diff-labels span:first-child b {
+  color: #145a38;
+}
+.gal-diff-labels span:last-child b {
+  color: #b01e54;
+}
+.gal-diff-track {
+  height: 10px;
+  margin-top: 8px;
+  border-radius: 99px;
+  background: linear-gradient(90deg, #52b788 0 var(--gal-share), #e56b92 var(--gal-share) 100%);
+}
+.gal-diff-track[data-empty='true'] {
+  background: #e2dce0;
+}
+
+/* ============================================================================
+ * LESSON 6 Step 7: Grand Finale (4-Pillar Flowchart + 3-Tier Action Guide)
+ * ========================================================================== */
+.gal-action-guide {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 6px 4px;
+}
+.gal-finale-diagram {
+  padding: 18px 24px;
+  border-radius: 26px;
+  background: #ffffff;
+  box-shadow: 0 12px 30px rgba(82, 36, 64, 0.045);
+  display: grid;
+  gap: 10px;
+}
+.gal-finale-head {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.gal-finale-head strong {
+  font-size: 20.5px;
+  font-weight: 680;
+}
+.gal-finale-diagram svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.gal-tier-grid {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 1.2fr 0.9fr 0.9fr;
+  gap: 18px;
+}
+.gal-tier {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
+  padding: 20px 24px;
+  border-radius: 24px;
+  background: #ffffff;
+  box-shadow: 0 10px 26px rgba(82, 36, 64, 0.04);
+}
+.gal-tier.is-now {
+  background: var(--lp-sage);
+}
+.gal-tier.is-later {
+  background: var(--lp-butter);
+}
+.gal-tier.is-skip {
+  background: #ffffff;
+}
+.gal-tier-badge {
+  font-size: 16.5px;
+  font-weight: 700;
+}
+.gal-tier h3 {
+  font-size: 24px;
+}
+.gal-tier ul {
+  padding-left: 20px;
+  display: grid;
+  gap: 6px;
+  font-size: 18.5px;
+  line-height: 1.44;
+  color: var(--gal-soft);
+}
+.gal-tier code {
+  background: rgba(255, 255, 255, 0.85);
+  padding: 1px 6px;
+  border-radius: 5px;
+  font-size: 17px;
+}

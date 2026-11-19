@@ -1,4 +1,4 @@
-// 日期和时刻按原作者所在的 UTC+08:00。note 是供观众阅读的简短观察或提问。
+// 日期和时刻按原作者所在的 UTC+08:00。note 是贝拉第一人称的修改手记。
 window.DATA = window.DATA || {};
 window.DATA.commits = [
   {
@@ -6,11 +6,11 @@ window.DATA.commits = [
     "date": "2026-04-05",
     "time": "22:57",
     "subject": "Initial commit: Astro personal portfolio website",
-    "summary": "把个人作品网站的第一版存起来",
+    "summary": "把个人作品网站的第一版存进档案柜",
     "chapter": 1,
     "added": 22973,
     "deleted": 0,
-    "note": "第一份存档，把整个网站记了下来。"
+    "note": "我的第一条存档！把整个个人网站的初稿骨架完整记了下来。"
   },
   {
     "hash": "10565a3",
@@ -21,18 +21,18 @@ window.DATA.commits = [
     "chapter": 1,
     "added": 4,
     "deleted": 2499,
-    "note": "换了发布账号，也能留下一条记录。"
+    "note": "6 分钟后换了发布账号，顺手清理掉两千多行多余的旧配置。"
   },
   {
     "hash": "b760c61",
     "date": "2026-04-10",
     "time": "23:40",
     "subject": "feat：升级新版网站初始化",
-    "summary": "给改版后的网站留一个起点",
+    "summary": "给大改版后的网站留一个新起点",
     "chapter": 2,
     "added": 7416,
     "deleted": 9135,
-    "note": "那一夜的 11 次修改，从 23:40 开始。"
+    "note": "4 月 10 日深夜 23:40，准备熬夜精修网站，先存一个大改版的起点。"
   },
   {
     "hash": "5ad758b",
@@ -43,106 +43,106 @@ window.DATA.commits = [
     "chapter": 2,
     "added": 2496,
     "deleted": 15,
-    "note": "下次想找旧导航，可以翻到前一版。"
+    "note": "毛玻璃导航看久了眼花，让 AI 改成干净利落的实色，满意就立刻存一版。"
   },
   {
     "hash": "9be3ae6",
     "date": "2026-04-10",
     "time": "23:59",
     "subject": "chore: untrack .vercel build output, add to .gitignore",
-    "summary": "把自动生成的文件移出版本记录",
+    "summary": "把自动生成的打包文件移出档案柜",
     "chapter": 2,
     "added": 1,
     "deleted": 2490,
-    "note": "能随时重新生成的文件，要每次都存吗？"
+    "note": "软件自动生成的临时文件不用每次都存，加一行忽略规则，仓库立刻清爽了。"
   },
   {
     "hash": "3864c4d",
     "date": "2026-04-11",
     "time": "00:11",
     "subject": "fix(audit p0): resolve 4 ship-blockers from Phase 3 audit",
-    "summary": "修掉检查时发现的四处上线障碍",
+    "summary": "修掉检查时发现的四处上线卡点",
     "chapter": 2,
     "added": 28,
     "deleted": 119,
-    "note": "离上线还差哪几步？这条记录数出了四处。"
+    "note": "过了零点，先把最影响上线的 4 个核心问题逐个修好并存档保底。"
   },
   {
     "hash": "e7ae144",
     "date": "2026-04-11",
     "time": "00:14",
     "subject": "feat(phase3 polish): finishing touches — headings, a11y landmarks, lazy images",
-    "summary": "整理标题层级，让图片按需加载",
+    "summary": "理顺标题层级，让长图滑到哪加载到哪",
     "chapter": 2,
     "added": 58,
     "deleted": 51,
-    "note": "长文章的图片，需要一打开就全加载吗？"
+    "note": "离上一次存档只隔 3 分钟——小步快跑，每做好一个小优化就按一次存档。"
   },
   {
     "hash": "a6f0b80",
     "date": "2026-04-11",
     "time": "00:19",
     "subject": "feat(phase4 animate): unify motion system, kill shimmer + overshoot easings",
-    "summary": "统一页面动效，收掉闪光和过冲",
+    "summary": "统一页面动效，关掉花哨的闪光和弹跳",
     "chapter": 2,
     "added": 41,
     "deleted": 53,
-    "note": "关掉闪光效果，也能单独留一版。"
+    "note": "AI 一开始加的闪光动效有点太浮夸了，让它收克制一点，看着舒服多了。"
   },
   {
     "hash": "6b913e7",
     "date": "2026-04-11",
     "time": "00:22",
     "subject": "feat(phase4 colorize): consolidate red side-tab accents, purge mermaid mint",
-    "summary": "统一侧栏强调色，清理多余的薄荷色",
+    "summary": "统一侧栏强调色，清掉杂乱的薄荷色",
     "chapter": 2,
     "added": 15,
     "deleted": 17,
-    "note": "侧栏的一点红，也有自己的修改记录。"
+    "note": "只改了十几行颜色代码，我也单独存一版，万一想看原来的配色随时能翻回来。"
   },
   {
     "hash": "4e6da0c",
     "date": "2026-04-11",
     "time": "00:28",
     "subject": "feat(phase4 distill): cut dead code, hero metrics row, collapse case sections",
-    "summary": "删掉多余代码，收起部分案例内容",
+    "summary": "大胆删掉多余代码，收起冗长的案例段落",
     "chapter": 2,
     "added": 16,
     "deleted": 458,
-    "note": "这一版删了 458 行，页面依然在往前走。"
+    "note": "一口气删掉 458 行代码！因为前面有存档兜底，做减法时手一点都不抖。"
   },
   {
     "hash": "3c5ac35",
     "date": "2026-04-11",
     "time": "00:32",
     "subject": "feat(phase4 harden): i18n, overflow, 404 page, carousel guard",
-    "summary": "补上找不到页面时的提示，修正文字溢出",
+    "summary": "补上 404 走丢提示页，修好文字出界",
     "chapter": 2,
     "added": 87,
     "deleted": 24,
-    "note": "点开失效链接，你希望页面怎么提醒你？"
+    "note": "把读者点错链接时的 404 提示页也做好了，细节越磨越顺。"
   },
   {
     "hash": "c7cc6e6",
     "date": "2026-04-11",
     "time": "00:35",
     "subject": "feat(phase4 adapt): touch targets, carousel keyboard/swipe, mobile polish",
-    "summary": "加大手机点击区域，让轮播能用键盘和手势",
+    "summary": "放大手机点击区域，支持键盘和手指滑动",
     "chapter": 2,
     "added": 67,
     "deleted": 7,
-    "note": "鼠标点得到的小按钮，手指也点得到吗？"
+    "note": "用手机试了下发现按钮太小老点错，赶紧让 AI 把触控区域放大再存一版。"
   },
   {
     "hash": "48f5dda",
     "date": "2026-04-11",
     "time": "00:38",
     "subject": "fix(phase4 quality gate): eliminate remaining layout-transition findings",
-    "summary": "修完最后几处会牵动布局的动画",
+    "summary": "修完最后几处会让版面抖动的过渡动画",
     "chapter": 2,
     "added": 11,
     "deleted": 7,
-    "note": "到凌晨 00:38，十一份存档串起了这一夜。"
+    "note": "凌晨 00:38 收工！不到一小时连存 11 版，每一步怎么改的都清清楚楚。"
   },
   {
     "hash": "180bc5f",
@@ -153,160 +153,160 @@ window.DATA.commits = [
     "chapter": 3,
     "added": 794,
     "deleted": 57,
-    "note": "从这一版起，点标签就能展开工具详情。"
+    "note": "网站不止放简历了，开始加我整理的「AI 工具箱」互动标签墙。"
   },
   {
     "hash": "5599976",
     "date": "2026-04-23",
     "time": "21:12",
     "subject": "feat(blog): 新增 DeepSeek 护城河文章「留下来 vs 走不掉」",
-    "summary": "发布分析 DeepSeek 的文章",
+    "summary": "发布深度文章《DeepSeek：留下来 vs 走不掉》",
     "chapter": 3,
     "added": 143,
     "deleted": 0,
-    "note": "一篇新文章，也可以有自己的修改历史。"
+    "note": "在网站上发了第一篇长文，写文章和写代码一样，都能用 Git 留档。"
   },
   {
     "hash": "765ad45",
     "date": "2026-04-23",
     "time": "21:15",
     "subject": "feat(blog): 幻方科技规模数据图 — DeepSeek 文章",
-    "summary": "为文章补一张展示幻方科技规模的数据图",
+    "summary": "给 DeepSeek 文章补上一张规模数据图",
     "chapter": 3,
     "added": 28,
     "deleted": 0,
-    "note": "这张数据图，比文章晚了三分钟存档。"
+    "note": "文章发完 3 分钟，觉得光有字不够直观，立刻补一张数据图表存进去。"
   },
   {
     "hash": "6bb1d52",
     "date": "2026-04-23",
     "time": "21:23",
     "subject": "feat(blog): 留存钩子图 + 数据来源标注 — DeepSeek 文章",
-    "summary": "加上一张留存示意图，并标明数据来源",
+    "summary": "再补一张留存结构图，并注明天数据出处",
     "chapter": 3,
     "added": 45,
     "deleted": 0,
-    "note": "图上补了出处，读者就能顺着找回原资料。"
+    "note": "8 分钟后又补上信息来源标注——想到哪改到哪，每次存档都是一个脚印。"
   },
   {
     "hash": "3b7284e",
     "date": "2026-04-23",
     "time": "21:29",
     "subject": "feat(blog): 打磨广告和出海两篇文章",
-    "summary": "同时打磨广告和出海两篇文章",
+    "summary": "顺手润色「AI 广告」和「出海」两篇文章",
     "chapter": 3,
     "added": 136,
     "deleted": 8,
-    "note": "两篇文章，能在同一次存档里一起修改。"
+    "note": "改完新文章，顺手把另外两篇旧文的段落也打磨了一遍，一起提交存档。"
   },
   {
     "hash": "5ac8ee3",
     "date": "2026-04-23",
     "time": "21:36",
     "subject": "polish: ai-freemium-model — personal story opening + achievement SVG + diagrams",
-    "summary": "改写一篇文章的开场，并补充配图",
+    "summary": "把商业模式文章的开头改成真实故事并配图",
     "chapter": 3,
     "added": 121,
     "deleted": 15,
-    "note": "开头换成故事，你会更想往下读吗？"
+    "note": "觉得干讲理论太枯燥，把文章开头换成了我自己的亲身经历。"
   },
   {
     "hash": "369c111",
     "date": "2026-04-27",
     "time": "20:50",
     "subject": "polish(blog): deepseek 文章 — 梨贝拉指纹 + 数据精度 + 类比补丁",
-    "summary": "回头修改 DeepSeek 文章的表达和数据精度",
+    "summary": "四天后重修 DeepSeek 文章的比喻和数据精度",
     "chapter": 3,
     "added": 151,
     "deleted": 59,
-    "note": "文章发出四天后，仍然可以接着修改。"
+    "note": "文章发布四天后有了新思考，随时翻开继续精修，历史版本也都留着。"
   },
   {
     "hash": "9dc6d9e",
     "date": "2026-06-11",
     "time": "18:48",
     "subject": "refactor(theme): Lemon Zest 柠檬绿主题系统 — Sunset Lite 粉红→绿色升级",
-    "summary": "把网站主题从粉红换成柠檬绿",
+    "summary": "把整站主题从粉红一键换成柠檬绿",
     "chapter": 4,
     "added": 2672,
     "deleted": 281,
-    "note": "如果更喜欢粉色，应该翻哪一版？"
+    "note": "夏天看腻了粉色，让 AI 把全站换成清爽的柠檬绿——哪天想换回粉色，翻回上一版就行！"
   },
   {
     "hash": "c859ba4",
     "date": "2026-06-11",
     "time": "20:46",
     "subject": "feat(tools): 碳循环一周饮食规划小工具 — 单文件 HTML + 设计文档",
-    "summary": "新增一个按周规划饮食的网页小工具",
+    "summary": "在网站里新增「碳循环饮食规划」网页小工具",
     "chapter": 4,
     "added": 499,
     "deleted": 0,
-    "note": "同一个网站，现在既能读文章，也能用工具。"
+    "note": "自己健身算饮食太麻烦，干脆用 AI 在网站里搓了一个能自动计算的小工具。"
   },
   {
     "hash": "17fe40e",
     "date": "2026-06-11",
     "time": "20:55",
     "subject": "feat(tools): 碳循环工具加目标体重预估 + 第一周水分提示",
-    "summary": "给小工具增加估算结果和提示文字",
+    "summary": "给饮食小工具加上目标体重预估和饮水提示",
     "chapter": 4,
     "added": 17,
     "deleted": 3,
-    "note": "第一版能用之后，还可以继续补提示。"
+    "note": "第一版跑通 9 分钟后，继续往上叠小功能：加上第一周喝水提醒。"
   },
   {
     "hash": "94e7e9d",
     "date": "2026-06-11",
     "time": "21:06",
     "subject": "feat(tools): 碳循环计算器上线网页版 — 默认值改通用占位，public/tools 静态托管",
-    "summary": "把小工具放上网页，改用通用的输入提示",
+    "summary": "把小工具正式公开上线，改成通用输入提示",
     "chapter": 4,
     "added": 465,
     "deleted": 1,
-    "note": "把工具给别人用，输入框该放什么示例？"
+    "note": "原本写的是我自己的体重数据，换成通用示例后，朋友们打开网页也能直接用了。"
   },
   {
     "hash": "7543d6a",
     "date": "2026-06-11",
     "time": "21:14",
     "subject": "feat(tools): 碳循环卡片显示 g/kg 系数 + 碳水相对中碳日增减高亮",
-    "summary": "让结果卡显示计算系数，高亮数值差异",
+    "summary": "在结果卡片上显示计算系数，高亮每天的增减",
     "chapter": 4,
     "added": 56,
     "deleted": 6,
-    "note": "两个结果的数字不同，一眼看得出来吗？"
+    "note": "给高碳日和低碳日加上颜色对比，一眼就能看清今天该多吃还是少吃。"
   },
   {
     "hash": "7b1022d",
     "date": "2026-06-12",
     "time": "06:11",
     "subject": "feat(tools): 碳循环课表新增力量+有氧组合日 — 消耗叠加按高碳计算",
-    "summary": "让计划表支持同一天记录两种训练",
+    "summary": "让计划表支持同一天叠加「力量 + 有氧」两种训练",
     "chapter": 4,
     "added": 20,
     "deleted": 12,
-    "note": "一张旧表格，怎样装下同一天的两种训练？"
+    "note": "早上六点醒来又想到一个需求：同一天既撸铁又跑步怎么办？花十分钟改好存档。"
   },
   {
     "hash": "dba4e8e",
     "date": "2026-06-12",
     "time": "06:18",
     "subject": "refactor(tools): 碳循环工具迁出",
-    "summary": "把小工具迁出个人网站，改成独立项目",
+    "summary": "准备把饮食小工具从个人网站搬出去，独立成新项目",
     "chapter": 4,
     "added": 61,
     "deleted": 17,
-    "note": "工具搬走后，旧仓库还记得它吗？"
+    "note": "小工具越做越完整，决定给它单独建个新仓库，先在主站改好跳转链接。"
   },
   {
     "hash": "941ca8e",
     "date": "2026-06-12",
     "time": "06:19",
     "subject": "refactor(tools): 完成碳循环工具迁出 — 删除工具文件与设计文档",
-    "summary": "从原网站清理已经搬走的工具文件和说明",
+    "summary": "从个人网站删掉已搬走的工具文件，清爽收尾",
     "chapter": 4,
     "added": 0,
     "deleted": 1079,
-    "note": "今天的页面里没了，旧存档里依然找得到。"
+    "note": "虽然从主站删掉了 1,079 行代码，但因为有 Git，它诞生和成长的每一步都永远留在档案柜里。"
   }
 ];

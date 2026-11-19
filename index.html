@@ -3,107 +3,119 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <meta name="theme-color" content="#f7dbe8" />
-    <title>Bela OS · 文科生也能懂的 Git &amp; GitHub</title>
+    <meta name="theme-color" content="#faf6f8" />
+    <title>Bela · 文科生也能懂的 Git &amp; GitHub</title>
     <link rel="icon" href="assets/y2k/heart.png" />
     <link rel="stylesheet" href="css/os.css" />
     <link rel="stylesheet" href="css/workshop.css" />
     <link rel="stylesheet" href="css/gallery.css" />
-    <link rel="stylesheet" href="css/sync-demo.css" />
   </head>
   <body>
-    <main id="stage" aria-label="Bela OS 直播桌面">
+    <main id="stage" aria-label="Bela 直播课程主屏">
       <header class="taskbar">
-        <button id="brand" class="os-brand flex items-center" title="回到直播桌面（0）">
-          <span class="pixel-logo" aria-hidden="true"><i></i><i></i><i></i><i></i></span>Bela OS
+        <button id="brand" class="os-brand" title="回到课程首页（0）">
+          <span class="brand-dot" aria-hidden="true"></span>Bela Live
         </button>
-        <span class="bar-divider" aria-hidden="true"></span
-        ><span class="on-air"><i></i><span id="air-title">直播桌面</span></span>
-        <div class="task-right flex items-center">
-          <span class="creator"
-            >♥ &nbsp;李贝拉Bela<span class="on-desktop"> · 文科生学 AI 编程</span></span
-          ><span class="bar-divider"></span><time id="clock"></time>
+        <span class="on-air"><i></i><span id="air-title">课程首页</span></span>
+        <div class="task-right">
+          <span class="creator">李贝拉Bela<span class="on-desktop"> · AI 大白话</span></span>
+          <div class="live-timer" id="live-timer" aria-label="直播与本节计时">
+            <span class="timer-pill is-sec" id="timer-sec-pill" title="当前章节已讲时长 / 建议时长 15 分钟">
+              <i class="timer-dot" aria-hidden="true"></i>
+              <b id="timer-sec-label">单节建议</b>
+              <time id="timer-sec-val">15:00</time>
+            </span>
+            <span class="timer-pill is-tot" title="整场直播累计时长 / 预期总时长 90 分钟">
+              <b>总进度</b>
+              <time id="clock">00:00 / 90:00</time>
+            </span>
+            <button type="button" class="timer-ctrl" id="timer-toggle" title="暂停或继续计时" aria-label="暂停或继续计时">⏸</button>
+            <button type="button" class="timer-ctrl" id="timer-reset" title="重置当前计时" aria-label="重置计时">↺</button>
+          </div>
         </div>
       </header>
-      <section id="home" aria-label="直播节目单">
-        <article class="hero os-window">
-          <div class="chrome">
-            <span class="window-name"><i class="mini-window"></i> Bela.live</span
-            ><span class="chrome-glyphs" aria-hidden="true"><i>–</i><i>□</i></span>
-          </div>
-          <div class="hero-face relative">
-            <div class="hero-art" aria-hidden="true">
-              <div class="photo-disc"></div>
-              <img src="assets/y2k/bela-racer.webp" alt="" /><span class="twinkle big">✦</span
-              ><span class="twinkle small">✧</span><span class="autograph">Bela</span>
-            </div>
-            <div class="hero-copy">
-              <div class="live-label"><b></b> LIVE CLASS</div>
-              <h1>
-                文科生也能懂的<strong>Git <em>&amp;</em> GitHub</strong>
-              </h1>
+      <section id="home" aria-label="直播课程目录">
+        <article class="hero card-surface">
+          <div class="hero-copy">
+            <div class="live-label"><b></b> LIVE CLASS · 90 MIN</div>
+            <h1>
+              <span class="hero-subhead">文科生也能懂的</span>
+              <strong class="hero-brand-title">
+                <svg class="brand-logo is-git" viewBox="0 0 24 24" aria-hidden="true"><path fill="#F05032" d="M23.546 10.93L13.067.452a1.55 1.55 0 0 0-2.188 0L8.708 2.627l2.76 2.76a1.838 1.838 0 0 1 2.327 2.341l2.658 2.66a1.838 1.838 0 0 1 1.9 3.039 1.837 1.837 0 0 1-2.6 0 1.846 1.846 0 0 1-.404-2.01l-2.48-2.48v6.532a1.838 1.838 0 1 1-1.512-.054V8.817a1.838 1.838 0 0 1-.997-2.41L7.63 3.686.454 10.862a1.55 1.55 0 0 0 0 2.189l10.48 10.477a1.55 1.55 0 0 0 2.186 0l10.426-10.426a1.55 1.55 0 0 0 0-2.172z"/></svg>
+                Git <em>&amp;</em>
+                <svg class="brand-logo is-gh" viewBox="0 0 24 24" aria-hidden="true"><path fill="#24292F" d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+                GitHub
+              </strong>
+            </h1>
+            <p class="hero-lead">从底层原理到 AI 实战，零焦虑上手版本管理。</p>
+            <div class="hero-actions">
               <button class="hero-enter" data-program="1" aria-label="从第一节开讲">
-                开讲 <span aria-hidden="true">↗</span>
+                从第 1 节开讲 <span aria-hidden="true">→</span>
               </button>
+              <span class="hero-shortcut">按键盘 <kbd>1</kbd>–<kbd>6</kbd> 快速切换章节</span>
             </div>
+          </div>
+          <div class="hero-art" aria-hidden="true">
+            <div class="portrait-frame">
+              <img src="assets/portraits/bela-cover.jpg" alt="" />
+            </div>
+            <span class="autograph">Bela</span>
           </div>
         </article>
-        <div class="program-head">
-          <h2>节目单</h2>
-          <span>按 <kbd>1</kbd>–<kbd>6</kbd></span>
-        </div>
-        <nav id="programs" aria-label="六个独立节目"></nav>
+        <nav id="programs" aria-label="六节系统课程"></nav>
       </section>
-      <section id="lesson" class="os-window" aria-labelledby="lesson-title" hidden>
-        <div class="chrome">
-          <span class="window-name"><i class="mini-window"></i><span id="lesson-file"></span></span
-          ><button
+      <section id="lesson" class="card-surface" aria-labelledby="lesson-title" hidden>
+        <div class="lesson-heading">
+          <div class="lesson-title-row">
+            <span class="lesson-kicker" id="lesson-file"></span>
+            <h1 id="lesson-title"></h1>
+          </div>
+          <button
             class="chrome-close"
             id="close-lesson"
-            title="回到桌面（Esc）"
-            aria-label="关闭节目，回到桌面"
+            title="回到首页（Esc）"
+            aria-label="关闭节目，回到首页"
           >
             ×
           </button>
         </div>
-        <div class="lesson-heading">
-          <h1 id="lesson-title"></h1>
-          <p><b>刚进来的朋友</b></p>
-        </div>
         <div id="lesson-body"></div>
         <nav class="stepnav" aria-label="节目步骤">
-          <span id="step-pos"></span><span id="step-name"></span>
+          <span id="step-pos"></span>
+          <span id="lesson-intro" class="step-hint"></span>
+          <span id="step-name" hidden></span>
           <div><button id="previous">← 上一步</button><button id="next">下一步 →</button></div>
         </nav>
       </section>
-      <aside class="recap os-window" id="recap">
-        <div class="chrome">
-          <span class="window-name"><span class="blink-dot"></span> REPLAY.exe</span
-          ><button
+      <aside class="recap card-surface" id="recap">
+        <div class="recap-head">
+          <span class="recap-title"><span class="blink-dot"></span> 刚进来？30 秒看懂</span>
+          <button
             id="loop-expand"
             class="chrome-close"
             aria-label="放大回顾播放器（L）"
-            title="放大播放 L"
+            title="放大播放（L）"
           >
             ⤢
           </button>
         </div>
         <div class="recap-inside">
-          <div class="recap-kicker">
-            <span class="radiowaves" aria-hidden="true">▂▅▇▃▆</span> ON REPEAT
-          </div>
-          <h2>
-            <span>刚进来？<br /></span>30 秒看懂
-          </h2>
           <div id="mini-frame" class="loop-frame"></div>
           <div class="playback">
             <button id="loop-pause" aria-label="暂停循环"></button>
             <div id="mini-bars" class="play-bars"></div>
             <span class="runtime">00:30</span>
           </div>
+          <div class="roadmap-wrap">
+            <div class="roadmap-head"><span>本场 90 分钟进度</span><b>随时可切</b></div>
+            <div id="live-roadmap" class="live-roadmap" aria-label="直播进度时间线"></div>
+          </div>
         </div>
       </aside>
       <nav id="utilities" aria-label="直播工具">
+        <button data-tool="summary" title="本节高光截图总结（S）" aria-label="本节截图总结">
+          <kbd>S</kbd><span class="tool-text">截图总结</span>
+        </button>
         <button data-tool="glossary" title="术语翻译机（T）" aria-label="术语翻译机">
           <kbd>T</kbd><span class="tool-text">术语翻译机</span>
         </button>
@@ -111,15 +123,14 @@
           <kbd>Q</kbd><span class="tool-text">弹幕小测</span>
         </button>
         <button data-tool="notes" title="主讲提词卡（N）" aria-label="主讲提词卡">
-          <kbd>N</kbd><span class="tool-text">提词卡</span
-          ><span class="out-arrow" aria-hidden="true">↗</span>
+          <kbd>N</kbd><span class="tool-text">提词卡</span><span class="out-arrow" aria-hidden="true">↗</span>
         </button>
       </nav>
       <section id="overlay" role="dialog" aria-modal="true" aria-labelledby="modal-title" hidden>
-        <div id="modal" class="os-window">
-          <div class="chrome">
-            <span class="window-name"><i class="mini-window"></i> Bela OS</span
-            ><button class="chrome-close" id="modal-close" aria-label="关闭浮窗">×</button>
+        <div id="modal" class="card-surface">
+          <div class="lesson-topbar">
+            <span class="lesson-kicker">BELA LIVE</span>
+            <button class="chrome-close" id="modal-close" aria-label="关闭浮窗">×</button>
           </div>
           <div id="modal-body"></div>
         </div>
@@ -128,11 +139,7 @@
     <noscript
       ><article class="fallback">
         <h1>文科生也能懂的 Git &amp; GitHub</h1>
-        <p>Git 把你主动提交的修改留在电脑上。GitHub 能托管这些记录，让别人一起改作品。</p>
-        <p>
-          六节节目依次是论文时光机、分支、GitHub 协作、开源故事、AI 改坏后的恢复，以及个人网站的 28
-          次存档。打开 JavaScript 即可参与演示。
-        </p>
+        <p>Git 像电脑里的版本档案柜，把你主动提交的修改按顺序留在本地。GitHub 能托管这些记录，让大家一起改作品。</p>
       </article></noscript
     >
     <script src="data/commits.js"></script>
@@ -140,7 +147,6 @@
     <script src="data/glossary.js"></script>
     <script src="js/programs.js"></script>
     <script src="js/lessons-workshop.js"></script>
-    <script src="js/sync-demo.js"></script>
     <script src="js/lessons-gallery.js"></script>
     <script src="js/app.js"></script>
   </body>

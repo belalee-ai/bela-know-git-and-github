@@ -37,6 +37,7 @@ OpenClaw 同次快照有 82,923 个 fork。贡献者约 3,808 位，按包含匿
 - 2005 年 4 月 3 日，Linus 开始写 Git。4 月 7 日，Git 记录下第一条提交。[Linux 基金会回顾](https://www.linuxfoundation.org/blog/blog/the-greatness-of-git) · [Git 项目的首次提交](https://github.com/git/git/commit/e83c5163316f89bfbde7d9ab23ca2e25604af290)
 - 现有 Linux 内核主线仓库从 4 月 16 日的 Linux-2.6.12-rc2 开始。这个日期直接对应可打开的记录，早于第一条 Git 记录的内核开发历史另有归档。[内核主线首次提交](https://github.com/torvalds/linux/commit/1da177e4c3f41524e886b7f1b8a0c1fc7321cac2)
 - 2025 年 Octoverse 报告列出超过 1.8 亿开发者、共 6.3 亿个仓库。收购金额是微软 2018 年公布的 75 亿美元。[GitHub Octoverse 2025](https://github.blog/news-insights/octoverse/octoverse-a-new-developer-joins-github-every-second-as-ai-leads-typescript-to-1/) · [微软收购公告](https://news.microsoft.com/source/2018/06/04/microsoft-to-acquire-github-for-7-5-billion/)
+- Linus Torvalds 肖像（`assets/portraits/linus.jpg`）取自 Wikimedia Commons `LinuxCon_Europe_Linus_Torvalds_03_(cropped).jpg`（CC BY-SA 3.0 公开授权）。
 
 ## 术语与类比
 
