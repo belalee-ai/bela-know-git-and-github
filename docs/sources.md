@@ -41,3 +41,7 @@ OpenClaw 同次快照有 82,923 个 fork。贡献者约 3,808 位，按包含匿
 ## 术语与类比
 
 术语翻译机将 Git 和 GitHub 文档里的操作转成大白话。「存档」指一次 commit，「投稿」指发起 pull request。「论文」「游戏存档」和「点赞收藏」是帮助解释的类比。[GitHub 关于 Git 的说明](https://docs.github.com/en/get-started/using-git/about-git) · [GitHub 官方术语表](https://docs.github.com/en/get-started/learning-about-github/github-glossary)
+
+第 3 节用一篇稿的两处修改演示分块暂存。提交记录暂存内容，推送把提交送到远端，朋友拉取后在自己的分支上看到新版本。演示从双方已有同一版本、朋友没有额外改动的状态开始。提词卡还给出了 VS Code 里暂存所选行的做法。[Git 官方书：选择本次提交的改动](https://git-scm.com/book/en/v2/Git-Tools-Interactive-Staging) · [Git 官方书：使用远程仓库](https://git-scm.com/book/en/v2/Git-Basics-Working-with-Remotes) · [VS Code 官方图解](https://code.visualstudio.com/docs/sourcecontrol/staging-commits#_stage-specific-lines-or-code-blocks)
+
+第 6 节把仓库可见性与写入权限分别讲解。网页上传时由操作者明确选择文件；本地的 `.gitignore` 匹配尚未跟踪的文件。[GitHub 仓库说明](https://docs.github.com/en/repositories/creating-and-managing-repositories/about-repositories) · [Git 忽略规则](https://git-scm.com/docs/gitignore)
