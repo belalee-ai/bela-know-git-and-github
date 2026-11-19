@@ -772,7 +772,7 @@
   background: #d8f3e5;
   font-size: 18.5px;
   font-weight: 680;
-  color: #145a38;
+  color: #a83b24;
 }
 .ws-site.is-broken .ws-preview-button {
   transform: translateX(155px) rotate(18deg);
@@ -1119,10 +1119,10 @@
   box-shadow: 0 10px 26px rgba(212, 56, 121, 0.14), inset 0 0 0 2.5px var(--ws-accent);
 }
 .ws-flow-box.is-to {
-  box-shadow: 0 10px 26px rgba(24, 107, 67, 0.14), inset 0 0 0 2.5px #186b43;
+  box-shadow: 0 10px 26px rgba(24, 107, 67, 0.14), inset 0 0 0 2.5px #c44a30;
 }
 .ws-flow-box.is-to em {
-  background: #186b43;
+  background: #c44a30;
 }
 .ws-flow-arrow {
   display: flex;
@@ -1277,7 +1277,7 @@
   padding: 4px 12px;
   border-radius: 99px;
   background: #d8f3e5;
-  color: #145a38;
+  color: #a83b24;
 }
 .ws-note-row {
   display: flex;
@@ -1343,7 +1343,7 @@
 }
 .ws-timeline button[aria-pressed='true'] {
   background: #d2efe0;
-  color: #145a38;
+  color: #a83b24;
 }
 .ws-compare {
   flex: 1;
@@ -1401,7 +1401,7 @@
 }
 .ws-diff ins {
   background: #d8f3e5;
-  color: #145a38;
+  color: #a83b24;
   text-decoration: none;
   font-weight: 650;
 }
@@ -1539,7 +1539,7 @@
   padding: 4px 14px;
   border-radius: 99px;
   background: #d2efe0;
-  color: #145a38;
+  color: #a83b24;
   font-size: 17px;
 }
 .ws-bold-label b {
@@ -1559,13 +1559,13 @@
   stroke-linecap: round;
 }
 .ws-path-main {
-  stroke: #248f5c;
+  stroke: #c44a30;
 }
 .ws-path-bold {
   stroke: #d43879;
 }
 .ws-node {
-  stroke: #186b43;
+  stroke: #c44a30;
   stroke-width: 3;
   fill: #d2efe0;
 }

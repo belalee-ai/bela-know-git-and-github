@@ -180,17 +180,17 @@ p {
   color: var(--ink);
 }
 .timer-pill.is-sec {
-  background: linear-gradient(135deg, #e5f6ed 0%, #f2fbf6 100%);
+  background: #fbede6;
 }
 .timer-pill.is-sec b,
 .timer-pill.is-sec time {
-  color: #165e3d;
+  color: #a83b24;
 }
 .timer-dot {
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background: #249c63;
+  background: #c44a30;
 }
 .timer-pill.is-sec.is-warn {
   background: linear-gradient(135deg, #fdf0d2 0%, #fff8e8 100%);

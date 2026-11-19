@@ -301,7 +301,7 @@
   color: var(--gal-accent-deep);
 }
 .gal-ignore-card.is-safe .gal-ignore-head b {
-  color: #145a38;
+  color: #a83b24;
 }
 
 /* ============================================================================
@@ -854,7 +854,7 @@
 .gal-myth-good span {
   font-size: 14px;
   font-weight: 700;
-  color: #145a38;
+  color: #a83b24;
   background: #d2efe0;
   padding: 2px 8px;
   border-radius: 99px;
@@ -1090,7 +1090,7 @@
   font-size: 19.5px;
 }
 .gal-diff-labels span:first-child b {
-  color: #145a38;
+  color: #a83b24;
 }
 .gal-diff-labels span:last-child b {
   color: #b01e54;

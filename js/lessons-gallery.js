@@ -78,7 +78,7 @@
           `<div class="gal-setup">
           <div class="gal-desktop-flow">
             <svg viewBox="0 0 1240 160" role="img" aria-label="AI Agent 配合 GitHub 网页端零命令行三步流程图">
-              <rect x="8" y="8" width="1224" height="144" rx="24" fill="#eef6ff"/>
+              <rect x="8" y="8" width="1224" height="144" rx="24" fill="#e9f0f7"/>
               <text x="34" y="42" font-size="18" font-weight="700" fill="#164687">💬 Q&amp;A：不会用命令行还能用 GitHub 吗？完全可以！用 AI Agent 管本地 + GitHub 网页端最直观：</text>
               <rect x="34" y="60" width="356" height="72" rx="16" fill="#ffffff"/>
               <text x="54" y="90" font-size="18" font-weight="700" fill="#164687">① 在 GitHub 网页端建仓</text>
@@ -87,10 +87,10 @@
               <rect x="446" y="60" width="364" height="72" rx="16" fill="#ffffff"/>
               <text x="466" y="90" font-size="18" font-weight="700" fill="#a31d56">② 发 1 句话给 AI Agent 干活</text>
               <text x="466" y="114" font-size="14.5" fill="#6b4857">不敲黑框命令，让 AI 帮你装 Git、存版本和回退</text>
-              <path d="M820 96 H854" stroke="#186b43" stroke-width="3.5"/><polygon points="858,96 846,89 846,103" fill="#186b43"/>
-              <rect x="866" y="60" width="340" height="72" rx="16" fill="#186b43"/>
+              <path d="M820 96 H854" stroke="#c44a30" stroke-width="3.5"/><polygon points="858,96 846,89 846,103" fill="#c44a30"/>
+              <rect x="866" y="60" width="340" height="72" rx="16" fill="#c44a30"/>
               <text x="888" y="90" font-size="18" font-weight="700" fill="#ffffff">③ 回到 GitHub 网页端验收</text>
-              <text x="888" y="114" font-size="14.5" fill="#d2f0e0">刷一下网页看记录、展示作品集 ✓</text>
+              <text x="888" y="114" font-size="14.5" fill="#f7ddd2">刷一下网页看记录、展示作品集 ✓</text>
             </svg>
           </div>
           <div class="gal-setup-grid">
@@ -152,15 +152,15 @@
               <text x="281" y="228" text-anchor="middle" font-size="13" fill="#544650">密码不上传</text>
               <text x="281" y="248" text-anchor="middle" font-size="13" fill="#544650">垃圾不上传</text>
 
-              <path d="M184 156 H212" stroke="#186b43" stroke-width="3.5"/>
-              <path d="M350 156 H376" stroke="#186b43" stroke-width="3.5"/><polygon points="380,156 368,149 368,163" fill="#186b43"/>
+              <path d="M184 156 H212" stroke="#c44a30" stroke-width="3.5"/>
+              <path d="M350 156 H376" stroke="#c44a30" stroke-width="3.5"/><polygon points="380,156 368,149 368,163" fill="#c44a30"/>
 
               <rect x="384" y="92" width="146" height="196" rx="18" fill="#ede6dc"/>
-              <text x="457" y="132" text-anchor="middle" font-size="17" font-weight="700" fill="#145a38">☁️ 传上 GitHub</text>
-              <text x="457" y="168" text-anchor="middle" font-size="14.5" font-weight="700" fill="#145a38">✅ 只传作品本身</text>
+              <text x="457" y="132" text-anchor="middle" font-size="17" font-weight="700" fill="#a83b24">☁️ 传上 GitHub</text>
+              <text x="457" y="168" text-anchor="middle" font-size="14.5" font-weight="700" fill="#a83b24">✅ 只传作品本身</text>
               <text x="457" y="202" text-anchor="middle" font-size="14" fill="#2b5e44">网页源码</text>
               <text x="457" y="226" text-anchor="middle" font-size="14" fill="#2b5e44">README 说明书</text>
-              <text x="457" y="260" text-anchor="middle" font-size="13.5" font-weight="700" fill="#145a38">安全零泄露 ✓</text>
+              <text x="457" y="260" text-anchor="middle" font-size="13.5" font-weight="700" fill="#a83b24">安全零泄露 ✓</text>
             </svg>
           </div>
           <div class="gal-ignore-right">
@@ -351,9 +351,9 @@
             <rect x="426" y="12" width="356" height="92" rx="20" fill="#f8d8e6"/>
             <text x="448" y="46" font-size="18" font-weight="700" fill="#a81d58">② .gitignore 安检门拦住密钥</text>
             <text x="448" y="76" font-size="16" fill="#5e3447">.env（API 密钥）与 node_modules 留在本地不上传</text>
-            <path d="M790 58 H830" stroke="#186b43" stroke-width="3.5"/><polygon points="834,58 822,51 822,65" fill="#186b43"/>
+            <path d="M790 58 H830" stroke="#c44a30" stroke-width="3.5"/><polygon points="834,58 822,51 822,65" fill="#c44a30"/>
             <rect x="842" y="12" width="308" height="92" rx="20" fill="#ede6dc"/>
-            <text x="864" y="46" font-size="18" font-weight="700" fill="#145a38">③ Private 练习 ⇄ Public 展示</text>
+            <text x="864" y="46" font-size="18" font-weight="700" fill="#a83b24">③ Private 练习 ⇄ Public 展示</text>
             <text x="864" y="76" font-size="16" fill="#2b5e44">平时练习选私密，做求职作品集转公开（随时可改）</text>
           </svg>
         </div>
@@ -764,7 +764,7 @@
             <text x="330" y="76" font-size="15.5" fill="#5e3447">AI改完先测试再交，崩了一秒退回</text>
             <path d="M588 56 H606" stroke="#9e8c96" stroke-width="3"/>
             <rect x="612" y="10" width="272" height="92" rx="20" fill="#ede6dc"/>
-            <text x="632" y="46" font-size="21" font-weight="750" fill="#145a38">🌿 更加可迭代</text>
+            <text x="632" y="46" font-size="21" font-weight="750" fill="#a83b24">🌿 更加可迭代</text>
             <text x="632" y="76" font-size="15.5" fill="#2b5e44">主分支放稳定版，大改新开分支试</text>
             <path d="M890 56 H908" stroke="#9e8c96" stroke-width="3"/>
             <rect x="914" y="10" width="258" height="92" rx="20" fill="#ddeaf6"/>
