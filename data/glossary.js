@@ -20,5 +20,12 @@ window.DATA.glossary = [
   { term: "Version control", meaning: "版本控制，把每次决定保留的改动记下来，能比较、追溯和恢复。", aliases: ["版本控制", "版本管理", "历史"] },
   { term: "Diff", meaning: "对照两个版本，看哪些行加进来，哪些行删掉了。", aliases: ["差异", "对比", "改动"] },
   { term: "main", meaning: "很多仓库把主要分支叫 main，大家通常把确认好的改动合回这里。", aliases: ["主分支", "主线"] },
-  { term: "GitHub Pages", meaning: "GitHub 提供的静态网站托管服务，能把仓库里的网页发布成网站。", aliases: ["网站", "静态网页", "发布"] }
+  { term: "GitHub Pages", meaning: "GitHub 提供的静态网站托管服务，能把仓库里的网页发布成网站。", aliases: ["网站", "静态网页", "发布"] },
+  { term: "Working tree", meaning: "工作区，就是你正在改的文件。还没提交的修改也在这里。", aliases: ["工作区", "工作目录", "草稿"] },
+  { term: "Staging area", meaning: "暂存区，放这次想提交的改动。同一份文件也可以只选一处。", aliases: ["暂存", "stage", "add", "index", "选一处"] },
+  { term: "Local repository", meaning: "本地仓库，保存在你这台电脑上的版本记录。断网也能提交。", aliases: ["本机", "本地仓库"] },
+  { term: "Remote", meaning: "远端仓库，可以推送或拉取的另一份仓库。演示里它在 GitHub 上。", aliases: ["remote repository", "远端", "远程仓库", "origin"] },
+  { term: "git init", meaning: "初始化，让 Git 开始管理这个文件夹。接下来可以选改动、存第一版。", aliases: ["初始化", "建本地仓库"] },
+  { term: ".gitignore", meaning: "忽略清单，用来跳过符合规则的未跟踪文件。已经入库的文件仍会跟踪。", aliases: ["忽略", "不跟踪"] },
+  { term: "Commit ID", meaning: "提交编号，能指到一次具体存档。问 AI 时可以把项目和编号一起给它。", aliases: ["编号", "hash", "哈希", "短编号"] }
 ];

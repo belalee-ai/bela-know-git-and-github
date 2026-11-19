@@ -124,3 +124,10 @@
 .gal-guide-body .gal-action { margin-top: 7px; }
 .gal-field { display: flex; gap: 20px; align-items: center; border: 1.5px solid #bfa4b6; border-radius: 7px; background: #f6edf5; padding: 9px 15px; font-size: 28px; }
 .gal .gal-name-history { margin-top: 14px; font-family: ui-monospace, monospace; font-size: 28px; color: #5e4460; }
+.gal-card-buttons, .gal-access { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; }
+.gal-card-buttons .gal-action { margin-top: 0; }
+.gal-access .gal-flip { min-width: 120px; padding: 11px 20px; }
+.gal .gal-access .gal-flip[aria-pressed="true"] { color: white; background: var(--gal-plum); border-color: var(--gal-plum); }
+.gal-visibility-label { border: 1px solid #d6abc4; border-radius: 7px; padding: 1px 10px; font-size: 28px; }
+.gal-ai-prompt { margin-bottom: 14px; }
+.gal-ai-prompt span { display: inline-block; margin-bottom: 5px; color: #78415d; font-size: 28px; font-weight: 650; }

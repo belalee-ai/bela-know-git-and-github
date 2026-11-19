@@ -231,10 +231,34 @@ async function exercise(page) {
     }
   }
   assert.equal(records.size,28,'四章展示的不同提交数');
+  await click(page,'[data-commit="9dc6d9e"]');
+  await click(page,'[data-ask-ai]');
+  await checkText('[data-ai-example]', '9dc6d9e');
+  await checkText('[data-ai-example]', '柠檬绿');
   await advance(1);
-  for (const step of [5,6]) await click(page,`.gal-guide-body [data-gal-step="${step}"]`);
+  await click(page,'.gal-guide-body [data-gal-step="5"]');
+  await click(page,'[data-visibility="public"]');
+  await checkText('[data-access]', '看');
+  const publicAccess = await bodyText(page,'[data-access]');
+  await click(page,'[data-visibility="private"]');
+  assert.ok(await visible(page,'[data-visibility="private"][aria-pressed="true"]'), '未选中私有仓库');
+  assert.notEqual(await bodyText(page,'[data-access]'), publicAccess, '两种仓库可见范围应有区别');
+  await click(page,'.gal-guide-body [data-gal-step="6"]');
+  await checkText('[data-repo-visibility]', '私有');
+  await click(page,'[data-ignore]');
+  await checkText('[data-ignore-help]', '未跟踪文件');
+  await checkText('[data-ignore-help]', '网页上传');
+  await frame(page, '06-upload-privacy');
+  await click(page,'[data-ignore]');
   await click(page,'[data-upload]'); await click(page,'[data-upload]');
   await checkText('#lesson-body','第一份作品已存档'); await frame(page,'06-first-upload');
+  await checkText('[data-repo-visibility]', '私有');
+  await click(page,'[data-replay]');
+  await click(page,'.gal-guide-body [data-gal-step="5"]');
+  await click(page,'[data-visibility="public"]');
+  await click(page,'.gal-guide-body [data-gal-step="6"]');
+  await checkText('[data-repo-visibility]', '公开');
+  assert.ok(!(await visible(page,'[data-replay]')), '重演后不应保留上轮上传结果');
   const topic = await bodyText(page,'#air-title');
   await page.call('Page.reload', {ignoreCache:true});
   await until(async () => (await bodyText(page,'#air-title')) === topic && await visible(page,'#lesson:not([hidden])'), '刷新后没有恢复第六节');

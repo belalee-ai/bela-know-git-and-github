@@ -126,6 +126,12 @@
 
   const chapterTitles = ['建站', '一夜 11 次', '写作', '换色'];
   const chapterChoice = {};
+  const demoRepo = 'my-first-note';
+  const accessOptions = {
+    private: {name: '私有', detail: '自己和受邀者能看，有写权限才能改。'},
+    public: {name: '公开', detail: '所有人能看，有写权限才能改。'}
+  };
+  let visibility = 'private';
   let uploadFinished = false;
   let sampleReady = false;
 
@@ -144,17 +150,32 @@
     mount(root, `<div class="gal-archive"><nav class="gal-chapters" aria-label="选择章节">${tabs}</nav>
       <div class="gal-archive-grid"><section class="gal-history" aria-label="${title}提交记录"><div class="gal-history-title">存档 <b>${rows.length}</b></div><div class="gal-history-list">${list}</div></section>
       <article class="gal-log"><div class="gal-log-meta"><span>belalee-website</span><code>${escape(selected.hash)}</code></div>
-      <div class="gal-log-face"><h3 aria-live="polite">${escape(selected.summary)}</h3><button type="button" class="gal-flip" data-gal-note aria-pressed="false">想一想 ↗</button></div>
+      <div class="gal-log-face"><div class="gal-example-body"><div class="gal-ai-prompt" hidden>
+        <span>离线示例</span><p><code>${escape(selected.hash)}</code> 改了什么？</p></div>
+        <h3 aria-live="polite">${escape(selected.summary)}</h3></div><div class="gal-card-buttons">
+          <button type="button" class="gal-flip" data-gal-note aria-pressed="false">想一想 ↗</button>
+          <button type="button" class="gal-flip" data-ask-ai aria-pressed="false" aria-label="用提交编号问 AI">问 AI</button></div></div>
       <div class="gal-log-diff"><div class="gal-diff-labels"><span aria-label="增加 ${added} 行"><b>+${format(added)}</b> 行</span><span aria-label="删去 ${deleted} 行"><b>−${format(deleted)}</b> 行</span></div>
       <div class="gal-diff-track" aria-hidden="true" style="--gal-share:${share}%" data-empty="${!sum}"></div></div>
       </article></div></div>`);
     const flip = root.querySelector('[data-gal-note]');
-    flip.addEventListener('click', () => {
-      const showNote = flip.getAttribute('aria-pressed') !== 'true';
-      root.querySelector('.gal-log-face h3').textContent = showNote ? selected.note : selected.summary;
-      flip.setAttribute('aria-pressed', String(showNote));
-      flip.textContent = showNote ? '看改动 ↶' : '想一想 ↗';
-    });
+    const ask = root.querySelector('[data-ask-ai]');
+    const prompt = root.querySelector('.gal-ai-prompt');
+    function showFace(mode) {
+      const isNote = mode === 'note';
+      const isExample = mode === 'example';
+      root.querySelector('.gal-log-face h3').textContent = isNote ? selected.note : selected.summary;
+      prompt.hidden = !isExample;
+      root.querySelector('.gal-example-body').toggleAttribute('data-ai-example', isExample);
+      flip.hidden = isExample;
+      flip.setAttribute('aria-pressed', String(isNote));
+      ask.setAttribute('aria-pressed', String(isExample));
+      ask.setAttribute('aria-label', isExample ? '收起提问示例' : '用提交编号问 AI');
+      flip.textContent = isNote ? '看改动 ↶' : '想一想 ↗';
+      ask.textContent = isExample ? '↶' : '问 AI';
+    }
+    flip.addEventListener('click', () => showFace(flip.getAttribute('aria-pressed') === 'true' ? 'summary' : 'note'));
+    ask.addEventListener('click', () => showFace(prompt.hidden ? 'example' : 'summary'));
     const listEl = root.querySelector('.gal-history-list');
     const active = listEl.querySelector('.is-current');
     if (active) listEl.scrollTop = Math.max(0, active.offsetTop - listEl.clientHeight / 2 + active.offsetHeight / 2);
@@ -171,16 +192,42 @@
     const titles = ['注册', '建仓', '上传'];
     const current = step - 4;
     const tabs = titles.map((name, index) => `<button class="gal-guide-tab ${current === index ? 'is-current' : ''}" data-gal-step="${index + 4}" aria-pressed="${current === index}" type="button"><b>${index + 1}</b>${name}</button>`).join('');
+    const access = accessOptions[visibility];
     let screen;
     if (current === 0) screen = `<span class="gal-kicker">Sign up</span><h3>注册一个账号</h3><p>用示例身份练习。</p>${goButton(5, '模拟注册 →')}`;
-    else if (current === 1) screen = `<span class="gal-kicker">New repository</span><h3>给作品建仓库</h3><div class="gal-field">项目名 <code>my-first-note</code></div>${goButton(6, '创建示例仓库 →')}`;
-    else if (uploadFinished) screen = `<span class="gal-kicker">Commit changes</span><h3>第一份作品已存档</h3><div class="gal-field"><span>✓</span> my-first-note / README.md</div><button class="gal-action" type="button" data-replay>再练一次 ↺</button>`;
-    else screen = `<span class="gal-kicker">Add file → Upload files</span><h3>把第一份笔记放进去</h3>
-      <div class="gal-field">${sampleReady ? '✓ 已选 README.md' : '文件 · 尚未选择'}</div>
-      <button class="gal-action" type="button" data-upload>${sampleReady ? '提交这次存档 ✓' : '选择示例文件 ＋'}</button>`;
+    else if (current === 1) screen = `<span class="gal-kicker">New repository</span><h3>${demoRepo}</h3>
+      <div class="gal-access" role="group" aria-label="谁能看这个仓库">${Object.entries(accessOptions).map(([id, option]) =>
+        `<button type="button" class="gal-flip" data-visibility="${id}" aria-pressed="${id === visibility}">${option.name}</button>`).join('')}</div>
+      <p data-access aria-live="polite">${access.detail}</p>${goButton(6, '创建仓库 →')}`;
+    else if (uploadFinished) screen = `<span class="gal-kicker">Commit changes</span><h3>第一份作品已存档</h3>
+      <div class="gal-field"><span>✓</span><code>${demoRepo} / README.md</code></div>
+      <p>${access.detail}</p><button class="gal-action" type="button" data-replay>再练一次 ↺</button>`;
+    else screen = `<span class="gal-kicker">Upload files</span><h3>${sampleReady ? '已选 README.md' : '分享哪份文件？'}</h3>
+      <p data-upload-hint>私人草稿、密钥留在本机。</p>
+      <div data-ignore-help id="gal-ignore-help" hidden><p>本地 Git 忽略匹配的未跟踪文件。</p><p>网页上传仍要自己挑。</p></div>
+      <div class="gal-card-buttons"><button class="gal-action" type="button" data-upload>${sampleReady ? '提交存档 ✓' : '选 README.md ＋'}</button>
+      <button class="gal-flip" type="button" data-ignore aria-expanded="false" aria-controls="gal-ignore-help">.gitignore ？</button></div>`;
     mount(root, `<div class="gal-guide"><nav aria-label="小白三步上手" class="gal-guide-nav">${tabs}</nav><section class="gal-guide-screen">
-      <div class="gal-repo-top"><b class="gal-code-mark" aria-hidden="true">&lt;/&gt;</b><strong>GitHub</strong><span>离线模拟</span></div>
+      <div class="gal-repo-top"><b class="gal-code-mark" aria-hidden="true">&lt;/&gt;</b>
+        <strong>${current === 2 ? demoRepo : 'GitHub'}</strong>
+        ${current === 2 ? `<b class="gal-visibility-label" data-repo-visibility="${visibility}">${access.name}</b>` : ''}<span>离线模拟</span></div>
       <div class="gal-guide-body"><div>${screen}</div>${art(current === 0 ? 'heart' : current === 1 ? 'disk' : 'disc')}</div></section></div>`);
+    root.querySelectorAll('[data-visibility]').forEach(button => button.addEventListener('click', () => {
+      if (button.dataset.visibility !== visibility) {
+        uploadFinished = false;
+        sampleReady = false;
+      }
+      visibility = button.dataset.visibility;
+      root.querySelectorAll('[data-visibility]').forEach(item => item.setAttribute('aria-pressed', String(item === button)));
+      root.querySelector('[data-access]').textContent = accessOptions[visibility].detail;
+    }));
+    const ignore = root.querySelector('[data-ignore]');
+    ignore?.addEventListener('click', () => {
+      const help = root.querySelector('[data-ignore-help]');
+      help.hidden = !help.hidden;
+      root.querySelector('[data-upload-hint]').hidden = !help.hidden;
+      ignore.setAttribute('aria-expanded', String(!help.hidden));
+    });
     root.querySelector('[data-upload]')?.addEventListener('click', () => {
       if (sampleReady) uploadFinished = true;
       else sampleReady = true;
@@ -190,6 +237,7 @@
     root.querySelector('[data-replay]')?.addEventListener('click', () => {
       uploadFinished = false;
       sampleReady = false;
+      visibility = 'private';
       go(4);
     });
   }
